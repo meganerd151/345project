@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "735859257858",
+    "project_id": "anti-time-wasting",
+    "storage_bucket": "anti-time-wasting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735859257858:android:654313724b49df597aed1b",
+        "android_client_info": {
+          "package_name": "com.example.antitime_wasting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735859257858-8h7ov291mgv89af5cadl23q09ctfnnbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQpP1tYscbwy4tvpqW-oq2xW3aYx1qu9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735859257858-8h7ov291mgv89af5cadl23q09ctfnnbm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

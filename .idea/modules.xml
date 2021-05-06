@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/345project.iml" filepath="$PROJECT_DIR$/.idea/345project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Anti_time-wasting.iml" filepath="$PROJECT_DIR$/.idea/modules/Anti_time-wasting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Anti_time-wasting.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Anti_time-wasting.app.iml" />
     </modules>
   </component>
 </project>
