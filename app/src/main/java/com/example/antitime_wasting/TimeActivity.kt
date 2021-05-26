@@ -18,15 +18,18 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
 
-
+//Second page of our App, with Study Button, Excercise button
 class TimeActivity : AppCompatActivity() {
 
+    //this object is a companion assignment for the val 'TAG' -> which is used for
+    //Log statements to check if the app is working.
+    //The Log is basically just logging activity
     companion object{
         private const val TAG = "TimeActivity"
 
     }
 
-
+    //Standard 'late' initialising of buttons, Views, etc.
     private lateinit var mascotTimeActivity: ImageView
     private lateinit var createActivity: Button
     private lateinit var studybtn: Button
@@ -34,38 +37,35 @@ class TimeActivity : AppCompatActivity() {
     private lateinit var timeText: TextView
     private var twoDimArrayDateTime = arrayListOf<Int>()
 
-
-
-
-
-
-
-
+    //Standard onCreate function of every page in the app
+    //main bulk of functions, buttons etc go into here
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time)
 
+        //initializing buttons, texts etc by finding them with 'findViewById' in the
+        //resources of the app
         mascotTimeActivity = findViewById(R.id.mascotTimeActivity)
         createActivity = findViewById(R.id.createNewActivity)
         excercisebtn = findViewById(R.id.excercisebtn)
         timeText = findViewById((R.id.timeText))
 
 
-        //set Button Listeners with Methods
-         val studybtn = findViewById<Button>(R.id.studybtn)
+        //set Button Listeners for the Study Button
+        //call the method 'timeMethod' when the
+        //studybtn is clicked
+        //This method save the time into the array and
+        //calculates the time
+        val studybtn = findViewById<Button>(R.id.studybtn)
         studybtn.setOnClickListener {
             timeMethod()
 
-
         }
 
-
-
-
-
-        //back button
+        //back button on the top left corner of the second page
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //Title on the top
         supportActionBar?.title = "Start activity"
     }
@@ -81,12 +81,23 @@ class TimeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    //timeMethod which has been called by the studybtn
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod() {
 
+        //SaveAndDisplayTime is a support class.
+        //Call the support class and 'add' and 'save'
+        //the time in the timeValues array-> saveOnClick is a function called
+        //within the support class SaveAndDisplay
         SaveAndDisplayTime.timeValues.add(SaveAndDisplayTime.saveOnClick())
+
+        //Log Statement to check in the logs if the functions
+        //are working correctly
         Log.i(TAG, "Clicked on Start Button" )
         Log.i(TAG, "${SaveAndDisplayTime.timeValues}" )
+
+        //initial attempt to save the time into Strings
+        // -----------NOT FINISHED --------UNDER CONSTRUCTION-------------
         SaveAndDisplayTime.WriteToFile(SaveAndDisplayTime.timeValuesToString)
         Log.i(TAG, "${SaveAndDisplayTime.timeValuesToString}" )
 
@@ -100,6 +111,11 @@ class TimeActivity : AppCompatActivity() {
             Log.w(TAG, "Output ${SaveAndDisplayTime.timeInStringForOutput()}")
         }
         */
+
+        //If, else structured arguments which call the support class
+        //and some functions there in order to
+        //calculate and correctly display the time
+        //once the study button is pressed two times
         if (SaveAndDisplayTime.timeValues.size < 2){
 
             Log.i(TAG, "First Loop" )

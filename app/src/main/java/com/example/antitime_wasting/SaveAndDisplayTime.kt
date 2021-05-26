@@ -19,9 +19,6 @@ import kotlin.collections.ArrayList
 object SaveAndDisplayTime {
 
 
-
-
-
     val timeValues = ArrayList<Int>()
     val timeValuesToString = timeValues.joinToString()
 
@@ -37,16 +34,22 @@ object SaveAndDisplayTime {
     }
 
     //save date and time on Click into Array
+    //This functions returns the date - from the function Date() -
+    //and converts the 'long' number into an integer by dividing it
+    //by 1000.
+    //Below are more function to retrieve the integers from the Array
+    //and converts these integers back to longs by the correct magic
+    //number
     fun saveOnClick(): Int {
 
-//save Values as Integer in time values
+
         return (Date().time / 1000).toInt()
 
     }
 
     //The start and stop will always add 2 values to the growing array. The last and second last values in the array are the start and stop position
     //for calculation purposes. 
-    //Retrive Last element of Array and convert them to long for calculation purposes
+    //Retrieve Last element of Array and convert them to long for calculation purposes
     fun retrieveLastElementOfTimeValues(): Long {
         return (timeValues[timeValues.size - 1] * 1000L)
     }
@@ -58,12 +61,16 @@ object SaveAndDisplayTime {
         return (timeValues[timeValues.size - 2] * 1000L)
     }
 
+    //function to calculate time passed between pressing the button two times
+    //used for checking purposes at the moment
     fun calculateTimeSpentOnActivity(): Date {
         val start = retrieveSecondLastElementOfTimeValues()
         val finish = retrieveLastElementOfTimeValues()
         return Date(finish - start)
     }
 
+    //the correct time output sent back in String format to
+    //the app screen
     fun timeInStringForOutput(): String {
         val diff1 = retrieveLastElementOfTimeValues() - retrieveSecondLastElementOfTimeValues()
         val diffDays = (diff1 / (24 * 60 * 60 * 1000)).toInt()
