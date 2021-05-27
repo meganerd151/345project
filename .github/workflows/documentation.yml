@@ -1,0 +1,31 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: gradlew dokkaHtml
+    - name: PushtoGitHub
+      run: |
+        rm -rf docs
+        mv app/build/dokka/html ./docs
+        git add -f docs
+        git diff -index --quit HEAD || git commit -m "Auto update docs"
+    - name: Push documentation
+      run: git push -u origin main
