@@ -1,0 +1,23 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.antitime_wasting////PointingToDeclaration/app/com.example.antitime_wasting/index.html
+$dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
+$dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/-main-activity.html
+$dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
+$dokka.location:com.example.antitime_wasting/MainActivity/onOptionsItemSelected/#android.view.MenuItem/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-options-item-selected.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime///PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/index.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/WriteToFile/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/-write-to-file.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/calculateTimeSpentOnActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/calculate-time-spent-on-activity.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/retrieveLastElementOfTimeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/retrieve-last-element-of-time-values.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/retrieveSecondLastElementOfTimeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/retrieve-second-last-element-of-time-values.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/saveDate/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/save-date.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/saveOnClick/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/save-on-click.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/timeInStringForOutput/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/time-in-string-for-output.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/timeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/time-values.html
+$dokka.location:com.example.antitime_wasting/SaveAndDisplayTime/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-save-and-display-time/time-values-to-string.html
+$dokka.location:com.example.antitime_wasting/TimeActivity.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-companion/index.html
+$dokka.location:com.example.antitime_wasting/TimeActivity///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/index.html
+$dokka.location:com.example.antitime_wasting/TimeActivity/TimeActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-time-activity.html
+$dokka.location:com.example.antitime_wasting/TimeActivity/onOptionsItemSelected/#android.view.MenuItem/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/on-options-item-selected.html
+com.example.antitime_wasting
+
