@@ -11,7 +11,9 @@ import android.widget.Button
 import android.widget.ImageView
 import java.io.FileInputStream
 
-//The Main Page
+/**
+ *Home Page
+ */
 class MainActivity : AppCompatActivity() {
 
     //Standard 'late' initialisation of buttons, Imageview, Containers etc.
@@ -21,9 +23,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var startButton: Button
 
 
-
-    //Standard onCreate function of the main activity screen
-    //this is the main function creates the buttons etc.
+    /**
+     * Standard onCreate function of the main activity screen
+     * this is the main function which creates the buttons, containers etc.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,13 +37,12 @@ class MainActivity : AppCompatActivity() {
         startButton = findViewById(R.id.startButton)
 
 
-
-
-        //Start Button gets a Button Listener
-        //Context is set to this page
-        //Standard Structure to move to a new page - > TimeActivity
-        //Time activity is the second page in our app
-        //
+        /**
+         * Start Button gets a Button Listener
+         * Context is set to this home page
+         * Standard Structure to move to a new page - > TimeActivity
+         * Time activity is the second page in our app
+         */
         startButton.setOnClickListener {
             val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
@@ -50,15 +52,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    //function which creates the top right Menu
-    //utilising Standard menuInflator commands for these menues.
+    /**
+     * Function which creates the top right Menu
+     * utilising Standard menuInflator commands for these menues.
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
    }
 
-    //function which will lunch the statistics menu with Graph,
-    //nothing assign so far
+    /**
+     * function which will lunch the statistics menu with Graph,
+     * nothing assign so far
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.statisticsMenu -> {

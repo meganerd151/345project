@@ -18,12 +18,16 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
 
-//Second page of our App, with Study Button, Excercise button
+/**
+ * Second page of our App, with Study Button, Excercise button
+ */
 class TimeActivity : AppCompatActivity() {
 
-    //this object is a companion assignment for the val 'TAG' -> which is used for
-    //Log statements to check if the app is working.
-    //The Log is basically just logging activity
+    /**
+     * This object is a companion assignment for the val 'TAG' -> which is used for
+     * Log statements to check if the app is working.
+     * The Log is basically just logging activity
+     */
     companion object{
         private const val TAG = "TimeActivity"
 
@@ -37,8 +41,10 @@ class TimeActivity : AppCompatActivity() {
     private lateinit var timeText: TextView
     private var twoDimArrayDateTime = arrayListOf<Int>()
 
-    //Standard onCreate function of every page in the app
-    //main bulk of functions, buttons etc go into here
+    /**
+     * Standard onCreate function of every page in the app
+     * main bulk of functions, buttons etc go into here
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +54,6 @@ class TimeActivity : AppCompatActivity() {
         //resources of the app
         mascotTimeActivity = findViewById(R.id.mascotTimeActivity)
         createActivity = findViewById(R.id.createNewActivity)
-        excercisebtn = findViewById(R.id.excercisebtn)
         timeText = findViewById((R.id.timeText))
 
 
@@ -63,6 +68,12 @@ class TimeActivity : AppCompatActivity() {
 
         }
 
+        val excercisebtn = findViewById<Button>(R.id.excercisebtn)
+        excercisebtn.setOnClickListener {
+            timeMethod()
+
+        }
+
         //back button on the top left corner of the second page
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -71,8 +82,10 @@ class TimeActivity : AppCompatActivity() {
     }
 
 
-
-    //function for the back button
+    /**
+     * function for the back button
+     * @return returns Boolean and returns user to the home page
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home){
             finish()
@@ -81,7 +94,20 @@ class TimeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    //timeMethod which has been called by the studybtn
+    /**
+     * timeMethod which has been called by the studybtn
+     *
+     * This method combines other methods from the
+     * SaveAndDisplayTime object and is the current
+     * workhorse of our app
+     *
+     * It save the start point and ending point in our app
+     * in the app.
+     *
+     * It also displays the String on the second page how much
+     * time was spent on a activity.
+     *
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod() {
 
@@ -102,6 +128,7 @@ class TimeActivity : AppCompatActivity() {
         Log.i(TAG, "${SaveAndDisplayTime.timeValuesToString}" )
 
 
+        //Faulty code
         /*
         if (SaveAndDisplayTime.timeValues.size >= 2) {
             SaveAndDisplayTime.calculateTimeSpentOnActivity()
