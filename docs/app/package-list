@@ -1,19 +1,13 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.example.antitime_wasting////PointingToDeclaration/app/com.example.antitime_wasting/index.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/index.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-i-d.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_SESSION_TYPE/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-s-e-s-s-i-o-n_-t-y-p-e.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_START_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-s-t-a-r-t_-t-i-m-e.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/TABLE_NAME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-t-a-b-l-e_-n-a-m-e.html
-$dokka.location:com.example.antitime_wasting/DBHandler.Companion/debugTag/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/debug-tag.html
-$dokka.location:com.example.antitime_wasting/DBHandler///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/index.html
-$dokka.location:com.example.antitime_wasting/DBHandler/DBHandler/#android.content.Context?#kotlin.String?#android.database.sqlite.SQLiteDatabase.CursorFactory?#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-d-b-handler.html
-$dokka.location:com.example.antitime_wasting/DBHandler/addHandler/#com.example.antitime_wasting.Session/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/add-handler.html
-$dokka.location:com.example.antitime_wasting/DBHandler/findHandler/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/find-handler.html
-$dokka.location:com.example.antitime_wasting/DBHandler/onCreate/#android.database.sqlite.SQLiteDatabase?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/on-create.html
-$dokka.location:com.example.antitime_wasting/DBHandler/onUpgrade/#android.database.sqlite.SQLiteDatabase?#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/on-upgrade.html
+$dokka.location:com.example.antitime_wasting/DBInterface///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/index.html
+$dokka.location:com.example.antitime_wasting/DBInterface/DBInterface/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/-d-b-interface.html
+$dokka.location:com.example.antitime_wasting/DBInterface/addSession/#com.example.antitime_wasting.Session#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/add-session.html
+$dokka.location:com.example.antitime_wasting/DBInterface/debugTag/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/debug-tag.html
+$dokka.location:com.example.antitime_wasting/DBInterface/findSession/#kotlin.Int#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/find-session.html
+$dokka.location:com.example.antitime_wasting/DBInterface/removeSession/#kotlin.Int#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/remove-session.html
+$dokka.location:com.example.antitime_wasting/DBInterface/updateSession/#com.example.antitime_wasting.Session#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/update-session.html
 $dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
 $dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/-main-activity.html
 $dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
@@ -30,6 +24,18 @@ $dokka.location:com.example.antitime_wasting/Session/setID/#kotlin.Int/PointingT
 $dokka.location:com.example.antitime_wasting/Session/setSessionType/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-session-type.html
 $dokka.location:com.example.antitime_wasting/Session/setStart/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-start.html
 $dokka.location:com.example.antitime_wasting/Session/startTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/start-time.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/-companion/index.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker///PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/index.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/SettingsTalker/#android.content.Context/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/-settings-talker.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/addEntry/#kotlin.String?#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/add-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/addEntry/#kotlin.String?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/add-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/clearAll/#kotlin.Boolean/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/clear-all.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/context/#/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/context.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/getIntEntry/#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/get-int-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/getStringEntry/#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/get-string-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/removeEntry/#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/remove-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/updateEntry/#kotlin.String?#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/update-entry.html
+$dokka.location:com.example.antitime_wasting/SettingsTalker/updateEntry/#kotlin.String?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/update-entry.html
 $dokka.location:com.example.antitime_wasting/TimeActivity.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-companion/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity/TimeActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-time-activity.html
@@ -44,5 +50,20 @@ $dokka.location:com.example.antitime_wasting/TimeHelper/saveDate/#/PointingToDec
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values-to-string.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/toString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-i-d.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_SESSION_TYPE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-s-e-s-s-i-o-n_-t-y-p-e.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_START_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-s-t-a-r-t_-t-i-m-e.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/TABLE_NAME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-t-a-b-l-e_-n-a-m-e.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/debugTag/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/debug-tag.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/index.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/___DBHandler___/#android.content.Context?#kotlin.String?#android.database.sqlite.SQLiteDatabase.CursorFactory?#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/___-d-b-handler___.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/addHandler/#com.example.antitime_wasting.Session/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/add-handler.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/deleteHandler/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/delete-handler.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/findHandler/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/find-handler.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/onCreate/#android.database.sqlite.SQLiteDatabase?/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/on-create.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/onUpgrade/#android.database.sqlite.SQLiteDatabase?#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/on-upgrade.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___/updateHandler/#com.example.antitime_wasting.Session/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/update-handler.html
 com.example.antitime_wasting
 
