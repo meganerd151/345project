@@ -1,5 +1,6 @@
 package com.example.antitime_wasting
 
+import android.util.Log
 import java.io.*
 import java.lang.Exception
 import java.util.*
@@ -87,8 +88,9 @@ object TimeHelper {
 
 
     fun toString(start:Long,end:Long): String {
-        //val difference = getLastTimeElement() - getSecondLastTimeElement()
         val difference = end-start
+        //val difference = getLastTimeElement() - getSecondLastTimeElement()
+        Log.i("TimeHelper","Start: $start, End: $end, Difference: $difference")
         val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
         val diffhours = (difference / (60 * 60 * 1000)).toInt()
         val diffmin = (difference / (60 * 1000)).toInt()
