@@ -20,6 +20,21 @@ class DBHandler(context: Context?, name: String?, factory: CursorFactory?, versi
         db?.execSQL(CREATE_TABLE)
     }
 
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        TODO("Not yet implemented")
+    }
+
+    companion object {
+        private const val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "timesDB.db"
+        const val TABLE_NAME = "Times"
+        const val COLUMN_ID = "TimeID"
+        const val COLUMN_START_TIME = "StartTime"
+        const val COLUMN_END_TIME = "EndTime"
+        const val COLUMN_SESSION_TYPE = "SessionType"
+        const val debugTag = "DBHandler"
+    }
+
     fun addHandler(session: Session) {
         try {
             val values = ContentValues()
@@ -47,25 +62,41 @@ class DBHandler(context: Context?, name: String?, factory: CursorFactory?, versi
             session.setStart(cursor.getInt(1))
             session.setEnd(cursor.getInt(2))
             session.setSessionType(cursor.getString(3))
-
         }
         cursor.close()
         db.close()
         return session
     }
 
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+    fun deleteHandler(ID: Int): Boolean {
+        var result = false
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = '$ID'"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query, null)
+        val session = Session()
+        if (cursor.moveToFirst()) {
+            session.setID(cursor.getInt(0))
+            db.delete(TABLE_NAME, "$COLUMN_ID=?", arrayOf(java.lang.String.valueOf(session.id)))
+            // for the love of GOD, please revisit this steaming pile of crap, took from online tutorial and just want it to work :)
+            cursor.close()
+            result = true
+        }
+        db.close()
+        return result
     }
 
-    companion object {
-        private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "timesDB.db"
-        const val TABLE_NAME = "Times"
-        const val COLUMN_ID = "TimeID"
-        const val COLUMN_START_TIME = "StartTime"
-        const val COLUMN_END_TIME = "EndTime"
-        const val COLUMN_SESSION_TYPE = "SessionType"
-        const val debugTag = "DBHandler"
+    fun updateHandler(session: Session): Boolean {
+        val db = this.writableDatabase
+        val args = ContentValues()
+        //args.put(COLUMN_ID,ID);
+        args.put(COLUMN_START_TIME, session.startTime)
+        args.put(COLUMN_END_TIME, session.endTime)
+        args.put(COLUMN_SESSION_TYPE, session.sessionType)
+        return db.update(TABLE_NAME, args, COLUMN_ID + " = " + session.id, null) > 0
+
+        //return false
     }
+
+
+
 }
