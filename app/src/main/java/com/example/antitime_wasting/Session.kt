@@ -10,7 +10,7 @@ package com.example.antitime_wasting
 
     var startTime:Int? = null
 
-    var finishTime:Int? = null
+    var endTime:Int? = null
 
     var sessionType:String? = null
 
