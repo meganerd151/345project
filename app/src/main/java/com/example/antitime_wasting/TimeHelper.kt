@@ -1,22 +1,12 @@
 package com.example.antitime_wasting
 
-import android.content.ContentValues.TAG
-import android.content.Context
-import android.content.SharedPreferences
-import android.nfc.Tag
-import android.util.Log
-import android.util.Log.*
-import com.example.antitime_wasting.SaveAndDisplayTime
-import java.io.FileInputStream
-import java.io.FileOutputStream
 import java.io.*
 import java.lang.Exception
-import java.nio.file.attribute.FileOwnerAttributeView
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-object SaveAndDisplayTime {
+object TimeHelper {
 
 
     val timeValues = ArrayList<Int>()
@@ -65,7 +55,7 @@ object SaveAndDisplayTime {
      * Retrieve Last element of Array and convert them to long for calculation purposes
      * @return last element of the Array
      */
-    fun retrieveLastElementOfTimeValues(): Long {
+    fun getLastTimeElement(): Long {
         return (timeValues[timeValues.size - 1] * 1000L)
     }
 
@@ -73,7 +63,7 @@ object SaveAndDisplayTime {
      * Retrieve Second Last Element of Array
      * @return second last element of the Array
      */
-    fun retrieveSecondLastElementOfTimeValues(): Long {
+    fun getSecondLastTimeElement(): Long {
         //Date d2 = new Date(((long) timeValues.get(timeValues.size()-1)*1000L));
         //return d2;
         return (timeValues[timeValues.size - 2] * 1000L)
@@ -81,9 +71,9 @@ object SaveAndDisplayTime {
 
     //function to calculate time passed between pressing the button two times
     //used for checking purposes at the moment
-    fun calculateTimeSpentOnActivity(): Date {
-        val start = retrieveSecondLastElementOfTimeValues()
-        val finish = retrieveLastElementOfTimeValues()
+    fun getTimeSpent(): Date {
+        val start = getSecondLastTimeElement()
+        val finish = getLastTimeElement()
         return Date(finish - start)
     }
 
@@ -93,8 +83,9 @@ object SaveAndDisplayTime {
      *@return Time spent on activity in String format
      */
 
-    fun timeInStringForOutput(): String {
-        val diff1 = retrieveLastElementOfTimeValues() - retrieveSecondLastElementOfTimeValues()
+
+    override fun toString(): String {
+        val diff1 = getLastTimeElement() - getSecondLastTimeElement()
         val diffDays = (diff1 / (24 * 60 * 60 * 1000)).toInt()
         val diffhours = (diff1 / (60 * 60 * 1000)).toInt()
         val diffmin = (diff1 / (60 * 1000)).toInt()

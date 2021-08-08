@@ -1,8 +1,5 @@
 package com.example.antitime_wasting
 
-import android.content.ContentValues
-import android.content.Intent
-import android.nfc.Tag
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,11 +9,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-
-import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.LocalTime
-import java.util.*
 
 /**
  * Second page of our App, with Study Button, Excercise button
@@ -79,6 +71,7 @@ class TimeActivity : AppCompatActivity() {
 
         //Title on the top
         supportActionBar?.title = "Start activity"
+
     }
 
 
@@ -115,17 +108,17 @@ class TimeActivity : AppCompatActivity() {
         //Call the support class and 'add' and 'save'
         //the time in the timeValues array-> saveOnClick is a function called
         //within the support class SaveAndDisplay
-        SaveAndDisplayTime.timeValues.add(SaveAndDisplayTime.saveOnClick())
+        TimeHelper.timeValues.add(TimeHelper.saveOnClick())
 
         //Log Statement to check in the logs if the functions
         //are working correctly
         Log.i(TAG, "Clicked on Start Button" )
-        Log.i(TAG, "${SaveAndDisplayTime.timeValues}" )
+        Log.i(TAG, "${TimeHelper.timeValues}" )
 
         //initial attempt to save the time into Strings
         // -----------NOT FINISHED --------UNDER CONSTRUCTION-------------
-        SaveAndDisplayTime.WriteToFile(SaveAndDisplayTime.timeValuesToString)
-        Log.i(TAG, "${SaveAndDisplayTime.timeValuesToString}" )
+        TimeHelper.WriteToFile(TimeHelper.timeValuesToString)
+        Log.i(TAG, "${TimeHelper.timeValuesToString}" )
 
 
         //Faulty code
@@ -143,18 +136,18 @@ class TimeActivity : AppCompatActivity() {
         //and some functions there in order to
         //calculate and correctly display the time
         //once the study button is pressed two times
-        if (SaveAndDisplayTime.timeValues.size < 2){
+        if (TimeHelper.timeValues.size < 2){
 
             Log.i(TAG, "First Loop" )
             return
         }else{
-            if (SaveAndDisplayTime.timeValues.size % 2 != 0){
+            if (TimeHelper.timeValues.size % 2 != 0){
                 Log.i(TAG, "Second Loop" )
                 return
             }else{
                 Log.i(TAG, "Third Loop" )
-                SaveAndDisplayTime.calculateTimeSpentOnActivity()
-                timeText.setText(SaveAndDisplayTime.timeInStringForOutput())
+                TimeHelper.getTimeSpent()
+                timeText.setText(TimeHelper.toString())
             }
         }
 
