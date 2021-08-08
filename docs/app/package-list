@@ -1,6 +1,16 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.example.antitime_wasting////PointingToDeclaration/app/com.example.antitime_wasting/index.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/index.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-i-d.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion/COLUMN_START_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-c-o-l-u-m-n_-s-t-a-r-t_-t-i-m-e.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion/TABLE_NAME/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/-t-a-b-l-e_-n-a-m-e.html
+$dokka.location:com.example.antitime_wasting/DBHandler.Companion/debugTag/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-companion/debug-tag.html
+$dokka.location:com.example.antitime_wasting/DBHandler///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/index.html
+$dokka.location:com.example.antitime_wasting/DBHandler/DBHandler/#android.content.Context?#kotlin.String?#android.database.sqlite.SQLiteDatabase.CursorFactory?#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/-d-b-handler.html
+$dokka.location:com.example.antitime_wasting/DBHandler/onCreate/#android.database.sqlite.SQLiteDatabase?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/on-create.html
+$dokka.location:com.example.antitime_wasting/DBHandler/onUpgrade/#android.database.sqlite.SQLiteDatabase?#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-handler/on-upgrade.html
 $dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
 $dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/-main-activity.html
 $dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
