@@ -42,7 +42,7 @@ object TimeHelper {
      *   number
      *   @return Time as an integer from the Date() function
      */
-    fun saveOnClick(): Int {
+    fun getCurrentTime(): Int {
 
 
         return (Date().time / 1000).toInt()
