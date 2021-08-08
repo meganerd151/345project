@@ -29,6 +29,8 @@ package com.example.antitime_wasting
         this.id = id
     }
 
+    constructor(){}
+
     fun setID(ID:Int){
         this.id = ID
     }
