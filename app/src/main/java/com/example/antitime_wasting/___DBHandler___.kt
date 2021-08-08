@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.util.*
 
-class DBHandler(context: Context?, name: String?, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
+class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         var CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
         CREATE_TABLE += COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL, " +
