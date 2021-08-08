@@ -17,9 +17,7 @@ class DBHandler(context: Context?, name: String?, factory: CursorFactory?, versi
                 COLUMN_END_TIME + " INTEGER, " +
                 COLUMN_SESSION_TYPE+ " TEXT " +
                 ")"
-        if (db != null) {
-            db.execSQL(CREATE_TABLE)
-        }
+        db?.execSQL(CREATE_TABLE)
     }
 
     fun addHandler(session: Session) {
@@ -38,6 +36,23 @@ class DBHandler(context: Context?, name: String?, factory: CursorFactory?, versi
     }
 
 
+    fun findHandler(sessionId: Int): Session {
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = '$sessionId'"
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(query, null)
+        val session = Session()
+        if (cursor.moveToFirst()) {
+            cursor.moveToFirst()
+            session.setID(cursor.getInt(0))
+            session.setStart(cursor.getInt(1))
+            session.setEnd(cursor.getInt(2))
+            session.setSessionType(cursor.getString(3))
+
+        }
+        cursor.close()
+        db.close()
+        return session
+    }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         TODO("Not yet implemented")
