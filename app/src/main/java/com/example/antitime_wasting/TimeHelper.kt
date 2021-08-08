@@ -71,9 +71,11 @@ object TimeHelper {
 
     //function to calculate time passed between pressing the button two times
     //used for checking purposes at the moment
-    fun getTimeSpent(): Date {
-        val start = getSecondLastTimeElement()
-        val finish = getLastTimeElement()
+    fun getTimeSpent(s:Int, f:Int): Date {
+        val start = s*1000L
+        val finish = f *1000L
+        //val start = getSecondLastTimeElement()
+        //val finish = getLastTimeElement()
         return Date(finish - start)
     }
 
@@ -84,12 +86,13 @@ object TimeHelper {
      */
 
 
-    override fun toString(): String {
-        val diff1 = getLastTimeElement() - getSecondLastTimeElement()
-        val diffDays = (diff1 / (24 * 60 * 60 * 1000)).toInt()
-        val diffhours = (diff1 / (60 * 60 * 1000)).toInt()
-        val diffmin = (diff1 / (60 * 1000)).toInt()
-        val diffsec = (diff1 / 1000).toInt()
+    fun toString(start:Long,end:Long): String {
+        //val difference = getLastTimeElement() - getSecondLastTimeElement()
+        val difference = end-start
+        val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
+        val diffhours = (difference / (60 * 60 * 1000)).toInt()
+        val diffmin = (difference / (60 * 1000)).toInt()
+        val diffsec = (difference / 1000).toInt()
         return "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
     }
 
