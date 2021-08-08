@@ -2,10 +2,10 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:com.example.antitime_wasting////PointingToDeclaration/app/com.example.antitime_wasting/index.html
 $dokka.location:com.example.antitime_wasting/DBInterface///PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/index.html
-$dokka.location:com.example.antitime_wasting/DBInterface/DBInterface/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/-d-b-interface.html
 $dokka.location:com.example.antitime_wasting/DBInterface/addSession/#com.example.antitime_wasting.Session#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/add-session.html
 $dokka.location:com.example.antitime_wasting/DBInterface/debugTag/#/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/debug-tag.html
 $dokka.location:com.example.antitime_wasting/DBInterface/findSession/#kotlin.Int#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/find-session.html
+$dokka.location:com.example.antitime_wasting/DBInterface/getLastSession/#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/get-last-session.html
 $dokka.location:com.example.antitime_wasting/DBInterface/removeSession/#kotlin.Int#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/remove-session.html
 $dokka.location:com.example.antitime_wasting/DBInterface/updateSession/#com.example.antitime_wasting.Session#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/update-session.html
 $dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
@@ -15,6 +15,7 @@ $dokka.location:com.example.antitime_wasting/MainActivity/onOptionsItemSelected/
 $dokka.location:com.example.antitime_wasting/Session///PointingToDeclaration/app/com.example.antitime_wasting/-session/index.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
+$dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/endTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/end-time.html
 $dokka.location:com.example.antitime_wasting/Session/id/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/id.html
@@ -45,11 +46,11 @@ $dokka.location:com.example.antitime_wasting/TimeHelper/WriteToFile/#kotlin.Stri
 $dokka.location:com.example.antitime_wasting/TimeHelper/getCurrentTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-current-time.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/getLastTimeElement/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-last-time-element.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/getSecondLastTimeElement/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-second-last-time-element.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/getTimeSpent/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-time-spent.html
+$dokka.location:com.example.antitime_wasting/TimeHelper/getTimeSpent/#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-time-spent.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/saveDate/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/save-date.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values-to-string.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/toString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
+$dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-i-d.html
