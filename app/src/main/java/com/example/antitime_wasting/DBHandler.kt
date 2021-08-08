@@ -27,10 +27,11 @@ class DBHandler(context: Context?, name: String?, factory: CursorFactory?, versi
     companion object {
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "timesDB.db"
-        const val TABLE_NAME = "times"
-        const val COLUMN_ID = "timeID"
-        const val COLUMN_START_TIME = "startTime"
-        const val COLUMN_END_TIME = "endTime"
+        const val TABLE_NAME = "Times"
+        const val COLUMN_ID = "TimeID"
+        const val COLUMN_START_TIME = "StartTime"
+        const val COLUMN_END_TIME = "EndTime"
+        const val COLUMN_SESSION_TYPE = "SessionType"
         const val debugTag = "DBHandler"
     }
 }
