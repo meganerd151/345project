@@ -10,4 +10,10 @@
     <color name="green_dark">#115259</color>
     <color name="green_darkest">#092B2F</color>
     <color name="green_blue">#428D97</color>
+    <color name="gf_green">#48821e</color>
+    <color name="gf_green_light">#78b24d</color>
+    <color name="gf_green_dark">#155500</color>
+    <color name="gf_purple">#b77fdd</color>
+    <color name="gf_purple_light">#eaafff</color>
+    <color name="gf_purple_dark">#8651ab</color>
 </resources>

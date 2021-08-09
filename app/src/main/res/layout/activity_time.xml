@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:hint="If you click on Study, it will log your start time. Click again to finish and get your time on the activity spent"
+                android:hint="@string/helpText"
                 android:textColor="#0B0A0A"
                 android:textColorHint="#121111"
                 android:textSize="18sp"
@@ -58,7 +58,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_secondary_variant"
+        android:background="@color/gf_green_dark"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
             android:gravity="center"
             android:insetLeft="50dp"
             android:insetRight="50dp"
-            android:text="Create new activity"
+            android:text="@string/createNew"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
             app:cornerRadius="12dp" />
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="Study" />
+            android:text="@string/study" />
 
         <Button
             android:id="@+id/excercisebtn"
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="Excercise" />
+            android:text="@string/excercise" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

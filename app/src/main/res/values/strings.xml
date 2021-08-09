@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Anti time-wasting</string>
+    <string name="helpText">If you click on Study, it will log your start time. Click again to finish and get your time on the activity spent</string>
+    <string name="createNew">Create New Activity</string>
+    <string name="study">Study</string>
+    <string name="excercise">Excersie</string>
 </resources>
