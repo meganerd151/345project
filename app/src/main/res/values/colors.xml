@@ -16,4 +16,16 @@
     <color name="gf_purple">#b77fdd</color>
     <color name="gf_purple_light">#eaafff</color>
     <color name="gf_purple_dark">#8651ab</color>
+    <color name="CT_Variant">#DCEDC8</color>
+    <color name="CT_IDK">#B0DBAD</color>
+    <color name="CT_Background">#CAFCC7</color>
+    <color name="CT_Primary">#8BC34A</color>
+    <color name="CT_Button">#FFC107</color>
+    <color name="CT_Accent">#FFC107</color>
+    <color name="CT_LightPrimary">#DCEDC8</color>
+    <color name="CT_DarkPrimary">#689F38</color>
+    <color name="CT_TextIcons">#212121</color>
+    <color name="CT_PrimaryText">#212121</color>
+    <color name="CT_SecondaryText">#757575</color>
+
 </resources>
