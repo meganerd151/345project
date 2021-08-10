@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".StatsMenuActivity">
 
+    <TextView
+        android:id="@+id/fillerText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="@string/stats"
+        android:textSize="50sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
