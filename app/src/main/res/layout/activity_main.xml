@@ -11,7 +11,7 @@
         android:id="@+id/linearLayoutBottom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/design_default_color_secondary_variant"
+        android:background="@color/gf_green"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
             android:insetLeft="50dp"
             android:insetRight="50dp"
             android:padding="8dp"
-            android:text="Start Activity"
+            android:text="@string/startNew"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
             app:cornerRadius="12dp" />

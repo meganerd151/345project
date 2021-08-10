@@ -4,11 +4,11 @@
 
     <item
         android:id="@+id/clearData"
-        android:title="Clear Data"
+        android:title="@string/clearData"
         app:showAsAction="never" />
     <item
         android:id="@+id/statisticsMenu"
         android:icon="@drawable/ic_statistics"
-        android:title="Statistics"
+        android:title="@string/stats"
         app:showAsAction="always" />
 </menu>

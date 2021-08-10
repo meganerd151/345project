@@ -148,7 +148,7 @@ class TimeActivity : AppCompatActivity() {
         if (startTime > 0 && endTime > 0) {
             Log.i(TAG,"Trying to write data to screen!")
 
-           // val timeSpent = TimeHelper.getTimeSpent(s.startTime!!,s.endTime!!)
+            // val timeSpent = TimeHelper.getTimeSpent(s.startTime!!,s.endTime!!)
             timeText.setText(TimeHelper.toString(startTime,endTime))
         }
 
@@ -156,4 +156,3 @@ class TimeActivity : AppCompatActivity() {
 
 
 }
-

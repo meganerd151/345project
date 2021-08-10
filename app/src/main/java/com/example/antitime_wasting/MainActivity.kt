@@ -68,7 +68,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.statisticsMenu -> {
-                //setup statistics page
+                val intent = Intent(this, StatsMenuActivity::class.java)
+                startActivity(intent)
             }
         }
         return true
