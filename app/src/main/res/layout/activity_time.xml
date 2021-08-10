@@ -58,7 +58,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/gf_green_dark"
+        android:background="@color/CT_DarkPrimary"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,8 +74,8 @@
             android:insetLeft="50dp"
             android:insetRight="50dp"
             android:text="@string/createNew"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white"
+            android:textColor="@color/CT_PrimaryText"
+            app:backgroundTint="@color/CT_Button"
             app:cornerRadius="12dp" />
     </LinearLayout>
 
@@ -95,7 +95,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="@string/study" />
+            android:text="@string/study"
+            android:textColor="@color/CT_PrimaryText"
+            app:backgroundTint="@color/CT_Button" />
 
         <Button
             android:id="@+id/excercisebtn"
@@ -103,7 +105,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="@string/exercise" />
+            android:text="@string/exercise"
+            android:textColor="@color/CT_PrimaryText"
+            app:backgroundTint="@color/CT_Button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
