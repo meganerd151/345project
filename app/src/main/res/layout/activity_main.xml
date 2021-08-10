@@ -11,7 +11,7 @@
         android:id="@+id/linearLayoutBottom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/gf_green"
+        android:background="@color/CT_Primary"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +19,7 @@
 
         <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+            android:layout_width="342dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
@@ -29,14 +29,13 @@
             android:padding="8dp"
             android:text="@string/startNew"
             android:textColor="@color/black"
-            app:backgroundTint="@color/white"
+            app:backgroundTint="#FFC107"
             app:cornerRadius="12dp" />
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#EFF4EF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
