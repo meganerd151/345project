@@ -36,6 +36,9 @@ class TimeActivity : AppCompatActivity() {
     private lateinit var timeText: TextView
     private var twoDimArrayDateTime = arrayListOf<Int>()
     private lateinit var session:Session
+    private var inSession: Boolean = false
+    private var startTime: Int = 0
+    private var endTime: Int = 0
 
 
     /**
@@ -46,6 +49,7 @@ class TimeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time)
+        Log.i("start", "start pressed")
 
         //initializing buttons, texts etc by finding them with 'findViewById' in the
         //resources of the app
@@ -93,65 +97,57 @@ class TimeActivity : AppCompatActivity() {
     }
 
     /**
-     * timeMethod which has been called by the studybtn
+     * NOTE: this still relies on methods from TimeHelper - this should be removed
      *
-     * This method combines other methods from the
-     * SaveAndDisplayTime object and is the current
-     * workhorse of our app
+     * NOTE: The time does not display correctly yet - it currently displays the total amount of
+     * seconds, minutes, etc. E.g. instead of 1 minute and 30 seconds it will display 1 minute and
+     * 90 seconds. - shouldn't be a hard fix.
      *
-     * It save the start point and ending point in our app
-     * in the app.
+     * Still need to check database is working fine as this code never actually accesses it - only
+     * inserts data (getting database inspector errors)
      *
-     * It also displays the String on the second page how much
-     * time was spent on a activity.
-     *
+     * I also believe some DBHandler / DBInterface methods do not work (e.g. getLastSession and updateSession)
      */
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
-        var startTime :Long = 0
-        var endTime :Long = 0
-        //if(TimeHelper.timeValues.size >2) TimeHelper.timeValues.clear()
-        if(TimeHelper.timeValues.size <=2){
-            TimeHelper.timeValues.add(TimeHelper.getCurrentTime())
-        }else{
-            startTime = TimeHelper.getSecondLastTimeElement()
-            endTime = TimeHelper.getLastTimeElement()
-            Log.i(TAG, "Start Time: $startTime End time: $endTime")
-            DBInterface.addSession(Session(startTime.toInt(),endTime.toInt(),pressedButton.getText().toString()),this)
-            TimeHelper.timeValues.clear()
+        if (inSession){
+            endTime = TimeHelper.getCurrentTime()
+            DBInterface.addSession(Session(startTime, endTime, "test"), this)
+
+            timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong()))
+            inSession = false
+            /* TESTING STUFF
+            var testSession = DBInterface.findSession(1, this)
+            var testStart: Int? = testSession.startTime
+            var testEnd: Int? = testSession.endTime
+            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd")
+             */
+
+            /*
+            val session = DBInterface.getLastSession(this)
+            session.setEnd(TimeHelper.getCurrentTime())
+            DBInterface.updateSession(session, this)
+            timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
+            inSession = false
+
+            currentSession.setEnd(TimeHelper.getCurrentTime())
+            DBInterface.addSession(currentSession, this)
+            var session = DBInterface.getLastSession(this)
+            timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
+            inSession = false*/
+        } else {
+            startTime = TimeHelper.getCurrentTime()
+            inSession = true
+            /*
+            val newSession = Session(TimeHelper.getCurrentTime(), null, null)
+            DBInterface.addSession(newSession, this)
+            inSession = true
+
+            currentSession.setID(currentSession.id + 1)
+            currentSession.setStart(TimeHelper.getCurrentTime())
+            currentSession.setSessionType("test")
+            inSession = true*/
         }
-
-        //SaveAndDisplayTime is a support class.
-        //Call the support class and 'add' and 'save'
-        //the time in the timeValues array-> saveOnClick is a function called
-        //within the support class SaveAndDisplay
-
-
-
-
-        //Log Statement to check in the logs if the functions
-        //are working correctly
-        Log.i(TAG, "Clicked on Start Button" )
-        //Log.i(TAG, "${TimeHelper.timeValues}" )
-
-        //initial attempt to save the time into Strings
-        // -----------NOT FINISHED --------UNDER CONSTRUCTION-------------
-        TimeHelper.WriteToFile(TimeHelper.timeValuesToString)
-        Log.i(TAG, "${TimeHelper.timeValuesToString}" )
-
-
-        //If, else structured arguments which call the support class
-        //and some functions there in order to
-        //calculate and correctly display the time
-        //once the study button is pressed two times
-
-        if (startTime > 0 && endTime > 0) {
-            Log.i(TAG,"Trying to write data to screen!")
-
-            // val timeSpent = TimeHelper.getTimeSpent(s.startTime!!,s.endTime!!)
-            timeText.setText(TimeHelper.toString(startTime,endTime))
-        }
-
     }
 
 

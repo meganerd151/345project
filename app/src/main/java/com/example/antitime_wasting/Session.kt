@@ -31,7 +31,7 @@ package com.example.antitime_wasting
 
     constructor(){}
 
-    constructor(start:Int,end:Int,sessionType:String){
+    constructor(start:Int?,end:Int?,sessionType:String?){
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
