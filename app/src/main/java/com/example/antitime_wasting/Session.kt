@@ -24,12 +24,16 @@ import java.util.Date
     var date:String? = null
         private set
 
+    var timeSpent:Int? = null
+        private set
+
     constructor(id:Int,start:Int,end:Int,sessionType:String){
         this.id = id
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
         this.date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        this.timeSpent = (end - start)
     }
 
     constructor(id:Int){
@@ -65,4 +69,7 @@ import java.util.Date
         this.date = date
     }
 
+    fun setTimeSpent(time:Int){
+        this.timeSpent = time
+    }
 }
