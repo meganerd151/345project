@@ -17,9 +17,11 @@ $dokka.location:com.example.antitime_wasting/Session/Session/#/PointingToDeclara
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int?#kotlin.Int?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
+$dokka.location:com.example.antitime_wasting/Session/date/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/date.html
 $dokka.location:com.example.antitime_wasting/Session/endTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/end-time.html
 $dokka.location:com.example.antitime_wasting/Session/id/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/id.html
 $dokka.location:com.example.antitime_wasting/Session/sessionType/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/session-type.html
+$dokka.location:com.example.antitime_wasting/Session/setDate/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-date.html
 $dokka.location:com.example.antitime_wasting/Session/setEnd/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-end.html
 $dokka.location:com.example.antitime_wasting/Session/setID/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-i-d.html
 $dokka.location:com.example.antitime_wasting/Session/setSessionType/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-session-type.html
@@ -54,6 +56,7 @@ $dokka.location:com.example.antitime_wasting/TimeHelper/timeValues/#/PointingToD
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values-to-string.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_DATE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-d-a-t-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-i-d.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_SESSION_TYPE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-s-e-s-s-i-o-n_-t-y-p-e.html
