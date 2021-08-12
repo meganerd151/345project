@@ -52,7 +52,7 @@ $dokka.location:com.example.antitime_wasting/TimeHelper/getTimeSpent/#kotlin.Int
 $dokka.location:com.example.antitime_wasting/TimeHelper/saveDate/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/save-date.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values.html
 $dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values-to-string.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
+$dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-i-d.html
