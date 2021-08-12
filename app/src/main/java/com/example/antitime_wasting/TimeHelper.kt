@@ -45,8 +45,7 @@ object TimeHelper {
      */
     fun getCurrentTime(): Int {
 
-
-        return (Date().time / 1000).toInt()
+        return (Date().time).toInt()
 
     }
 
@@ -95,6 +94,7 @@ object TimeHelper {
         val diffhours = (difference / (60 * 60 * 1000)).toInt()
         val diffmin = (difference / (60 * 1000)).toInt()
         val diffsec = (difference / 1000).toInt()
+        Log.i("returning", "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds")
         return "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
     }
 

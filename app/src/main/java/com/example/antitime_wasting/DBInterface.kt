@@ -85,8 +85,8 @@ object DBInterface {
 
     fun getLastSession(context: Context?): Session{
         talker = SettingsTalker(context!!)
-        val dbHandler = ___DBHandler___(context,null,null,1);
-        return dbHandler.findHandler(talker!!.getIntEntry(settingsName))
+        val dbHandler = ___DBHandler___(context,null,null,1)
+        return dbHandler.findHandler(talker!!.getIntEntry(settingsName) -1)
     }
 
 }

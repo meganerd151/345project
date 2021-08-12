@@ -116,12 +116,13 @@ class TimeActivity : AppCompatActivity() {
 
             timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong()))
             inSession = false
-            /* TESTING STUFF
-            var testSession = DBInterface.findSession(1, this)
+            /* TESTING  */
+            var testSession = DBInterface.getLastSession(this)
             var testStart: Int? = testSession.startTime
             var testEnd: Int? = testSession.endTime
-            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd")
-             */
+            var time: Int? = (testStart!! - testEnd!!)/1000
+            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd difference: $time")
+
 
             /*
             val session = DBInterface.getLastSession(this)
