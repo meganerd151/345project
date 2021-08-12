@@ -116,6 +116,7 @@ class TimeActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
         val studybtn : Button = findViewById(R.id.studybtn)
+        var spinner : Spinner = findViewById(R.id.sessionSpinner)
         if (inSession){
             endTime = TimeHelper.getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
@@ -123,13 +124,14 @@ class TimeActivity : AppCompatActivity() {
             timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong(), sessionType))
             inSession = false
             studybtn.text = "Start Session"
-            /* TESTING  */
+            spinner.setEnabled(true)
+            /* TESTING
             var testSession = DBInterface.getLastSession(this)
             var testStart: Int? = testSession.startTime
             var testEnd: Int? = testSession.endTime
             var time: Int? = (testStart!! - testEnd!!)/1000
             Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd difference: $time")
-
+            */
 
             /*
             val session = DBInterface.getLastSession(this)
@@ -144,11 +146,11 @@ class TimeActivity : AppCompatActivity() {
             timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
             inSession = false*/
         } else {
-            var spinner : Spinner = findViewById(R.id.sessionSpinner)
             startTime = TimeHelper.getCurrentTime()
             sessionType = spinner.getSelectedItem().toString()
             inSession = true
             studybtn.text = "End Session"
+            spinner.setEnabled(false)
             /*
             val newSession = Session(TimeHelper.getCurrentTime(), null, null)
             DBInterface.addSession(newSession, this)
