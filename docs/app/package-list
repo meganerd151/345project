@@ -26,7 +26,9 @@ $dokka.location:com.example.antitime_wasting/Session/setEnd/#kotlin.Int/Pointing
 $dokka.location:com.example.antitime_wasting/Session/setID/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-i-d.html
 $dokka.location:com.example.antitime_wasting/Session/setSessionType/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-session-type.html
 $dokka.location:com.example.antitime_wasting/Session/setStart/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-start.html
+$dokka.location:com.example.antitime_wasting/Session/setTimeSpent/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/set-time-spent.html
 $dokka.location:com.example.antitime_wasting/Session/startTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/start-time.html
+$dokka.location:com.example.antitime_wasting/Session/timeSpent/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/time-spent.html
 $dokka.location:com.example.antitime_wasting/SettingsTalker.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/-companion/index.html
 $dokka.location:com.example.antitime_wasting/SettingsTalker///PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/index.html
 $dokka.location:com.example.antitime_wasting/SettingsTalker/SettingsTalker/#android.content.Context/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/-settings-talker.html
@@ -57,6 +59,7 @@ $dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/Poi
 $dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_DATE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-d-a-t-e.html
+$dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_DELTA_T/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-d-e-l-t-a_-t.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_END_TIME/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-e-n-d_-t-i-m-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_ID/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-i-d.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_SESSION_TYPE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-s-e-s-s-i-o-n_-t-y-p-e.html
