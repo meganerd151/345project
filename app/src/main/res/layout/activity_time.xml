@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:background="@color/white"
+            android:background="#EFF4EF"
             android:clickable="false"
             android:entries="@array/SessionTypes"
             android:spinnerMode="dropdown" />
