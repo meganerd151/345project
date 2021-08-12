@@ -37,6 +37,7 @@ class TimeActivity : AppCompatActivity() {
     private var inSession: Boolean = false
     private var startTime: Int = 0
     private var endTime: Int = 0
+    private var sessionType : String = "Study"
 
 
     /**
@@ -117,9 +118,9 @@ class TimeActivity : AppCompatActivity() {
         val studybtn : Button = findViewById(R.id.studybtn)
         if (inSession){
             endTime = TimeHelper.getCurrentTime()
-            DBInterface.addSession(Session(startTime, endTime, "test"), this)
+            DBInterface.addSession(Session(startTime, endTime, sessionType), this)
 
-            timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong()))
+            timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong(), sessionType))
             inSession = false
             studybtn.text = "Start Session"
             /* TESTING  */
@@ -143,7 +144,9 @@ class TimeActivity : AppCompatActivity() {
             timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
             inSession = false*/
         } else {
+            var spinner : Spinner = findViewById(R.id.sessionSpinner)
             startTime = TimeHelper.getCurrentTime()
+            sessionType = spinner.getSelectedItem().toString()
             inSession = true
             studybtn.text = "End Session"
             /*

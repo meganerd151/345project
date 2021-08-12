@@ -86,7 +86,7 @@ object TimeHelper {
      */
 
 
-    fun toString(start:Long,end:Long): String {
+    fun toString(start:Long,end:Long, type:String): String {
         val difference = end-start
         //val difference = getLastTimeElement() - getSecondLastTimeElement()
         Log.i("TimeHelper","Start: $start, End: $end, Difference: $difference")
@@ -94,7 +94,7 @@ object TimeHelper {
         val diffhours = (difference / (60 * 60 * 1000)).toInt() % 24
         val diffmin = (difference / (60 * 1000)).toInt() % 60
         val diffsec = (difference / 1000).toInt() % 60
-        return "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
+        return "Time spent on $type:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
     }
 
     /**
