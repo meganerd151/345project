@@ -15,8 +15,8 @@ $dokka.location:com.example.antitime_wasting/MainActivity/onOptionsItemSelected/
 $dokka.location:com.example.antitime_wasting/Session///PointingToDeclaration/app/com.example.antitime_wasting/-session/index.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
-$dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
+$dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int?#kotlin.Int?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/endTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/end-time.html
 $dokka.location:com.example.antitime_wasting/Session/id/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/id.html
 $dokka.location:com.example.antitime_wasting/Session/sessionType/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/session-type.html
