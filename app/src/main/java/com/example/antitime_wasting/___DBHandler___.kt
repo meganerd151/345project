@@ -15,8 +15,9 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         CREATE_TABLE += COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL, " +
                 COLUMN_START_TIME + " INTEGER, " +
                 COLUMN_END_TIME + " INTEGER, " +
-                COLUMN_SESSION_TYPE+ " TEXT " +
-                ")"
+                COLUMN_SESSION_TYPE+ " TEXT, " +
+                COLUMN_DATE+" DATE "+
+                ");"
         db?.execSQL(CREATE_TABLE)
     }
 
@@ -32,6 +33,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         const val COLUMN_START_TIME = "StartTime"
         const val COLUMN_END_TIME = "EndTime"
         const val COLUMN_SESSION_TYPE = "SessionType"
+        const val COLUMN_DATE = "Date"
         const val debugTag = "DBHandler"
     }
 
@@ -42,6 +44,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
             values.put(COLUMN_START_TIME, session.startTime)
             values.put(COLUMN_END_TIME, session.endTime)
             values.put(COLUMN_SESSION_TYPE, session.sessionType)
+            values.put(COLUMN_DATE,session.date)
             val db = this.writableDatabase
             db.insert(TABLE_NAME, null, values)
             db.close()
@@ -62,6 +65,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
             session.setStart(cursor.getInt(1))
             session.setEnd(cursor.getInt(2))
             session.setSessionType(cursor.getString(3))
+            session.setDate(cursor.getString(4))
         }
         cursor.close()
         db.close()
@@ -92,6 +96,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         args.put(COLUMN_START_TIME, session.startTime)
         args.put(COLUMN_END_TIME, session.endTime)
         args.put(COLUMN_SESSION_TYPE, session.sessionType)
+        args.put(COLUMN_DATE,session.date)
         return db.update(TABLE_NAME, args, COLUMN_ID + " = " + session.id, null) > 0
 
         //return false
