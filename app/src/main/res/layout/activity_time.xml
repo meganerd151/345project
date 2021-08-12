@@ -64,7 +64,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:background="@color/CT_DarkPrimary"
+            android:background="@color/white"
+            android:clickable="false"
             android:entries="@array/SessionTypes"
             android:spinnerMode="dropdown" />
 
@@ -115,15 +116,6 @@
             android:textColor="@color/CT_PrimaryText"
             app:backgroundTint="@color/CT_Button" />
 
-        <Button
-            android:id="@+id/excercisebtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:text="@string/exercise"
-            android:textColor="@color/CT_PrimaryText"
-            app:backgroundTint="@color/CT_Button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

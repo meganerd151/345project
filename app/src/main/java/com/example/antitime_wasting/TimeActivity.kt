@@ -56,12 +56,13 @@ class TimeActivity : AppCompatActivity() {
         createActivity = findViewById(R.id.createNewActivity)
         timeText = findViewById((R.id.timeText))
 
-        /*val spinner : Spinner = findViewById(R.id.sessionSpinner)
-        ArrayAdapter.createFromResource(
+        val spinner : Spinner = findViewById(R.id.sessionSpinner)
+        val adapter:SpinnerAdapter = ArrayAdapter.createFromResource(
             this,
             R.array.SessionTypes,
-            android.R.layout.simple_spinner_dropdown_item
-        ).also {  }*/
+            R.layout.spinner_item
+        )
+        spinner.setAdapter(adapter)
 
         //set Button Listeners for the Study Button
         //call the method 'timeMethod' when the
@@ -71,12 +72,6 @@ class TimeActivity : AppCompatActivity() {
         val studybtn = findViewById<Button>(R.id.studybtn)
         studybtn.setOnClickListener {
             timeMethod(studybtn)
-
-        }
-
-        val excercisebtn = findViewById<Button>(R.id.excercisebtn)
-        excercisebtn.setOnClickListener {
-            timeMethod(excercisebtn)
 
         }
 
