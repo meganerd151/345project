@@ -91,10 +91,9 @@ object TimeHelper {
         //val difference = getLastTimeElement() - getSecondLastTimeElement()
         Log.i("TimeHelper","Start: $start, End: $end, Difference: $difference")
         val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
-        val diffhours = (difference / (60 * 60 * 1000)).toInt()
-        val diffmin = (difference / (60 * 1000)).toInt()
-        val diffsec = (difference / 1000).toInt()
-        Log.i("returning", "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds")
+        val diffhours = (difference / (60 * 60 * 1000)).toInt() % 24
+        val diffmin = (difference / (60 * 1000)).toInt() % 60
+        val diffsec = (difference / 1000).toInt() % 60
         return "Time spent on Activity:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
     }
 
