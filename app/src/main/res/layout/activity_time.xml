@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="@string/study"
+            android:text="Start Session"
             android:textColor="@color/CT_PrimaryText"
             app:backgroundTint="@color/CT_Button" />
 

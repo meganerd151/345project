@@ -110,12 +110,14 @@ class TimeActivity : AppCompatActivity() {
      */
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
+        val studybtn : Button = findViewById(R.id.studybtn)
         if (inSession){
             endTime = TimeHelper.getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, "test"), this)
 
             timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong()))
             inSession = false
+            studybtn.text = "Start Session"
             /* TESTING  */
             var testSession = DBInterface.getLastSession(this)
             var testStart: Int? = testSession.startTime
@@ -139,6 +141,7 @@ class TimeActivity : AppCompatActivity() {
         } else {
             startTime = TimeHelper.getCurrentTime()
             inSession = true
+            studybtn.text = "End Session"
             /*
             val newSession = Session(TimeHelper.getCurrentTime(), null, null)
             DBInterface.addSession(newSession, this)
