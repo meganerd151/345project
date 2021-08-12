@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.annotation.RequiresApi
 import java.sql.Time
 
@@ -57,6 +55,12 @@ class TimeActivity : AppCompatActivity() {
         createActivity = findViewById(R.id.createNewActivity)
         timeText = findViewById((R.id.timeText))
 
+        /*val spinner : Spinner = findViewById(R.id.sessionSpinner)
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.SessionTypes,
+            android.R.layout.simple_spinner_dropdown_item
+        ).also {  }*/
 
         //set Button Listeners for the Study Button
         //call the method 'timeMethod' when the

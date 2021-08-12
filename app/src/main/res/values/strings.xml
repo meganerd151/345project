@@ -7,4 +7,9 @@
     <string name="exercise">Exercise</string>
     <string name="clearData">Clear Data</string>
     <string name="stats">Statistics</string>
+    
+    <string-array name="SessionTypes">
+        <item>Study</item>
+        <item>Exercise</item>
+    </string-array>
 </resources>
