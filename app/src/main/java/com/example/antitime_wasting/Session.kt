@@ -1,5 +1,8 @@
 package com.example.antitime_wasting
 
+import java.text.SimpleDateFormat
+import java.util.Date
+
 /*
 * @created 08/Aug/2021 - 2:20 PM
 * @project Anti time-wasting
@@ -18,11 +21,15 @@ package com.example.antitime_wasting
     var sessionType:String? = null
         private set
 
+    var date:String? = null
+        private set
+
     constructor(id:Int,start:Int,end:Int,sessionType:String){
         this.id = id
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
+        this.date = SimpleDateFormat("yyyy-MM-dd").format(Date())
     }
 
     constructor(id:Int){
@@ -35,6 +42,7 @@ package com.example.antitime_wasting
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
+        this.date = SimpleDateFormat("yyyy-MM-dd").format(Date())
     }
 
     fun setID(ID:Int){
@@ -51,6 +59,10 @@ package com.example.antitime_wasting
 
     fun setSessionType(session:String){
         this.sessionType = session
+    }
+
+    fun setDate(date: String){
+        this.date = date
     }
 
 }
