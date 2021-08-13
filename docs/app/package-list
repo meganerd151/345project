@@ -64,16 +64,6 @@ $dokka.location:com.example.antitime_wasting/TimeActivity.Companion///PointingTo
 $dokka.location:com.example.antitime_wasting/TimeActivity///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity/TimeActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-time-activity.html
 $dokka.location:com.example.antitime_wasting/TimeActivity/onOptionsItemSelected/#android.view.MenuItem/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/on-options-item-selected.html
-$dokka.location:com.example.antitime_wasting/TimeHelper///PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/index.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/WriteToFile/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/-write-to-file.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/getCurrentTime/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-current-time.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/getLastTimeElement/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-last-time-element.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/getSecondLastTimeElement/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-second-last-time-element.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/getTimeSpent/#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/get-time-spent.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/saveDate/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/save-date.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/timeValues/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/timeValuesToString/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/time-values-to-string.html
-$dokka.location:com.example.antitime_wasting/TimeHelper/toString/#kotlin.Long#kotlin.Long#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-time-helper/to-string.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion///PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/index.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_DATE/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-d-a-t-e.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___.Companion/COLUMN_DELTA_T/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/-companion/-c-o-l-u-m-n_-d-e-l-t-a_-t.html
