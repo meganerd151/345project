@@ -89,6 +89,14 @@ object DBInterface {
         return dbHandler.findHandler(talker!!.getIntEntry(settingsName) -1)
     }
 
+    /**
+     * queryType returns an ArrayList of sessions of a given type.
+     *
+     * @param type the sessionType to query.
+     * @param context Application Context.
+     *
+     * @return ArrayList of sessions from query.
+     */
     fun queryType(type:String, context: Context?): ArrayList<Session>{
         val dbHandler = ___DBHandler___(context, null, null, 1)
         return dbHandler.queryType(type)

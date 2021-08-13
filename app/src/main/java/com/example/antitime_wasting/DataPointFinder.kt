@@ -7,19 +7,21 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * Object used for finding the data points to plot from the database information
+ * Object used for finding the data points to plot from the database information.
+ *
+ * TODO : allow for vary in month lengths (not just a set 31 days)
  */
 object DataPointFinder {
 
     /**
      * Method can be called externally to get the data points (of type Point) to plot given the type
-     * of sessions, the scope (e.g. days in a month, months in a year)
+     * of sessions, the scope (e.g. days in a month, months in a year).
      *
-     * @param type the session type you want to plot (Study, Exercise, etc.)
-     * @param scope of enum Scope - the total amount of time graphed and how it is grouped
-     * @param context used to access the database
+     * @param type the session type you want to plot (Study, Exercise, etc.).
+     * @param scope of enum Scope - the total amount of time graphed and how it is grouped.
+     * @param context used to access the database.
      *
-     * @return ArrayList of Points
+     * @return ArrayList of Points.
      */
     fun findDataPoints(type: String, scope: Scope, context: Context?): ArrayList<Point>{
         val points: ArrayList<Point> = ArrayList<Point>()
@@ -42,12 +44,12 @@ object DataPointFinder {
     }
 
     /**
-     * Used internally to determine whether a date will be in the data set based on the scope
+     * Used internally to determine whether a date will be in the data set based on the scope.
      *
-     * @param date the date from a session in String form
-     * @param scope the scope of the data of the enum type Scope
+     * @param date the date from a session in String form.
+     * @param scope the scope of the data of the enum type Scope.
      *
-     * @return a boolean indicating whether the date is in the scope or not
+     * @return a boolean indicating whether the date is in the scope or not.
      */
     private fun inScope(date: String, scope: Scope): Boolean{
         return when (scope){
@@ -61,12 +63,12 @@ object DataPointFinder {
     }
 
     /**
-     * Used internally to find the index of a Point in the points array using the date of a session
+     * Used internally to find the index of a Point in the points array using the date of a session.
      *
-     * @param date the date from a session in String form
-     * @param scope the scope of the data of enum type Scope
+     * @param date the date from a session in String form.
+     * @param scope the scope of the data of enum type Scope.
      *
-     * @return an integer indicating the index
+     * @return an integer indicating the index.
      */
     private fun findIndexOfPoint(date: String, scope: Scope): Int{
         return when (scope){
