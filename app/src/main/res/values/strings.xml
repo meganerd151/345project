@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Anti time-wasting</string>
+    <string name="app_name">Timetric</string>
     <string name="helpText">If you click on Study, it will log your start time. Click again to finish and get your time on the activity spent</string>
     <string name="createNew">Create New Activity</string>
     <string name="startNew">Start</string>
