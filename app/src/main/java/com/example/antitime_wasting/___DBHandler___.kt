@@ -17,7 +17,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
                 COLUMN_END_TIME + " INTEGER, " +
                 COLUMN_SESSION_TYPE+ " TEXT, " +
                 COLUMN_DATE+" DATE, "+
-                COLUMN_DELTA_T+" INTEGER"
+                COLUMN_DELTA_T+" INTEGER"+
                 ");"
         db?.execSQL(CREATE_TABLE)
     }
