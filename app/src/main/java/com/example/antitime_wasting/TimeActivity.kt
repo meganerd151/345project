@@ -110,14 +110,14 @@ class TimeActivity : AppCompatActivity() {
         val studybtn : Button = findViewById(R.id.studybtn)
         var spinner : Spinner = findViewById(R.id.sessionSpinner)
         if (inSession){
-            endTime = TimeHelper.getCurrentTime()
+            endTime = getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
-            timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong(), sessionType))
+            timeText.setText(displayLayout(startTime.toLong(), endTime.toLong(), sessionType))
             inSession = false
             studybtn.text = "Start Session"
             spinner.setEnabled(true)
         } else {
-            startTime = TimeHelper.getCurrentTime()
+            startTime = getCurrentTime()
             sessionType = spinner.getSelectedItem().toString()
             inSession = true
             studybtn.text = "End Session"
