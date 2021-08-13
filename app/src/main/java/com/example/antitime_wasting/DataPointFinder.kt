@@ -10,9 +10,9 @@ object DataPointFinder {
         var sessions: ArrayList<Session> = DBInterface.queryType(type, null)
         var yVal: Int = 0
         var numPoints: Int
-        when (scope){
-            Scope.BY_DAY -> numPoints = 31
-            Scope.BY_MONTH -> numPoints = 12
+        numPoints = when (scope){
+            Scope.BY_DAY -> 31
+            Scope.BY_MONTH -> 12
         }
         for (i:Int in 1..numPoints){
             var point: Point = Point()
@@ -29,13 +29,13 @@ object DataPointFinder {
             point.sety(yVal)
             yVal = 0
         }
+        return points
     }
     // yyyy-mm-dd
     fun inSameTimeRange(date: String, lastDate: String, range: Scope): Boolean{
         return when (range){
             Scope.BY_DAY -> date == lastDate
             Scope.BY_MONTH -> date.subSequence(0, 7) == lastDate.subSequence(0, 7)
-            else -> false
         }
     }
 }
