@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telephony.mbms.FileInfo
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mascot: ImageView
     private lateinit var startButton: Button
 
-
     /**
      * Standard onCreate function of the main activity screen
      * this is the main function which creates the buttons, containers etc.
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         //resources of the app
         mascot = findViewById(R.id.mascot)
         startButton = findViewById(R.id.startButton)
-
 
         /**
          * Start Button gets a Button Listener

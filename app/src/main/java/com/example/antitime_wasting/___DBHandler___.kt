@@ -119,6 +119,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
                 sessions.add(findHandler(cursor.getInt(0)))
             } while (cursor.moveToNext())
         }
+        db.close()
         return sessions
     }
 

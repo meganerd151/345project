@@ -3,6 +3,7 @@ package com.example.antitime_wasting
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.DataPoint
@@ -62,7 +63,12 @@ class StatsMenuActivity : AppCompatActivity() {
 
         graphView?.addSeries(series)
 
-
+        /* TESTING */
+        val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
+        for (point in data) {
+            Log.i("datapoints", "x: ${point.x}  y: ${point.y}")
+        }
+        //Log.i("data", "x = ${data[0].x}")
 
     }
 }
