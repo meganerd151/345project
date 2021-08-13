@@ -22,7 +22,7 @@ object DataPointFinder {
         for (point in points){
             var session: Session = sessions[index]
             var lastDate: String = session.date.toString()
-            while (hasSameXVal(session, lastDate, scope)){
+            while (inSameTimeRange(session, lastDate, scope)){
                 yVal++
                 index++
             }
@@ -30,6 +30,14 @@ object DataPointFinder {
             yVal = 0
         }
     }
-
-    fun hasSameXVal
+    // yyyy-mm-dd
+    fun inSameTimeRange(session: Session, lastDate: String, range: Scope): Boolean{
+        var returnVal: Boolean = false
+        val date: String = session.date.toString()
+        when (range){
+            Scope.BY_DAY -> returnVal = date == lastDate
+            Scope.BY_MONTH -> returnVal = date.subSequence(0, 7) == lastDate.subSequence(0, 7)
+        }
+        return returnVal
+    }
 }
