@@ -89,4 +89,9 @@ object DBInterface {
         return dbHandler.findHandler(talker!!.getIntEntry(settingsName) -1)
     }
 
+    fun queryType(type:String, context: Context?): ArrayList<Session>{
+        val dbHandler = ___DBHandler___(context, null, null, 1)
+        return dbHandler.queryType(type)
+    }
+
 }
