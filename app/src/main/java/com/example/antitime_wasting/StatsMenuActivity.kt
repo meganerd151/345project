@@ -68,7 +68,6 @@ class StatsMenuActivity : AppCompatActivity() {
         for (point in data) {
             Log.i("datapoints", "x: ${point.x}  y: ${point.y}")
         }
-        //Log.i("data", "x = ${data[0].x}")
 
     }
 }
