@@ -1,3 +1,4 @@
+![Android CI](https://github.com/meganerd151/345project/actions/workflows/android.yml/badge.svg) ![Code Coverage](https://github.com/meganerd151/345project/actions/workflows/coverage.yml/badge.svg) ![Documentation](https://github.com/meganerd151/345project/actions/workflows/documentation.yml/badge.svg)
 # 345project
 Anti time-wasting app development
 
