@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".StatsMenuActivity">
 
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/idGraphView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp" />
+    <!--
     <TextView
         android:id="@+id/fillerText"
         android:layout_width="match_parent"
@@ -15,5 +23,6 @@
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
