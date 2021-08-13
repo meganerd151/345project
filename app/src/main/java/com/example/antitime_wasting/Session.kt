@@ -1,7 +1,7 @@
 package com.example.antitime_wasting
 
 import java.text.SimpleDateFormat
-import java.util.Date
+import java.util.*
 
 /*
 * @created 08/Aug/2021 - 2:20 PM
@@ -32,7 +32,7 @@ import java.util.Date
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
-        this.date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        this.date = SimpleDateFormat("yyyy-MM-dd",Locale.US).format(Date())
         this.timeSpent = (end - start)
     }
 
@@ -46,7 +46,8 @@ import java.util.Date
         this.startTime = start
         this.endTime = end
         this.sessionType = sessionType
-        this.date = SimpleDateFormat("yyyy-MM-dd").format(Date())
+        this.date = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        this.timeSpent = (end!! - start!!)
     }
 
     fun setID(ID:Int){
