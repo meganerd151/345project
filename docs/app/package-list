@@ -11,7 +11,6 @@ $dokka.location:com.example.antitime_wasting/DBInterface/removeSession/#kotlin.I
 $dokka.location:com.example.antitime_wasting/DBInterface/updateSession/#com.example.antitime_wasting.Session#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-d-b-interface/update-session.html
 $dokka.location:com.example.antitime_wasting/DataPointFinder///PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/index.html
 $dokka.location:com.example.antitime_wasting/DataPointFinder/findDataPoints/#kotlin.String#com.example.antitime_wasting.Scope#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/find-data-points.html
-$dokka.location:com.example.antitime_wasting/DataPointFinder/inSameTimeRange/#kotlin.String#kotlin.String#com.example.antitime_wasting.Scope/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/in-same-time-range.html
 $dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
 $dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/-main-activity.html
 $dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
