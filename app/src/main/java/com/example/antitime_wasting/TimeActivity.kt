@@ -124,8 +124,8 @@ class TimeActivity : AppCompatActivity() {
             var testSession = DBInterface.getLastSession(this)
             var testStart: Int? = testSession.startTime
             var testEnd: Int? = testSession.endTime
-            var time: Int? = (testStart!! - testEnd!!)/1000
-            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd difference: $time")
+            var current : String = testSession.date.toString()
+            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd date: $current")
             */
 
             /*

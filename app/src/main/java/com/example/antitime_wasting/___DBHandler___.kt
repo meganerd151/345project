@@ -2,12 +2,14 @@ package com.example.antitime_wasting
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteConstraintException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CursorFactory
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
@@ -107,6 +109,17 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         //return false
     }
 
+    fun queryType(type: String): ArrayList<Session>{
+        var sessions: ArrayList<Session> = ArrayList<Session>()
+        val db = this.writableDatabase
+        val query: String = "SELECT $COLUMN_ID FROM $TABLE_NAME"
+        var cursor: Cursor = db.rawQuery(query, null)
+        if (cursor.moveToFirst()){
+            do {
+                sessions.add(findHandler(cursor.getInt(0)))
+            } while (cursor.moveToNext())
+        }
+    }
 
 
 }
