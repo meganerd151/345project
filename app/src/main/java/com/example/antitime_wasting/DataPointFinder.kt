@@ -21,8 +21,8 @@ object DataPointFinder {
             points.add(point)
         }
         for (session in sessions){
-            if (inScope(session.date.toString())){
-                points[findIndexOfPoint(session.date)] += session.timeSpent
+            if (inScope(session.date.toString(), scope)){
+                points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!!
             }
         }
         return points
@@ -66,6 +66,14 @@ object DataPointFinder {
             Scope.BY_MONTH -> {
                 SimpleDateFormat("yyyy-mm", Locale.US).format((Date())) == date.substring(0, 7)
             }
+        }
+    }
+    // yyyy-mm-dd
+    // 0123456789
+    fun findIndexOfPoint(date: String, scope: Scope): Int{
+        return when (scope){
+            Scope.BY_DAY -> date.substring(8, 10).toInt() - 1
+            Scope.BY_MONTH -> date.substring(5, 7).toInt() - 1
         }
     }
 }
