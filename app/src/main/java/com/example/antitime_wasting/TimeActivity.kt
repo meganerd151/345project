@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.*
 import androidx.annotation.RequiresApi
 import java.sql.Time
+import java.util.*
 
 
 private const val SettingsName = "TimeRunning"
@@ -64,11 +65,7 @@ class TimeActivity : AppCompatActivity() {
         )
         spinner.setAdapter(adapter)
 
-        //set Button Listeners for the Study Button
-        //call the method 'timeMethod' when the
-        //studybtn is clicked
-        //This method save the time into the array and
-        //calculates the time
+
         val studybtn = findViewById<Button>(R.id.studybtn)
         studybtn.setOnClickListener {
             timeMethod(studybtn)
@@ -115,47 +112,30 @@ class TimeActivity : AppCompatActivity() {
         if (inSession){
             endTime = TimeHelper.getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
-
             timeText.setText(TimeHelper.toString(startTime.toLong(), endTime.toLong(), sessionType))
             inSession = false
             studybtn.text = "Start Session"
             spinner.setEnabled(true)
-            /* TESTING
-            var testSession = DBInterface.getLastSession(this)
-            var testStart: Int? = testSession.startTime
-            var testEnd: Int? = testSession.endTime
-            var current : String = testSession.date.toString()
-            Log.i(TAG, "Test: Start Time: $testStart End time: $testEnd date: $current")
-            */
-
-            /*
-            val session = DBInterface.getLastSession(this)
-            session.setEnd(TimeHelper.getCurrentTime())
-            DBInterface.updateSession(session, this)
-            timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
-            inSession = false
-
-            currentSession.setEnd(TimeHelper.getCurrentTime())
-            DBInterface.addSession(currentSession, this)
-            var session = DBInterface.getLastSession(this)
-            timeText.setText(TimeHelper.toString(session.startTime!!.toLong(),session.endTime!!.toLong()))
-            inSession = false*/
         } else {
             startTime = TimeHelper.getCurrentTime()
             sessionType = spinner.getSelectedItem().toString()
             inSession = true
             studybtn.text = "End Session"
             spinner.setEnabled(false)
-            /*
-            val newSession = Session(TimeHelper.getCurrentTime(), null, null)
-            DBInterface.addSession(newSession, this)
-            inSession = true
-
-            currentSession.setID(currentSession.id + 1)
-            currentSession.setStart(TimeHelper.getCurrentTime())
-            currentSession.setSessionType("test")
-            inSession = true*/
         }
+    }
+
+    private fun getCurrentTime(): Int {
+        return (Date().time).toInt()
+    }
+
+    private fun displayLayout(start:Long,end:Long, type:String): String {
+        val difference = end-start
+        val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
+        val diffhours = (difference / (60 * 60 * 1000)).toInt() % 24
+        val diffmin = (difference / (60 * 1000)).toInt() % 60
+        val diffsec = (difference / 1000).toInt() % 60
+        return "Time spent on $type:  \n $diffDays days \n $diffhours hours \n $diffmin minutes \n $diffsec seconds"
     }
 
 
