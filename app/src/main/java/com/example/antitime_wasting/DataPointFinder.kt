@@ -22,55 +22,29 @@ object DataPointFinder {
         }
         for (session in sessions){
             if (inScope(session.date.toString(), scope)){
+                Log.i("datapoints", "INFO: In Scope")
                 points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!!
             }
         }
         return points
-        /*
-        Log.i("DataPointFinder", "len = ${points.size}")
-        var index: Int = 0
-        for (point in points){
-
-            var session: Session = sessions[index]
-            var lastDate: String = session.date.toString()
-            var numSessions: Int = sessions.size
-            while (inSameTimeRange(sessions[index].date.toString(), lastDate, scope)){
-                yVal += sessions[index].timeSpent!!
-                index++
-                if (index >= numSessions){
-                    break
-                }
-            }
-            if (index >= numSessions){
-                break
-            }
-            point.sety(yVal)
-            yVal = 0
-        }
-        return points*/
-
-    }
-    // yyyy-mm-dd
-    fun inSameTimeRange(date: String, lastDate: String, range: Scope): Boolean{
-        return when (range){
-            Scope.BY_DAY -> date == lastDate
-            Scope.BY_MONTH -> date.subSequence(0, 7) == lastDate.subSequence(0, 7)
-        }
     }
 
-    fun inScope(date: String, scope: Scope): Boolean{
+    private fun inScope(date: String, scope: Scope): Boolean{
+        val test: String = SimpleDateFormat("yyyy-MM",Locale.US).format((Date()))
+        val test2: String = date.substring(0, 7)
+        Log.i("Datapoints", "INFO: $test $test2")
         return when (scope){
             Scope.BY_DAY -> {
                 SimpleDateFormat("yyyy", Locale.US).format(Date()) == date.substring(0, 4)
             }
             Scope.BY_MONTH -> {
-                SimpleDateFormat("yyyy-mm", Locale.US).format((Date())) == date.substring(0, 7)
+                SimpleDateFormat("yyyy-MM", Locale.US).format((Date())) == date.substring(0, 7)
             }
         }
     }
     // yyyy-mm-dd
     // 0123456789
-    fun findIndexOfPoint(date: String, scope: Scope): Int{
+    private fun findIndexOfPoint(date: String, scope: Scope): Int{
         return when (scope){
             Scope.BY_DAY -> date.substring(8, 10).toInt() - 1
             Scope.BY_MONTH -> date.substring(5, 7).toInt() - 1
