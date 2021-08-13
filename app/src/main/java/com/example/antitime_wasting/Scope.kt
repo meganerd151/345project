@@ -1,5 +1,5 @@
 package com.example.antitime_wasting
 
-enum Scope {
+enum class Scope {
     BY_DAY, BY_MONTH
 }
