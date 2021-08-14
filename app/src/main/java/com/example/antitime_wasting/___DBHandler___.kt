@@ -112,7 +112,7 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
     fun queryType(type: String): ArrayList<Session>{
         var sessions: ArrayList<Session> = ArrayList<Session>()
         val db = this.writableDatabase
-        val query: String = "SELECT $COLUMN_ID FROM $TABLE_NAME"
+        val query: String = "SELECT $COLUMN_ID FROM $TABLE_NAME WHERE $COLUMN_SESSION_TYPE = '$type'"
         var cursor: Cursor = db.rawQuery(query, null)
         if (cursor.moveToFirst()){
             do {

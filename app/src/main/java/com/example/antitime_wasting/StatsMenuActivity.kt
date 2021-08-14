@@ -58,6 +58,7 @@ class StatsMenuActivity : AppCompatActivity() {
 
         val applybtn = findViewById<Button>(R.id.applyBtn)
         applybtn.setOnClickListener {
+            Log.i("button", typeSpinner.selectedItem.toString())
             when (scopeSpinner.selectedItem.toString()){
                 "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY)
                 "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH)
