@@ -8,6 +8,7 @@ import android.widget.Button
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
+import kotlin.collections.ArrayList
 
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null
@@ -20,7 +21,7 @@ class StatsMenuActivity : AppCompatActivity() {
         fun DP(a: Int, b: Int): DataPoint {
             return DataPoint(a.toDouble(), b.toDouble())
         }
-
+        /*
         // on below line we are adding data to our graph view.
         val series = LineGraphSeries(
             arrayOf<DataPoint>( // on below line we are adding
@@ -36,7 +37,23 @@ class StatsMenuActivity : AppCompatActivity() {
                 DP(8, 9)
             )
         )
+        */
+        val points: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
+        var dataPoints = arrayOfNulls<DataPoint>(points.size)
+        for (point in points)
+            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y/1000).toDouble())
+        /* -----TESTING-----
+        for (dataPoint in dataPoints){
+            if (dataPoint != null){
+                Log.i("TEST", "not null")
+            } else {
+                Log.i("TEST", "is null")
+            }
+        } */
+        val series = LineGraphSeries(dataPoints)
 
+        val numPoints: Double = points.size.toDouble()
+        val maxValue: Double = DataPointFinder.getMaxY(points)
         // after adding data to our line graph series.
         // on below line we are setting
         // title for our graph view.
@@ -57,9 +74,9 @@ class StatsMenuActivity : AppCompatActivity() {
         // data series to our graph view.
 
         graphView?.getViewport()?.setMinX(0.0)
-        graphView?.getViewport()?.setMaxX(9.0)
+        graphView?.getViewport()?.setMaxX(numPoints)
         graphView?.getViewport()?.setMinY(0.0)
-        graphView?.getViewport()?.setMaxY(9.0)
+        graphView?.getViewport()?.setMaxY(maxValue)
 
         graphView?.addSeries(series)
 

@@ -75,4 +75,14 @@ object DataPointFinder {
             Scope.BY_MONTH -> date.substring(5, 7).toInt() - 1
         }
     }
+
+    fun getMaxY(points: ArrayList<Point>): Double{
+        var maxY: Int = 0
+        for (point in points){
+            if (point.y > maxY){
+                maxY = point.y
+            }
+        }
+        return (maxY/1000).toDouble()
+    }
 }
