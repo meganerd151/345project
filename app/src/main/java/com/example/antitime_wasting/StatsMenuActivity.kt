@@ -37,9 +37,33 @@ class StatsMenuActivity : AppCompatActivity() {
         )
         scopeSpinner.setAdapter(scopeAdapter)
 
+        graphView = findViewById(R.id.idGraphView)
+        graphView?.setTitle("My Graph View")
 
-        update_graph()
+        // on below line we are setting
+        // text color to our graph view.
+        graphView?.setTitleColor(R.color.purple_200)
 
+        // on below line we are setting
+        // our title text size.
+        graphView?.setTitleTextSize(18f)
+
+        graphView?.getViewport()?.setYAxisBoundsManual(true)
+        graphView?.getViewport()?.setXAxisBoundsManual(true)
+        // on below line we are adding
+        // data series to our graph view.
+
+
+
+
+        val applybtn = findViewById<Button>(R.id.applyBtn)
+        applybtn.setOnClickListener {
+            when (scopeSpinner.selectedItem.toString()){
+                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY)
+                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH)
+            }
+
+        }
 
         /* TESTING */
         val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
@@ -49,8 +73,9 @@ class StatsMenuActivity : AppCompatActivity() {
 
     }
 
-    fun update_graph(){
-        val points: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
+    fun update_graph(sessionType: String, scope: Scope){
+        graphView?.removeAllSeries()
+        val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
         for (point in points)
             dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y/1000).toDouble())
@@ -69,22 +94,6 @@ class StatsMenuActivity : AppCompatActivity() {
         // after adding data to our line graph series.
         // on below line we are setting
         // title for our graph view.
-        graphView = findViewById(R.id.idGraphView)
-        graphView?.setTitle("My Graph View")
-
-        // on below line we are setting
-        // text color to our graph view.
-        graphView?.setTitleColor(R.color.purple_200)
-
-        // on below line we are setting
-        // our title text size.
-        graphView?.setTitleTextSize(18f)
-
-        graphView?.getViewport()?.setYAxisBoundsManual(true)
-        graphView?.getViewport()?.setXAxisBoundsManual(true)
-        // on below line we are adding
-        // data series to our graph view.
-
         graphView?.getViewport()?.setMinX(0.0)
         graphView?.getViewport()?.setMaxX(numPoints)
         graphView?.getViewport()?.setMinY(0.0)
