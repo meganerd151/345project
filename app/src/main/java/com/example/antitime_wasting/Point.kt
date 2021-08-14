@@ -2,6 +2,8 @@ package com.example.antitime_wasting
 
 /**
  * Used to indicate a point on a graph.
+ *
+ * @author Sam Fern
  */
 class Point {
     var x: Int = 0

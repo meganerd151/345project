@@ -10,6 +10,7 @@ import java.util.*
  * Object used for finding the data points to plot from the database information.
  *
  * TODO : allow for vary in month lengths (not just a set 31 days)
+ * @author Sam Fern
  */
 object DataPointFinder {
 
