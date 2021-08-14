@@ -21,9 +21,26 @@ class StatsMenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_stats_menu)
         // on below line we are initializing our graph view.
 
-        fun DP(a: Int, b: Int): DataPoint {
+        val typeSpinner : Spinner = findViewById(R.id.sessionTypeSelector)
+        val typeAdapter: SpinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.SessionTypes,
+            R.layout.spinner_item
+        )
+        typeSpinner.setAdapter(typeAdapter)
+
+        val scopeSpinner : Spinner = findViewById(R.id.scopeSelector)
+        val scopeAdapter:SpinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.ScopeTypes,
+            R.layout.spinner_item
+        )
+        scopeSpinner.setAdapter(scopeAdapter)
+
+        update_graph()
+        /*fun DP(a: Int, b: Int): DataPoint {
             return DataPoint(a.toDouble(), b.toDouble())
-        }
+        }*/
         /*
         // on below line we are adding data to our graph view.
         val series = LineGraphSeries(
@@ -41,6 +58,17 @@ class StatsMenuActivity : AppCompatActivity() {
             )
         )
         */
+
+
+        /* TESTING */
+        val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
+        for (point in data) {
+            Log.i("datapoints", "x: ${point.x}  y: ${point.y}")
+        }
+
+    }
+
+    fun update_graph(){
         val points: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
         for (point in points)
@@ -82,28 +110,5 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setMaxY(maxValue)
 
         graphView?.addSeries(series)
-
-        val typeSpinner : Spinner = findViewById(R.id.sessionTypeSelector)
-        val typeAdapter: SpinnerAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.SessionTypes,
-            R.layout.spinner_item
-        )
-        typeSpinner.setAdapter(typeAdapter)
-
-        val scopeSpinner : Spinner = findViewById(R.id.scopeSelector)
-        val scopeAdapter:SpinnerAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.ScopeTypes,
-            R.layout.spinner_item
-        )
-        scopeSpinner.setAdapter(scopeAdapter)
-
-        /* TESTING */
-        val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
-        for (point in data) {
-            Log.i("datapoints", "x: ${point.x}  y: ${point.y}")
-        }
-
     }
 }
