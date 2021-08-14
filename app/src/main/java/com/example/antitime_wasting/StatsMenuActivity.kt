@@ -37,27 +37,8 @@ class StatsMenuActivity : AppCompatActivity() {
         )
         scopeSpinner.setAdapter(scopeAdapter)
 
+
         update_graph()
-        /*fun DP(a: Int, b: Int): DataPoint {
-            return DataPoint(a.toDouble(), b.toDouble())
-        }*/
-        /*
-        // on below line we are adding data to our graph view.
-        val series = LineGraphSeries(
-            arrayOf<DataPoint>( // on below line we are adding
-                // each point on our x and y axis.
-                DP(0, 1),
-                DP(1, 2),
-                DP(2, 3),
-                DP(3, 4),
-                DP(4, 5),
-                DP(5, 6),
-                DP(6, 7),
-                DP(7, 8),
-                DP(8, 9)
-            )
-        )
-        */
 
 
         /* TESTING */
