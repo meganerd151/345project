@@ -4,7 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
+import android.widget.SpinnerAdapter
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
@@ -79,6 +82,22 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setMaxY(maxValue)
 
         graphView?.addSeries(series)
+
+        val typeSpinner : Spinner = findViewById(R.id.sessionTypeSelector)
+        val typeAdapter: SpinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.SessionTypes,
+            R.layout.spinner_item
+        )
+        typeSpinner.setAdapter(typeAdapter)
+
+        val scopeSpinner : Spinner = findViewById(R.id.scopeSelector)
+        val scopeAdapter:SpinnerAdapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.ScopeTypes,
+            R.layout.spinner_item
+        )
+        scopeSpinner.setAdapter(scopeAdapter)
 
         /* TESTING */
         val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)

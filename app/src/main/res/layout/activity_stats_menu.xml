@@ -16,18 +16,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/SessionTypeSelector"
+        android:id="@+id/sessionTypeSelector"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:entries="@array/SessionTypes"
         app:layout_constraintTop_toBottomOf="@id/idGraphView" />
 
     <Spinner
-        android:id="@+id/ScopeSelector"
+        android:id="@+id/scopeSelector"
         android:layout_width="match_parent"
         android:layout_height="39dp"
         android:entries="@array/ScopeTypes"
-        app:layout_constraintTop_toBottomOf="@id/SessionTypeSelector" />
+        app:layout_constraintTop_toBottomOf="@id/sessionTypeSelector" />
 
     <!--
     <TextView
