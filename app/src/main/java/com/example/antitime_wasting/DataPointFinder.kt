@@ -31,8 +31,7 @@ object DataPointFinder {
             Scope.BY_MONTH -> 12
         }
         for (i:Int in 1..numPoints){
-            val point: Point = Point()
-            point.x = i
+            val point = Point(i, 0)
             points.add(point)
         }
         for (session in sessions){
