@@ -7,6 +7,13 @@ class Point {
     var x: Int = 0
     var y: Int = 0
 
+    constructor(){}
+
+    constructor(xVal: Int, yVal: Int){
+        x = xVal
+        y = yVal
+    }
+
     fun setx(xval: Int){
         x = xval
     }
