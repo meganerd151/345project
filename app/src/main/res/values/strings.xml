@@ -12,4 +12,9 @@
         <item>Study</item>
         <item>Exercise</item>
     </string-array>
+
+    <string-array name="ScopeTypes">
+        <item>Month View</item>
+        <item>Year View</item>
+    </string-array>
 </resources>
