@@ -79,7 +79,7 @@ class StatsMenuActivity : AppCompatActivity() {
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
         for (point in points)
-            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y/1000).toDouble())
+            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y).toDouble()/(1000))
 
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)

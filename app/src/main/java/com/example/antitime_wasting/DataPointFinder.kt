@@ -84,6 +84,6 @@ object DataPointFinder {
                 maxY = point.y
             }
         }
-        return (maxY/1000).toDouble()
+        return (maxY).toDouble()/(1000)
     }
 }
