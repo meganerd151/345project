@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
 import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.series.BarGraphSeries
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlin.collections.ArrayList
@@ -80,7 +81,8 @@ class StatsMenuActivity : AppCompatActivity() {
         for (point in points)
             dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y/1000).toDouble())
 
-        val series = LineGraphSeries(dataPoints)
+        //val series = LineGraphSeries(dataPoints)
+        val series = BarGraphSeries(dataPoints)
 
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
