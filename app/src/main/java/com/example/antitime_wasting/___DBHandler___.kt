@@ -25,12 +25,18 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        db?.execSQL("DROP TABLE IF EXISTS "+ DATABASE_NAME)
+        onCreate(db)
+    }
+
+    fun wipeDatabase(){
+        val db = this.writableDatabase
+        db.execSQL("delete from $TABLE_NAME")
     }
 
     companion object {
         private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "timesDB.db"
+        const val DATABASE_NAME = "timesDB.db"
         const val TABLE_NAME = "Times"
         const val COLUMN_ID = "TimeID"
         const val COLUMN_START_TIME = "StartTime"

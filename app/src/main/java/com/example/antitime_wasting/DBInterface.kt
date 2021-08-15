@@ -102,4 +102,14 @@ object DBInterface {
         return dbHandler.queryType(type)
     }
 
+    /**
+     * wipeDatabase removes all entries in the timesDB.db database.
+     *
+     * @param context Application Context.
+     * */
+    fun wipeDatabase(context: Context?){
+        val dbHandler = ___DBHandler___(context,null,null,1)
+        dbHandler.wipeDatabase()
+    }
+
 }
