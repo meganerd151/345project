@@ -16,10 +16,17 @@ class Point {
         y = yVal
     }
 
+    /**
+     * Sets the value of the x datafield
+     * @param xval value to store in x
+     * */
     fun setx(xval: Int){
         x = xval
     }
-
+    /**
+     * Sets the value of the y datafield
+     * @param yval value to store in y
+     * */
     fun sety(yval: Int){
         y = yval
     }
