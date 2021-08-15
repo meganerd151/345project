@@ -19,8 +19,6 @@ $dokka.location:com.example.antitime_wasting/MainActivity/onOptionsItemSelected/
 $dokka.location:com.example.antitime_wasting/Point///PointingToDeclaration/app/com.example.antitime_wasting/-point/index.html
 $dokka.location:com.example.antitime_wasting/Point/Point/#/PointingToDeclaration/app/com.example.antitime_wasting/-point/-point.html
 $dokka.location:com.example.antitime_wasting/Point/Point/#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/-point.html
-$dokka.location:com.example.antitime_wasting/Point/getx/#/PointingToDeclaration/app/com.example.antitime_wasting/-point/getx.html
-$dokka.location:com.example.antitime_wasting/Point/gety/#/PointingToDeclaration/app/com.example.antitime_wasting/-point/gety.html
 $dokka.location:com.example.antitime_wasting/Point/setx/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/setx.html
 $dokka.location:com.example.antitime_wasting/Point/sety/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/sety.html
 $dokka.location:com.example.antitime_wasting/Point/x/#/PointingToDeclaration/app/com.example.antitime_wasting/-point/x.html
