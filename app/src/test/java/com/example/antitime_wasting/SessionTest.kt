@@ -3,6 +3,11 @@ package com.example.antitime_wasting
 import org.junit.Test
 import org.junit.Assert.*
 
+/**
+ * Class that tests to see if the correct values get saved to a session
+ * object when you create a new session
+ * @author Amy Lloyd
+ */
 class SessionTest {
     @Test fun makeAndChangeSession(){
         val st: Int = 0

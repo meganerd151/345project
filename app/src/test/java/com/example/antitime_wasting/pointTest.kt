@@ -3,7 +3,10 @@ package com.example.antitime_wasting
 import org.junit.Test
 import org.junit.Assert.*
 
-class PointTest {
+/**
+ * A class that tests point and its setter methods
+ */
+class pointTest {
     @Test fun makeAndChangePoint(){
         //makes point and checks to see if it was created correctly
         val p = Point(1, 2)
