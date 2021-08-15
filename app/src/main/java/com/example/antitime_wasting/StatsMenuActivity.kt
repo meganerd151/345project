@@ -62,7 +62,7 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(45f)
         graphView?.getGridLabelRenderer()?.setPadding(8)
 
-        graphView?.setTitleTextSize(50f)
+        graphView?.setTitleTextSize(65f)
 
         graphView?.getGridLabelRenderer()?.setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL);
 
@@ -122,18 +122,17 @@ class StatsMenuActivity : AppCompatActivity() {
 
         when (scope){
             Scope.BY_DAY -> {
-                graphView?.setTitle("$sessionType This Month")
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
                 graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
             }
             Scope.BY_MONTH -> {
-                graphView?.setTitle("$sessionType This Year")
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
                 graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
             }
         }
+        graphView?.setTitle("$sessionType")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle(scopeLabel)
 
         val numPoints: Double = points.size.toDouble()

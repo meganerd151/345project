@@ -13,10 +13,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/CT_DarkPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idGraphView" />
 
     <TextView
         android:id="@+id/textView2"
@@ -27,16 +41,17 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/idGraphView"
+        app:layout_constraintTop_toTopOf="@id/view"
         tools:layout_editor_absoluteX="135dp" />
 
     <Spinner
         android:id="@+id/sessionTypeSelector"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="50dp"
+        android:background="@color/CT_Primary"
         android:entries="@array/SessionTypes"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,9 +73,10 @@
     <Spinner
         android:id="@+id/scopeSelector"
         android:layout_width="match_parent"
-        android:layout_height="39dp"
+        android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:background="@color/CT_Primary"
         android:entries="@array/ScopeTypes"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +91,9 @@
         android:insetLeft="50dp"
         android:insetRight="50dp"
         android:text="Apply Changes"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/CT_PrimaryText"
+        app:backgroundTint="@color/CT_Accent"
+        app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintTop_toBottomOf="@+id/scopeSelector"
         tools:layout_editor_absoluteX="0dp" />
 
