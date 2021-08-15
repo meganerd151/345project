@@ -56,7 +56,7 @@ class StatsMenuActivity : AppCompatActivity() {
 
         graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
-        graphView?.getGridLabelRenderer()?.setPadding(32)
+        //graphView?.getGridLabelRenderer()?.setPadding(8)
 
         graphView?.setTitleColor(R.color.purple_200)
 
