@@ -63,7 +63,7 @@ $dokka.location:com.example.antitime_wasting/StatsMenuActivity///PointingToDecla
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/StatsMenuActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/-stats-menu-activity.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/Ymin/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/-ymin.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/graphView/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/graph-view.html
-$dokka.location:com.example.antitime_wasting/StatsMenuActivity/update_graph/#kotlin.String#com.example.antitime_wasting.Scope/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/update_graph.html
+$dokka.location:com.example.antitime_wasting/StatsMenuActivity/update_graph/#kotlin.String#com.example.antitime_wasting.Scope#com.jjoe64.graphview.helper.StaticLabelsFormatter#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/update_graph.html
 $dokka.location:com.example.antitime_wasting/TimeActivity.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-companion/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity/TimeActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-time-activity.html
