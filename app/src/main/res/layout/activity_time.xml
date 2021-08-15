@@ -35,8 +35,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:padding="80dp"
-                app:srcCompat="@mipmap/mascot1"
-                tools:srcCompat="@mipmap/mascot1" />
+                app:srcCompat="@drawable/blockythree"
+                tools:srcCompat="@drawable/blockythree" />
 
         </FrameLayout>
 

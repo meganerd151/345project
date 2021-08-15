@@ -36,6 +36,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="#EFF4EF"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="80dp"
-            app:srcCompat="@mipmap/mascot1" />
+            app:srcCompat="@drawable/blockythree" />
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
