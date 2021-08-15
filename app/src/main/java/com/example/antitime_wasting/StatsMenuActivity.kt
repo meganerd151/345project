@@ -70,8 +70,6 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setMinY(0.0)
         graphView?.getViewport()?.setMaxY(Ymin)
 
-        //graphView?.addSeries(series)
-
         val applybtn = findViewById<Button>(R.id.applyBtn)
         applybtn.setOnClickListener {
             when (scopeSpinner.selectedItem.toString()){
@@ -99,9 +97,9 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
-        for (point in points)
-            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y).toDouble()/(1000))
-
+        for (point in points) {
+            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y).toDouble() / (1000))
+        }
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)
 
@@ -116,15 +114,14 @@ class StatsMenuActivity : AppCompatActivity() {
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
-        //graphView?.getViewport()?.setMinX(0.0)
         graphView?.getViewport()?.setMaxX(numPoints)
-        //graphView?.getViewport()?.setMinY(0.0)
         if (maxValue > Ymin) {
-            graphView?.getViewport()?.setMaxY(maxValue)
+            graphView?.getViewport()?.setMaxY(maxValue + 1)
         } else {
             graphView?.getViewport()?.setMaxY(Ymin)
         }
 
         graphView?.addSeries(series)
+
     }
 }
