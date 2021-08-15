@@ -56,14 +56,10 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView = findViewById(R.id.idGraphView)
         //graphView?.setTitle("My Graph View")
 
-        //graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+
         graphView?.getGridLabelRenderer()?.setVerticalAxisTitleTextSize(30f)
-        //graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(30f)
         graphView?.getGridLabelRenderer()?.setPadding(8)
-
-        //graphView?.setTitleColor(R.color.purple_200)
-        //graphView?.setTitleColor(R.color.black)
 
         graphView?.setTitleTextSize(50f)
 
@@ -74,17 +70,10 @@ class StatsMenuActivity : AppCompatActivity() {
 
 
         //graphView?.getViewport()?.setMinX(0.0)
-        /*graphView?.getViewport()?.setMaxX(31.0)
-        graphView?.getViewport()?.setMinY(0.0)
-        graphView?.getViewport()?.setMaxY(Ymin)
-*/
 
         val dayLabels = StaticLabelsFormatter(graphView)
-        var dayArray = arrayOf("", "05", "10", "15", "20", "25", "30")
+        var dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
         var i: Int = 0
-        /*for (i: Int in 0..30){
-            dayArray[i] = (i+1).toString() + "  "
-        }*/
         dayLabels.setHorizontalLabels(dayArray)
 
         val res: Resources = resources
@@ -109,13 +98,6 @@ class StatsMenuActivity : AppCompatActivity() {
             }
 
         }
-
-        /* TESTING
-        val data: ArrayList<Point> = DataPointFinder.findDataPoints("Study", Scope.BY_DAY, this)
-        for (point in data) {
-            Log.i("datapoints", "x: ${point.x}  y: ${point.y}")
-        }
-        */
     }
 
     /**
@@ -128,13 +110,13 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
+        var i: Int = 0
         for (point in points) {
-            dataPoints[point.x - 1] = DataPoint((point.x).toDouble(), (point.y).toDouble() / (1000))
+            dataPoints[i] = DataPoint((point.x).toDouble(), (point.y).toDouble() / (1000))
+            i += 1
         }
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)
-
-        //graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
 
         when (scope){
             Scope.BY_DAY -> {
