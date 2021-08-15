@@ -47,4 +47,20 @@ class SessionTest {
         s.setTimeSpent(6)
         assertEquals(6, s.timeSpent)
     }
+
+    @Test fun sessionIDConstructorTest(){
+        val s = Session(5)
+
+        assertEquals(5, s.id)
+    }
+
+    @Test fun sessionUnusedConstructorTest(){
+        val s = Session(3, 0, 5, "Study")
+
+        assertEquals(3, s.id)
+        assertEquals(0, s.startTime)
+        assertEquals(5, s.endTime)
+        assertEquals("Study", s.sessionType)
+        assertEquals(5, s.timeSpent)
+    }
 }
