@@ -23,14 +23,4 @@ class Point {
     fun sety(yval: Int){
         y = yval
     }
-
-    //for testing
-    fun getx(): Int{
-        return x
-    }
-
-    //for testing
-    fun gety(): Int{
-        return y
-    }
 }
