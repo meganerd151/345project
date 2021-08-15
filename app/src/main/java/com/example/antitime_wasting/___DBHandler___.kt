@@ -11,7 +11,21 @@ import android.util.Log
 import java.util.*
 import kotlin.collections.ArrayList
 
+
+/**
+ * This is a class to directly interract with the Database.
+ * Note: you should not directly interract with this class, you should instead interract with DBInterface.kt
+ *
+ * @param context the application context (unused)
+ * @param name unused
+ * @param factory unused
+ * @param version unused
+ * */
 class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
+
+    /**
+     * onCreate is an overloading method who is called when the database is created.
+     * */
     override fun onCreate(db: SQLiteDatabase?) {
         var CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
         CREATE_TABLE += COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL, " +
