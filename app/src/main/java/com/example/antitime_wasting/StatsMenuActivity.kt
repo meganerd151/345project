@@ -64,6 +64,13 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setYAxisBoundsManual(true)
         graphView?.getViewport()?.setXAxisBoundsManual(true)
 
+        graphView?.getViewport()?.setMinX(0.0)
+        graphView?.getViewport()?.setMaxX(31.0)
+        graphView?.getViewport()?.setMinY(0.0)
+        graphView?.getViewport()?.setMaxY(10.0)
+
+        //graphView?.addSeries(series)
+
         val applybtn = findViewById<Button>(R.id.applyBtn)
         applybtn.setOnClickListener {
             when (scopeSpinner.selectedItem.toString()){
@@ -108,10 +115,14 @@ class StatsMenuActivity : AppCompatActivity() {
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
-        graphView?.getViewport()?.setMinX(0.0)
+        //graphView?.getViewport()?.setMinX(0.0)
         graphView?.getViewport()?.setMaxX(numPoints)
-        graphView?.getViewport()?.setMinY(0.0)
-        graphView?.getViewport()?.setMaxY(maxValue)
+        //graphView?.getViewport()?.setMinY(0.0)
+        if (maxValue > 10.0) {
+            graphView?.getViewport()?.setMaxY(maxValue)
+        } else {
+            graphView?.getViewport()?.setMaxY(10.0)
+        }
 
         graphView?.addSeries(series)
     }
