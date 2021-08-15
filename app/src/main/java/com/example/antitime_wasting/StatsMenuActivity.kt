@@ -39,9 +39,13 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView = findViewById(R.id.idGraphView)
         graphView?.setTitle("My Graph View")
 
+        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent studying")
+        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
+        graphView?.getGridLabelRenderer()?.setPadding(32)
+
         graphView?.setTitleColor(R.color.purple_200)
 
-        graphView?.setTitleTextSize(18f)
+        graphView?.setTitleTextSize(70f)
 
         graphView?.getViewport()?.setYAxisBoundsManual(true)
         graphView?.getViewport()?.setXAxisBoundsManual(true)
