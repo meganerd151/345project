@@ -14,9 +14,22 @@ import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlin.collections.ArrayList
 
+/**
+ * Page to display statistics stored in the database
+ *
+ * TODO: change to displaying in either minutes or hours
+ * TODO: Add labels to spinners
+ *
+ * @author David Black
+ * @author Sam Fern
+ */
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null
 
+    /**
+     * Creates the basis of a graph, two spinners for selecting the type of data to display, along
+     * with a button to apply the changes from the spinners
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats_menu)
