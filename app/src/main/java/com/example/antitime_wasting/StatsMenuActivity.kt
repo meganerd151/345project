@@ -84,6 +84,14 @@ class StatsMenuActivity : AppCompatActivity() {
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)
 
+
+        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+        when (scope){
+            Scope.BY_DAY -> graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
+            Scope.BY_MONTH -> graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
+        }
+
+
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
