@@ -12,7 +12,8 @@ import com.jjoe64.graphview.series.DataPoint
 import android.content.res.Resources
 import com.jjoe64.graphview.helper.StaticLabelsFormatter
 import com.jjoe64.graphview.DefaultLabelFormatter
-
+import com.jjoe64.graphview.GridLabelRenderer
+import com.jjoe64.graphview.GridLabelRenderer.GridStyle
 /**
  * Page to display statistics stored in the database
  *
@@ -53,34 +54,37 @@ class StatsMenuActivity : AppCompatActivity() {
         scopeSpinner.setAdapter(scopeAdapter)
 
         graphView = findViewById(R.id.idGraphView)
-        graphView?.setTitle("My Graph View")
+        //graphView?.setTitle("My Graph View")
 
-        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+        //graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
         graphView?.getGridLabelRenderer()?.setVerticalAxisTitleTextSize(30f)
-        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
+        //graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(30f)
-        //graphView?.getGridLabelRenderer()?.setPadding(8)
+        graphView?.getGridLabelRenderer()?.setPadding(8)
 
         //graphView?.setTitleColor(R.color.purple_200)
         //graphView?.setTitleColor(R.color.black)
 
         graphView?.setTitleTextSize(50f)
 
-        graphView?.getViewport()?.setYAxisBoundsManual(true)
-        graphView?.getViewport()?.setXAxisBoundsManual(true)
+        graphView?.getGridLabelRenderer()?.setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL);
 
-        graphView?.getViewport()?.setMinX(0.0)
-        graphView?.getViewport()?.setMaxX(31.0)
+        //graphView?.getViewport()?.setYAxisBoundsManual(true)
+        //graphView?.getViewport()?.setXAxisBoundsManual(true)
+
+
+        //graphView?.getViewport()?.setMinX(0.0)
+        /*graphView?.getViewport()?.setMaxX(31.0)
         graphView?.getViewport()?.setMinY(0.0)
         graphView?.getViewport()?.setMaxY(Ymin)
-
+*/
 
         val dayLabels = StaticLabelsFormatter(graphView)
-        var dayArray = arrayOfNulls<String>(31)
+        var dayArray = arrayOf("", "05", "10", "15", "20", "25", "30")
         var i: Int = 0
-        for (i: Int in 0..30){
-            dayArray[i] = i.toString()
-        }
+        /*for (i: Int in 0..30){
+            dayArray[i] = (i+1).toString() + "  "
+        }*/
         dayLabels.setHorizontalLabels(dayArray)
 
         val res: Resources = resources
@@ -88,7 +92,7 @@ class StatsMenuActivity : AppCompatActivity() {
         val monthArray = arrayOfNulls<String>(12)
         i = 0
         for(month in res.getStringArray(R.array.months)) {
-            monthArray[i] = month.substring(0, 3)
+            monthArray[i] = month.substring(0, 3) + "  "
             i += 1
         }
         monthLabels.setHorizontalLabels(monthArray)
@@ -130,14 +134,14 @@ class StatsMenuActivity : AppCompatActivity() {
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)
 
-        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+        //graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
 
         when (scope){
             Scope.BY_DAY -> {
                 graphView?.setTitle("$sessionType This Month")
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
-                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(0)
+                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
             }
             Scope.BY_MONTH -> {
                 graphView?.setTitle("$sessionType This Year")
