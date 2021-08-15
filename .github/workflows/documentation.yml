@@ -23,8 +23,8 @@ jobs:
       run: ./gradlew dokkaHtml
     - name: PushtoGitHub
       run: |
-        git config --global user.email "motblaschke@gmail.com"
-        git config --global user.name "jakemperkins"
+        git config --global user.email "lloydgeek@gmail.com"
+        git config --global user.name "meganerd151"
         rm -rf docs
         mv app/build/dokka/html ./docs
         git add -f docs
