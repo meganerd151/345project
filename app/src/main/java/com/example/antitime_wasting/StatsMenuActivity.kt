@@ -25,6 +25,7 @@ import kotlin.collections.ArrayList
  */
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null
+    var Ymin: Double = 10.0
 
     /**
      * Creates the basis of a graph, two spinners for selecting the type of data to display, along
@@ -67,7 +68,7 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setMinX(0.0)
         graphView?.getViewport()?.setMaxX(31.0)
         graphView?.getViewport()?.setMinY(0.0)
-        graphView?.getViewport()?.setMaxY(10.0)
+        graphView?.getViewport()?.setMaxY(Ymin)
 
         //graphView?.addSeries(series)
 
@@ -118,10 +119,10 @@ class StatsMenuActivity : AppCompatActivity() {
         //graphView?.getViewport()?.setMinX(0.0)
         graphView?.getViewport()?.setMaxX(numPoints)
         //graphView?.getViewport()?.setMinY(0.0)
-        if (maxValue > 10.0) {
+        if (maxValue > Ymin) {
             graphView?.getViewport()?.setMaxY(maxValue)
         } else {
-            graphView?.getViewport()?.setMaxY(10.0)
+            graphView?.getViewport()?.setMaxY(Ymin)
         }
 
         graphView?.addSeries(series)
