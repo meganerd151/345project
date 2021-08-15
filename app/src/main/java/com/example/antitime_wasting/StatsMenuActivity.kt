@@ -40,7 +40,7 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView = findViewById(R.id.idGraphView)
         graphView?.setTitle("My Graph View")
 
-        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent studying")
+        graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
         graphView?.getGridLabelRenderer()?.setPadding(32)
 
