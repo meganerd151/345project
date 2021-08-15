@@ -1,18 +1,17 @@
 package com.example.antitime_wasting
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.BarGraphSeries
 import com.jjoe64.graphview.series.DataPoint
-import com.jjoe64.graphview.series.LineGraphSeries
-import kotlin.collections.ArrayList
+import android.content.res.Resources
+import com.jjoe64.graphview.helper.StaticLabelsFormatter
+import com.jjoe64.graphview.DefaultLabelFormatter
 
 /**
  * Page to display statistics stored in the database
@@ -26,6 +25,8 @@ import kotlin.collections.ArrayList
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null
     var Ymin: Double = 10.0
+
+
 
     /**
      * Creates the basis of a graph, two spinners for selecting the type of data to display, along
@@ -55,12 +56,15 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.setTitle("My Graph View")
 
         graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+        graphView?.getGridLabelRenderer()?.setVerticalAxisTitleTextSize(30f)
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
+        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(30f)
         //graphView?.getGridLabelRenderer()?.setPadding(8)
 
-        graphView?.setTitleColor(R.color.purple_200)
+        //graphView?.setTitleColor(R.color.purple_200)
+        //graphView?.setTitleColor(R.color.black)
 
-        graphView?.setTitleTextSize(70f)
+        graphView?.setTitleTextSize(50f)
 
         graphView?.getViewport()?.setYAxisBoundsManual(true)
         graphView?.getViewport()?.setXAxisBoundsManual(true)
@@ -70,11 +74,34 @@ class StatsMenuActivity : AppCompatActivity() {
         graphView?.getViewport()?.setMinY(0.0)
         graphView?.getViewport()?.setMaxY(Ymin)
 
+
+        val dayLabels = StaticLabelsFormatter(graphView)
+        var dayArray = arrayOfNulls<String>(31)
+        var i: Int = 0
+        for (i: Int in 0..30){
+            dayArray[i] = i.toString()
+        }
+        dayLabels.setHorizontalLabels(dayArray)
+
+        val res: Resources = resources
+        val monthLabels = StaticLabelsFormatter(graphView)
+        val monthArray = arrayOfNulls<String>(12)
+        i = 0
+        for(month in res.getStringArray(R.array.months)) {
+            monthArray[i] = month.substring(0, 3)
+            i += 1
+        }
+        monthLabels.setHorizontalLabels(monthArray)
+
+
+        update_graph("Study", Scope.BY_DAY, dayLabels)
+
+
         val applybtn = findViewById<Button>(R.id.applyBtn)
         applybtn.setOnClickListener {
             when (scopeSpinner.selectedItem.toString()){
-                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY)
-                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH)
+                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels)
+                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels)
             }
 
         }
@@ -93,7 +120,7 @@ class StatsMenuActivity : AppCompatActivity() {
      * @param sessionType the type of session the graph is to display.
      * @param scope the length of time the graph covers.
      */
-    fun update_graph(sessionType: String, scope: Scope){
+    fun update_graph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter){
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
@@ -103,12 +130,23 @@ class StatsMenuActivity : AppCompatActivity() {
         //val series = LineGraphSeries(dataPoints)
         val series = BarGraphSeries(dataPoints)
 
-
         graphView?.getGridLabelRenderer()?.setVerticalAxisTitle("Time spent")
+
         when (scope){
-            Scope.BY_DAY -> graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
-            Scope.BY_MONTH -> graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
+            Scope.BY_DAY -> {
+                graphView?.setTitle("$sessionType This Month")
+                graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
+                graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
+                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(0)
+            }
+            Scope.BY_MONTH -> {
+                graphView?.setTitle("$sessionType This Year")
+                graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
+                graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
+                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
+            }
         }
+
 
 
         val numPoints: Double = points.size.toDouble()
