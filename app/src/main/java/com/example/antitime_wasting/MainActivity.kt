@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
+import com.google.android.material.snackbar.Snackbar
 import java.io.FileInputStream
 
 /**
@@ -72,6 +73,11 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.clearData ->{
                 DBInterface.wipeDatabase(this)
+                Snackbar.make(
+                    findViewById(R.id.coordinator),
+                    R.string.dataClearedSucessfully,
+                    Snackbar.LENGTH_SHORT
+                ).show()
             }
         }
         return true
