@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Function which creates the top right Menu
-     * utilising Standard menuInflator commands for these menues.
+     * utilising Standard menuInflator commands for these menus.
      */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity() {
             R.id.statisticsMenu -> {
                 val intent = Intent(this, StatsMenuActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.clearData ->{
+                DBInterface.wipeDatabase(this)
             }
         }
         return true
