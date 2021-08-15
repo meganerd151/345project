@@ -14,6 +14,10 @@ import com.jjoe64.graphview.helper.StaticLabelsFormatter
 import com.jjoe64.graphview.DefaultLabelFormatter
 import com.jjoe64.graphview.GridLabelRenderer
 import com.jjoe64.graphview.GridLabelRenderer.GridStyle
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
 /**
  * Page to display statistics stored in the database
  *
@@ -54,11 +58,8 @@ class StatsMenuActivity : AppCompatActivity() {
         scopeSpinner.setAdapter(scopeAdapter)
 
         graphView = findViewById(R.id.idGraphView)
-        //graphView?.setTitle("My Graph View")
 
-
-        graphView?.getGridLabelRenderer()?.setVerticalAxisTitleTextSize(30f)
-        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(30f)
+        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(45f)
         graphView?.getGridLabelRenderer()?.setPadding(8)
 
         graphView?.setTitleTextSize(50f)
@@ -86,15 +87,16 @@ class StatsMenuActivity : AppCompatActivity() {
         }
         monthLabels.setHorizontalLabels(monthArray)
 
+        var thisMonth: String = res.getStringArray(R.array.months)[SimpleDateFormat("MM", Locale.US).format((Date())).toInt()-1]
+        var thisYear: String = SimpleDateFormat("yyyy", Locale.US).format((Date()))
 
-        update_graph("Study", Scope.BY_DAY, dayLabels)
-
+        update_graph("Study", Scope.BY_DAY, dayLabels, thisMonth)
 
         val applybtn = findViewById<Button>(R.id.applyBtn)
         applybtn.setOnClickListener {
             when (scopeSpinner.selectedItem.toString()){
-                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels)
-                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels)
+                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels, thisMonth)
+                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels, thisYear)
             }
 
         }
@@ -106,7 +108,7 @@ class StatsMenuActivity : AppCompatActivity() {
      * @param sessionType the type of session the graph is to display.
      * @param scope the length of time the graph covers.
      */
-    fun update_graph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter){
+    fun update_graph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter, scopeLabel: String){
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         var dataPoints = arrayOfNulls<DataPoint>(points.size)
@@ -132,8 +134,7 @@ class StatsMenuActivity : AppCompatActivity() {
                 graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
             }
         }
-
-
+        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle(scopeLabel)
 
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
