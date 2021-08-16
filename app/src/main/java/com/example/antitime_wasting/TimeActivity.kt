@@ -7,13 +7,12 @@ import android.util.Log
 import android.view.MenuItem
 import android.widget.*
 import androidx.annotation.RequiresApi
-import java.sql.Time
 import java.util.*
 
 
 private const val SettingsName = "TimeRunning"
 /**
- * Second page of our App, with Study Button, Excercise button
+ * Second page of our App, with Study Button, Exercise button
  */
 class TimeActivity : AppCompatActivity() {
 
@@ -30,11 +29,11 @@ class TimeActivity : AppCompatActivity() {
     //Standard 'late' initialising of buttons, Views, etc.
     private lateinit var mascotTimeActivity: ImageView
     private lateinit var createActivity: Button
-    private lateinit var studybtn: Button
-    private lateinit var excercisebtn: Button
+    //private lateinit var studybtn: Button
+    //private lateinit var excercisebtn: Button
     private lateinit var timeText: TextView
-    private var twoDimArrayDateTime = arrayListOf<Int>()
-    private lateinit var session:Session
+    //private var twoDimArrayDateTime = arrayListOf<Int>()
+    //private lateinit var session:Session
     private var inSession: Boolean = false
     private var startTime: Int = 0
     private var endTime: Int = 0
@@ -93,22 +92,23 @@ class TimeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    /**
-     * NOTE: this still relies on methods from TimeHelper - this should be removed
-     *
-     * NOTE: The time does not display correctly yet - it currently displays the total amount of
-     * seconds, minutes, etc. E.g. instead of 1 minute and 30 seconds it will display 1 minute and
-     * 90 seconds. - shouldn't be a hard fix.
-     *
-     * Still need to check database is working fine as this code never actually accesses it - only
-     * inserts data (getting database inspector errors)
-     *
-     * I also believe some DBHandler / DBInterface methods do not work (e.g. getLastSession and updateSession)
-     */
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
+        /**
+         * NOTE: this still relies on methods from TimeHelper - this should be removed
+         *
+         * NOTE: The time does not display correctly yet - it currently displays the total amount of
+         * seconds, minutes, etc. E.g. instead of 1 minute and 30 seconds it will display 1 minute and
+         * 90 seconds. - shouldn't be a hard fix.
+         *
+         * Still need to check database is working fine as this code never actually accesses it - only
+         * inserts data (getting database inspector errors)
+         *
+         * I also believe some DBHandler / DBInterface methods do not work (e.g. getLastSession and updateSession)
+         */
         val studybtn : Button = findViewById(R.id.studybtn)
-        var spinner : Spinner = findViewById(R.id.sessionSpinner)
+        val spinner : Spinner = findViewById(R.id.sessionSpinner)
         if (inSession){
             endTime = getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
@@ -125,25 +125,27 @@ class TimeActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Used internally to get the current time.
-     *
-     * @return the current time as an Int.
-     */
+
     private fun getCurrentTime(): Int {
+        /**
+         * Used internally to get the current time.
+         *
+         * @return the current time as an Int.
+         */
         return (Date().time).toInt()
     }
 
-    /**
-     * Used internally to get the String to display the session information.
-     *
-     * @param start the start time
-     * @param end the end time
-     * @param type the session type as a String.
-     *
-     * @return a String that can be displayed.
-     */
+
     private fun displayLayout(start:Long,end:Long, type:String): String {
+        /**
+         * Used internally to get the String to display the session information.
+         *
+         * @param start the start time
+         * @param end the end time
+         * @param type the session type as a String.
+         *
+         * @return a String that can be displayed.
+         */
         val difference = end-start
         val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
         val diffhours = (difference / (60 * 60 * 1000)).toInt() % 24

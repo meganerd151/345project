@@ -25,7 +25,7 @@ object DataPointFinder {
      * @return ArrayList of Points.
      */
     fun findDataPoints(type: String, scope: Scope, context: Context?): ArrayList<Point>{
-        val points: ArrayList<Point> = ArrayList<Point>()
+        val points = ArrayList<Point>()
         val sessions: ArrayList<Session> = DBInterface.queryType(type, context)
         val numPoints: Int = when (scope){
             Scope.BY_DAY -> 31
@@ -43,15 +43,16 @@ object DataPointFinder {
         return points
     }
 
-    /**
-     * Used internally to determine whether a date will be in the data set based on the scope.
-     *
-     * @param date the date from a session in String form.
-     * @param scope the scope of the data of the enum type Scope.
-     *
-     * @return a boolean indicating whether the date is in the scope or not.
-     */
+
     private fun inScope(date: String, scope: Scope): Boolean{
+        /**
+         * Used internally to determine whether a date will be in the data set based on the scope.
+         *
+         * @param date the date from a session in String form.
+         * @param scope the scope of the data of the enum type Scope.
+         *
+         * @return a boolean indicating whether the date is in the scope or not.
+         */
         return when (scope){
             Scope.BY_DAY -> {
                 SimpleDateFormat("yyyy", Locale.US).format(Date()) == date.substring(0, 4)
@@ -61,16 +62,15 @@ object DataPointFinder {
             }
         }
     }
-
-    /**
-     * Used internally to find the index of a Point in the points array using the date of a session.
-     *
-     * @param date the date from a session in String form.
-     * @param scope the scope of the data of enum type Scope.
-     *
-     * @return an integer indicating the index.
-     */
     private fun findIndexOfPoint(date: String, scope: Scope): Int{
+        /**
+         * Used internally to find the index of a Point in the points array using the date of a session.
+         *
+         * @param date the date from a session in String form.
+         * @param scope the scope of the data of enum type Scope.
+         *
+         * @return an integer indicating the index.
+         */
         return when (scope){
             Scope.BY_DAY -> date.substring(8, 10).toInt() - 1
             Scope.BY_MONTH -> date.substring(5, 7).toInt() - 1
@@ -78,7 +78,7 @@ object DataPointFinder {
     }
 
     fun getMaxY(points: ArrayList<Point>): Double{
-        var maxY: Int = 0
+        var maxY = 0
         for (point in points){
             if (point.y > maxY){
                 maxY = point.y

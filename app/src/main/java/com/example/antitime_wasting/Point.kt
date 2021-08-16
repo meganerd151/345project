@@ -5,16 +5,9 @@ package com.example.antitime_wasting
  *
  * @author Sam Fern
  */
-class Point {
-    var x: Int = 0
-    var y: Int = 0
-
-    constructor(){}
-
-    constructor(xVal: Int, yVal: Int){
-        x = xVal
-        y = yVal
-    }
+class Point(xVal: Int, yVal: Int) {
+    var x: Int = xVal
+    var y: Int = yVal
 
     /**
      * Sets the value of the x datafield

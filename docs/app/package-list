@@ -18,7 +18,6 @@ $dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/Pointin
 $dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
 $dokka.location:com.example.antitime_wasting/MainActivity/onOptionsItemSelected/#android.view.MenuItem/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-options-item-selected.html
 $dokka.location:com.example.antitime_wasting/Point///PointingToDeclaration/app/com.example.antitime_wasting/-point/index.html
-$dokka.location:com.example.antitime_wasting/Point/Point/#/PointingToDeclaration/app/com.example.antitime_wasting/-point/-point.html
 $dokka.location:com.example.antitime_wasting/Point/Point/#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/-point.html
 $dokka.location:com.example.antitime_wasting/Point/setx/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/setx.html
 $dokka.location:com.example.antitime_wasting/Point/sety/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-point/sety.html
@@ -62,9 +61,9 @@ $dokka.location:com.example.antitime_wasting/SettingsTalker/updateEntry/#kotlin.
 $dokka.location:com.example.antitime_wasting/SettingsTalker/updateEntry/#kotlin.String?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-settings-talker/update-entry.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity///PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/index.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/StatsMenuActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/-stats-menu-activity.html
-$dokka.location:com.example.antitime_wasting/StatsMenuActivity/Ymin/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/-ymin.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/graphView/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/graph-view.html
 $dokka.location:com.example.antitime_wasting/StatsMenuActivity/update_graph/#kotlin.String#com.example.antitime_wasting.Scope#com.jjoe64.graphview.helper.StaticLabelsFormatter#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/update_graph.html
+$dokka.location:com.example.antitime_wasting/StatsMenuActivity/yMin/#/PointingToDeclaration/app/com.example.antitime_wasting/-stats-menu-activity/y-min.html
 $dokka.location:com.example.antitime_wasting/TimeActivity.Companion///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-companion/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity///PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/index.html
 $dokka.location:com.example.antitime_wasting/TimeActivity/TimeActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-time-activity/-time-activity.html

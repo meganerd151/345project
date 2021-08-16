@@ -3,7 +3,9 @@ package com.example.antitime_wasting
 import java.text.SimpleDateFormat
 import java.util.*
 
-/*
+/**
+ * A representation of a single study Session object
+ *
 * @created 08/Aug/2021 - 2:20 PM
 * @project Anti time-wasting
 * @author Blake MacDade

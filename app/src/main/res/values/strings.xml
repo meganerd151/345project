@@ -8,6 +8,9 @@
     <string name="clearData">Clear Data</string>
     <string name="stats">Statistics</string>
     <string name="dataClearedSucessfully">Data has been cleared!</string>
+    <string name="startsession">Start Session</string>
+    <string name="endsession">End Session</string>
+
     <string name="testData">Add test data</string>
     <string name="testDataInserted">Previous data has been cleared. Test data has been inserted!</string>
     <string-array name="SessionTypes">

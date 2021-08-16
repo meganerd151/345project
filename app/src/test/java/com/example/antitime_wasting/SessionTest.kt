@@ -11,9 +11,13 @@ import java.util.*
  * @author Amy Lloyd
  */
 class SessionTest {
+
+    /**
+     * Testing setting and getting methods for session
+     * */
     @Test fun makeAndChangeSession(){
-        val st: Int = 0
-        val et: Int = 5
+        val st = 0
+        val et = 5
         val s = Session(st, et, "Study")
 
         //check to see if the initialization in this constructor works
@@ -48,12 +52,18 @@ class SessionTest {
         assertEquals(6, s.timeSpent)
     }
 
+    /**
+     * Test Session Constructor
+     * */
     @Test fun sessionIDConstructorTest(){
         val s = Session(5)
 
         assertEquals(5, s.id)
     }
 
+    /**
+     * Test empty Session constructor
+     * */
     @Test fun sessionUnusedConstructorTest(){
         val s = Session(3, 0, 5, "Study")
 
