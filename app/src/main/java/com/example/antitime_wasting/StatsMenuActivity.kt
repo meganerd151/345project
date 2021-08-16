@@ -22,10 +22,10 @@ import kotlin.collections.ArrayList
  * Page to display statistics stored in the database
  *
  * TODO: change to displaying in either minutes or hours
- * TODO: Add labels to spinners
  *
- * @author David Black
  * @author Sam Fern
+ * @author David Black
+ * @author Amy Lloyd
  */
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null

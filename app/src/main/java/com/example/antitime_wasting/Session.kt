@@ -52,6 +52,17 @@ class Session {
     }
 
     /**
+     * Temp constructor for inserting test data
+     */
+    constructor(start:Int?,end:Int?,sessionType:String?,date: String?){
+        this.startTime = start
+        this.endTime = end
+        this.sessionType = sessionType
+        this.date = date
+        this.timeSpent = (end!! - start!!)
+    }
+
+    /**
      * Sets the id of the session
      * @param ID id to assign
      * */

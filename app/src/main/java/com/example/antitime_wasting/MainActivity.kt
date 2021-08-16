@@ -79,8 +79,26 @@ class MainActivity : AppCompatActivity() {
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
+            R.id.testData -> {
+                DBInterface.wipeDatabase(this)
+                Snackbar.make(
+                    findViewById(R.id.coordinator),
+                    R.string.testDataInserted,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                insertTestData()
+            }
         }
         return true
+    }
+
+    fun insertTestData(){
+        val sessions = ArrayList<Session>()
+        sessions.add(Session(0, 5000, "Study", "2021-08-02"))
+
+        for (session in sessions){
+            DBInterface.addSession(session, this)
+        }
     }
 
 
