@@ -102,16 +102,17 @@ class MainActivity : AppCompatActivity() {
         val res: Resources = resources
         val sessions = ArrayList<Session>()
 
+        var currentDay: String = SimpleDateFormat("dd", Locale.US).format((Date()))
+        var currentMonth: String = SimpleDateFormat("MM", Locale.US).format((Date()))
         var dayString: String
         for (type in res.getStringArray(R.array.SessionTypes)) {
-            for (day: Int in 1..31) { //need to find month length
+            for (day: Int in 1..currentDay.toInt()) {
                 dayString = if (day < 10) {
                     "0$day"
                 } else {
                     day.toString()
                 }
-                //Log.i("TestData", "day is $dayString")
-                sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-08-$dayString")) //replace with this month not 08
+                sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-$currentMonth-$dayString"))
             }
             //sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-01"))
         }
