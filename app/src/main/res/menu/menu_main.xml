@@ -7,6 +7,9 @@
         android:title="@string/clearData"
         app:showAsAction="never" />
     <item
+        android:id="@+id/testData"
+        android:title="@string/testData" />
+    <item
         android:id="@+id/statisticsMenu"
         android:icon="@drawable/ic_statistics"
         android:title="@string/stats"

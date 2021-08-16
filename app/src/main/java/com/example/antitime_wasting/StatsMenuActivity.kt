@@ -11,9 +11,9 @@ import com.jjoe64.graphview.series.BarGraphSeries
 import com.jjoe64.graphview.series.DataPoint
 import android.content.res.Resources
 import com.jjoe64.graphview.helper.StaticLabelsFormatter
-//import com.jjoe64.graphview.DefaultLabelFormatter
+import com.jjoe64.graphview.DefaultLabelFormatter
 import com.jjoe64.graphview.GridLabelRenderer
-//import com.jjoe64.graphview.GridLabelRenderer.GridStyle
+import com.jjoe64.graphview.GridLabelRenderer.GridStyle
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -22,14 +22,14 @@ import kotlin.collections.ArrayList
  * Page to display statistics stored in the database
  *
  * TODO: change to displaying in either minutes or hours
- * TODO: Add labels to spinners
  *
- * @author David Black
  * @author Sam Fern
+ * @author David Black
+ * @author Amy Lloyd
  */
 class StatsMenuActivity : AppCompatActivity() {
     var graphView: GraphView? = null
-    var yMin: Double = 10.0
+    var Ymin: Double = 10.0
 
 
 
@@ -64,31 +64,45 @@ class StatsMenuActivity : AppCompatActivity() {
 
         graphView?.setTitleTextSize(65f)
 
-        graphView?.getGridLabelRenderer()?.setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL)
+        graphView?.getGridLabelRenderer()?.setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL);
 
         //graphView?.getViewport()?.setYAxisBoundsManual(true)
         //graphView?.getViewport()?.setXAxisBoundsManual(true)
 
-
         //graphView?.getViewport()?.setMinX(0.0)
 
         val dayLabels = StaticLabelsFormatter(graphView)
-        val dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
-        var i = 0
+        //var dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
+        var dayArray = arrayOfNulls<String>(31)
+        var i: Int = 0
+        /*for (i in 0..dayArray.size-1){
+            /*if (i+1 < 10){
+                dayArray[i] = "0${i+1}"
+            } else {
+                dayArray[i] = (i+1).toString()
+            }*/
+            dayArray[i] = ""
+        }*/
+        dayArray[4] = "05"
+        dayArray[9] = "10"
+        dayArray[14] = "15"
+        dayArray[19] = "20"
+        dayArray[24] = "25"
+        dayArray[29] = "30"
         dayLabels.setHorizontalLabels(dayArray)
 
         val res: Resources = resources
         val monthLabels = StaticLabelsFormatter(graphView)
         val monthArray = arrayOfNulls<String>(12)
-
+        i= 0
         for(month in res.getStringArray(R.array.months)) {
-            monthArray[i] = month.substring(0, 3) + "  "
+            monthArray[i] = month.substring(0, 3)
             i += 1
         }
         monthLabels.setHorizontalLabels(monthArray)
 
-        val thisMonth: String = res.getStringArray(R.array.months)[SimpleDateFormat("MM", Locale.US).format((Date())).toInt()-1]
-        val thisYear: String = SimpleDateFormat("yyyy", Locale.US).format((Date()))
+        var thisMonth: String = res.getStringArray(R.array.months)[SimpleDateFormat("MM", Locale.US).format((Date())).toInt()-1]
+        var thisYear: String = SimpleDateFormat("yyyy", Locale.US).format((Date()))
 
         update_graph("Study", Scope.BY_DAY, dayLabels, thisMonth)
 
@@ -111,8 +125,8 @@ class StatsMenuActivity : AppCompatActivity() {
     fun update_graph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter, scopeLabel: String){
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
-        val dataPoints = arrayOfNulls<DataPoint>(points.size)
-        var i = 0
+        var dataPoints = arrayOfNulls<DataPoint>(points.size)
+        var i: Int = 0
         for (point in points) {
             dataPoints[i] = DataPoint((point.x).toDouble(), (point.y).toDouble() / (1000))
             i += 1
@@ -124,27 +138,31 @@ class StatsMenuActivity : AppCompatActivity() {
             Scope.BY_DAY -> {
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
-                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
+                //graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(0)
+                //graphView?.getGridLabelRenderer()?.setTextSize(18f)
             }
             Scope.BY_MONTH -> {
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
+                //graphView?.getGridLabelRenderer()?.setNumHorizontalLabels(12)
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
-                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
+                //graphView?.getGridLabelRenderer()?.setTextSize(18f)
             }
         }
-        graphView?.setTitle(sessionType)
+        graphView?.setTitle("$sessionType")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle(scopeLabel)
+        graphView?.getGridLabelRenderer()?.setTextSize(19f)
 
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
-        graphView?.getViewport()?.setMaxX(numPoints)
-        if (maxValue > yMin) {
-            graphView?.getViewport()?.setMaxY(maxValue + 1)
+        //graphView?.getViewport()?.setMinX(-1.0)
+        //graphView?.getViewport()?.setMaxX((numPoints+1).toDouble())
+        if (maxValue > Ymin) {
+            graphView?.getViewport()?.setMaxY(maxValue)
         } else {
-            graphView?.getViewport()?.setMaxY(yMin)
+            graphView?.getViewport()?.setMaxY(Ymin)
         }
-
+        series.spacing = 5
         graphView?.addSeries(series)
 
     }
