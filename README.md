@@ -2,8 +2,6 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba20764a329b4f2eabc2a3de10894d51)](https://www.codacy.com/gh/meganerd151/345project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=meganerd151/345project&amp;utm_campaign=Badge_Grade)
 # 345project
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/077177d8ccad42f8b93c71d117997d54)](https://app.codacy.com/gh/meganerd151/345project?utm_source=github.com&utm_medium=referral&utm_content=meganerd151/345project&utm_campaign=Badge_Grade_Settings)
-
 Anti time-wasting app development
 
 
