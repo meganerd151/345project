@@ -76,7 +76,7 @@ class DBTest {
     fun writeAndDelete(){
         dbHandler.addHandler(testSession)
         //will provide failed test need to revise
-        //assertTrue(dbHandler.deleteHandler(151))
+        assertTrue(dbHandler.deleteHandler(151))
     }
 
     /**
@@ -89,7 +89,7 @@ class DBTest {
         dbHandler.addHandler(testSession)
         testSession.setSessionType("TEST")
         //will produce a failed test need to revise
-        //assertEquals(dbHandler.updateHandler(testSession), true)
+        assertEquals(dbHandler.updateHandler(testSession), true)
     }
 
 
