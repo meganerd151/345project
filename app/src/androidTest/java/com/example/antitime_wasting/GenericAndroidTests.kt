@@ -14,6 +14,9 @@ import kotlin.jvm.Throws
 * @project Anti time-wasting
 * @author Blake MacDade
 */
+/**
+ * Class to do assorted tests on a running device
+ * */
 @RunWith(AndroidJUnit4::class)
 class GenericAndroidTests {
 

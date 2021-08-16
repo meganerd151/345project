@@ -97,6 +97,9 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    /**
+     * Function to insert random test data for testing purposes
+     * */
     fun insertTestData(){
 
         val res: Resources = resources
