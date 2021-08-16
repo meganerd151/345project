@@ -73,8 +73,18 @@ class StatsMenuActivity : AppCompatActivity() {
         //graphView?.getViewport()?.setMinX(0.0)
 
         val dayLabels = StaticLabelsFormatter(graphView)
-        var dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
+        //var dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
+        var dayArray = arrayOfNulls<String>(31)
         var i: Int = 0
+        for (i in 0..dayArray.size-1){
+            dayArray[i] = "   "
+        }
+        dayArray[5] = "05  "
+        dayArray[10] = "10  "
+        dayArray[15] = "15  "
+        dayArray[20] = "20  "
+        dayArray[25] = "25  "
+        dayArray[30] = "30  "
         dayLabels.setHorizontalLabels(dayArray)
 
         val res: Resources = resources
@@ -138,7 +148,8 @@ class StatsMenuActivity : AppCompatActivity() {
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
-        graphView?.getViewport()?.setMaxX(numPoints)
+        //graphView?.getViewport()?.setMinX(-1.0)
+        //graphView?.getViewport()?.setMaxX(numPoints+2)
         if (maxValue > Ymin) {
             graphView?.getViewport()?.setMaxY(maxValue + 1)
         } else {

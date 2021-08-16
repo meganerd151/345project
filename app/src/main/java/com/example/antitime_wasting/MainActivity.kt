@@ -1,6 +1,7 @@
 package com.example.antitime_wasting
 
 import android.content.Intent
+import android.content.res.Resources
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,10 @@ import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
 import java.io.FileInputStream
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.random.Random
 
 /**
  *Home Page
@@ -93,12 +98,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun insertTestData(){
+
+        val res: Resources = resources
         val sessions = ArrayList<Session>()
-        sessions.add(Session(0, 5000, "Study", "2021-08-02"))
+
+        var dayString: String
+        for (type in res.getStringArray(R.array.SessionTypes)) {
+            for (day: Int in 1..31) { //need to find month length
+                dayString = if (day < 10) {
+                    "0$day"
+                } else {
+                    day.toString()
+                }
+                //Log.i("TestData", "day is $dayString")
+                sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-$dayString")) //replace with this month not 08
+            }
+            //sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-01"))
+        }
 
         for (session in sessions){
             DBInterface.addSession(session, this)
         }
+
     }
 
 
