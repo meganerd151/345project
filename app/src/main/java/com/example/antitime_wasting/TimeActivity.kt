@@ -85,11 +85,11 @@ class TimeActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    /**
-     * Keeps track of the time the user is in an activity.
-     */
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
+        /* Keeps track of the time the user is in an activity.
+         */
         val studybtn : Button = findViewById(R.id.studybtn)
         val spinner : Spinner = findViewById(R.id.sessionSpinner)
         if (inSession){
@@ -108,16 +108,11 @@ class TimeActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Used internally to get the current time.
-     *
-     * @return the current time as an Int.
-     */
     private fun getCurrentTime(): Int {
         return (Date().time).toInt()
     }
 
-    /**
+    /*
      * Used internally to get the String to display the session information.
      *
      * @param start the start time

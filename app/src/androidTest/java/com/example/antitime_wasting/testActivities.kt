@@ -72,9 +72,7 @@ class testActivities {
         onView(withId(R.id.frameTimeActivity)).check(matches(isDisplayed()))
         onView(withId(R.id.mascotTimeActivity)).check(matches(isDisplayed()))
         onView(withId(R.id.timeText)).check(matches(isDisplayed()))
-        onView(withId(R.id.linearLayout)).check(matches(isDisplayed()))
-        onView(withId(R.id.createNewActivity)).check(matches(isDisplayed()))
-        onView(withId(R.id.linearLayout2)).check(matches(isDisplayed()))
+        onView(withId(R.id.view2)).check(matches(isDisplayed()))
         onView(withId(R.id.studybtn)).check(matches(isDisplayed()))
 
     }
