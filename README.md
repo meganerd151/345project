@@ -1,8 +1,8 @@
-![Android CI](https://github.com/meganerd151/345project/actions/workflows/android.yml/badge.svg) ![Code Coverage](https://github.com/meganerd151/345project/actions/workflows/coverage.yml/badge.svg) [![Documentation](https://github.com/meganerd151/345project/actions/workflows/documentation.yml/badge.svg)](https://meganerd151.github.io/345project/)
+![Android CI](https://github.com/meganerd151/345project/actions/workflows/android.yml/badge.svg) ![Code Coverage](https://github.com/meganerd151/345project/actions/workflows/coverage.yml/badge.svg) [![Documentation](https://github.com/meganerd151/345project/actions/workflows/documentation.yml/badge.svg)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba20764a329b4f2eabc2a3de10894d51)](https://www.codacy.com/gh/meganerd151/345project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=meganerd151/345project&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/meganerd151/345project/branch/main/graph/badge.svg?token=E8HYFTQ3PU)](https://codecov.io/gh/meganerd151/345project)
 # Timetric
-
+[Documentation](https://meganerd151.github.io/345project/)
 ## Anti time-wasting app development
 
 We are building an Android app to discourage time-wasting!
