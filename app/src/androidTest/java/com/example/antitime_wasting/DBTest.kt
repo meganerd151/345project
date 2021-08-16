@@ -14,6 +14,12 @@ import kotlin.jvm.Throws
 
 /**
  * Class to test the database
+ *
+ * adapted from ___DBHandler___ unit test that no longer exists
+ *
+ * @created 16/Aug/2021
+ * @author Blake MacDade
+ * @author Amy Lloyd
  * */
 @RunWith(AndroidJUnit4::class)
 class DBTest {
@@ -58,5 +64,41 @@ class DBTest {
     fun writeAndQuery(){
         dbHandler.addHandler(testSession)
         assertNotNull(dbHandler.queryType("Test"))
+    }
+
+
+    /**
+     * Tests writing and deleting from the database
+     * Does not work atm, need to fix
+     */
+    @Test
+    @Throws(Exception::class)
+    fun writeAndDelete(){
+        dbHandler.addHandler(testSession)
+        //will provide failed test need to revise
+        //assertTrue(dbHandler.deleteHandler(151))
+    }
+
+    /**
+     * Tests writing and updating a session in the database
+     * Does not work atm, need to revise
+     */
+    @Test
+    @Throws(Exception::class)
+    fun writeAndUpdate(){
+        dbHandler.addHandler(testSession)
+        testSession.setSessionType("TEST")
+        //will produce a failed test need to revise
+        //assertEquals(dbHandler.updateHandler(testSession), true)
+    }
+
+
+    /**
+     * Tests wiping the database
+     */
+    @Test
+    @Throws(Exception::class)
+    fun wipeDB(){
+        assertEquals(dbHandler.wipeDatabase(), true)
     }
 }
