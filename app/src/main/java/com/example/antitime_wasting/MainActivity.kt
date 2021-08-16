@@ -5,14 +5,12 @@ import android.content.res.Resources
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telephony.mbms.FileInfo
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
-import java.io.FileInputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -23,9 +21,6 @@ import kotlin.random.Random
  */
 class MainActivity : AppCompatActivity() {
 
-    //Standard 'late' initialisation of buttons, Imageview, Containers etc.
-    //'lateinit' means that a particular variable will be initialize later in the
-    //program
     private lateinit var mascot: ImageView
     private lateinit var startButton: Button
 
@@ -97,26 +92,34 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    /**
-     * Function to insert random test data for testing purposes
-     * */
-    fun insertTestData(){
+    private fun insertTestData(){
 
         val res: Resources = resources
         val sessions = ArrayList<Session>()
 
+        val currentDay: String = SimpleDateFormat("dd", Locale.US).format((Date()))
+        val currentMonth: String = SimpleDateFormat("MM", Locale.US).format((Date()))
         var dayString: String
+        var monthString: String
         for (type in res.getStringArray(R.array.SessionTypes)) {
-            for (day: Int in 1..31) { //need to find month length
+            for (month: Int in 1..(currentMonth.toInt()-1)){
+                monthString = if (month < 10) {
+                    "0$month"
+                } else {
+                    month.toString()
+                }
+                sessions.add(Session(0, Random.nextInt(150000, 1500000), type, "2021-$monthString-02"))
+            }
+            //sessions.add(Session(0, Random.nextInt(150000, 1500000), type, "2021-03-02"))
+            for (day: Int in 1..currentDay.toInt()) {
                 dayString = if (day < 10) {
                     "0$day"
                 } else {
                     day.toString()
                 }
-                //Log.i("TestData", "day is $dayString")
-                sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-08-$dayString")) //replace with this month not 08
+                sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-$currentMonth-$dayString"))
             }
-            //sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-01"))
+
         }
 
         for (session in sessions){

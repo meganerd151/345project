@@ -8,115 +8,87 @@
     android:background="#EFF4EF"
     tools:context=".TimeActivity">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/frameTimeActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"></LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        android:background="#EFF4EF"
+        app:layout_constraintBottom_toTopOf="@id/timeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <FrameLayout
-            android:id="@+id/frameTimeActivity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#EFF4EF">
-
-            <ImageView
-                android:id="@+id/mascotTimeActivity"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:padding="80dp"
-                app:srcCompat="@drawable/blockythree"
-                tools:srcCompat="@drawable/blockythree" />
-
-        </FrameLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/mascotTimeActivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_gravity="center"
+            android:padding="80dp"
+            app:srcCompat="@drawable/blockythree"
+            tools:srcCompat="@drawable/blockythree" />
 
-            <TextView
-                android:id="@+id/timeText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:hint="@string/helpText"
-                android:textColor="#0B0A0A"
-                android:textColorHint="#121111"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+    </FrameLayout>
 
-        </LinearLayout>
-
-        <Spinner
-            android:id="@+id/sessionSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:background="#27B0A927"
-            android:clickable="false"
-            android:entries="@array/SessionTypes"
-            android:spinnerMode="dropdown" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/CT_DarkPrimary"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/createNewActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:insetLeft="50dp"
-            android:insetRight="50dp"
-            android:text="@string/createNew"
-            android:textColor="@color/CT_PrimaryText"
-            app:backgroundTint="@color/CT_Button"
-            app:cornerRadius="12dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/timeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EFF4EF"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:gravity="center"
+        android:hint="@string/helpText"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/frameTimeActivity" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/CT_DarkPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeText"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <Button
-            android:id="@+id/studybtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:text="Start Session"
-            android:textColor="@color/CT_PrimaryText"
-            app:backgroundTint="@color/CT_Button" />
+    <Spinner
+        android:id="@+id/sessionSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_weight="0"
+        android:background="@color/CT_Primary"
+        android:clickable="false"
+        android:entries="@array/SessionTypes"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/studybtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_weight="0"
+        android:gravity="center"
+        android:text="Start Session"
+        android:textColor="@color/CT_PrimaryText"
+        app:backgroundTint="@color/CT_Button"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sessionSpinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
