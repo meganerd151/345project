@@ -3,12 +3,10 @@ package com.example.antitime_wasting
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.runner.RunWith
-import java.io.IOException
 import kotlin.jvm.Throws
 
 /*
