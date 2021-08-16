@@ -8,13 +8,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CursorFactory
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import java.util.*
 import kotlin.collections.ArrayList
 
 
 /**
- * This is a class to directly interract with the Database.
- * Note: you should not directly interract with this class, you should instead interract with DBInterface.kt
+ * This is a class to directly interact with the Database.
+ * Note: you should not directly interact with this class, you should instead interract with DBInterface.kt
  *
  * @param context the application context (unused)
  * @param name unused
@@ -29,15 +28,15 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
      * @param db the database instance to work on.
      * */
     override fun onCreate(db: SQLiteDatabase?) {
-        var CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
-        CREATE_TABLE += COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL, " +
+        var createTableQuery = "CREATE TABLE " + TABLE_NAME + "("
+        createTableQuery += COLUMN_ID + " INTEGER PRIMARY KEY NOT NULL, " +
                 COLUMN_START_TIME + " INTEGER, " +
                 COLUMN_END_TIME + " INTEGER, " +
                 COLUMN_SESSION_TYPE+ " TEXT, " +
                 COLUMN_DATE+" DATE, "+
                 COLUMN_DELTA_T+" INTEGER"+
                 ");"
-        db?.execSQL(CREATE_TABLE)
+        db?.execSQL(createTableQuery)
     }
     /**
      * onUpgrade is an overloading method who is called when the database is created, but another one exists.
@@ -169,16 +168,17 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
      * @return returns an ArrayList of all session objects that are of the given type.
      * */
     fun queryType(type: String): ArrayList<Session>{
-        var sessions: ArrayList<Session> = ArrayList<Session>()
+        val sessions = ArrayList<Session>()
         val db = this.writableDatabase
-        val query: String = "SELECT $COLUMN_ID FROM $TABLE_NAME WHERE $COLUMN_SESSION_TYPE = '$type'"
-        var cursor: Cursor = db.rawQuery(query, null)
+        val query = "SELECT $COLUMN_ID FROM $TABLE_NAME WHERE $COLUMN_SESSION_TYPE = '$type'"
+        val cursor: Cursor = db.rawQuery(query, null)
         if (cursor.moveToFirst()){
             do {
                 sessions.add(findHandler(cursor.getInt(0)))
             } while (cursor.moveToNext())
         }
         db.close()
+        cursor.close()
         return sessions
     }
 
