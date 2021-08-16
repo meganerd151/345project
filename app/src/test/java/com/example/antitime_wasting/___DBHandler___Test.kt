@@ -10,7 +10,7 @@ import org.junit.Test
 * @author Blake MacDade
 */ class ___DBHandler___Test : TestCase() {
 
-    val context = ApplicationProvider.getApplicationContext<Context>()
+    var context = ApplicationProvider.getApplicationContext<Context>()
 
     val dbHandler = ___DBHandler___(context,null,null,0)
     val testSession = Session(1000,2000,"Test")
