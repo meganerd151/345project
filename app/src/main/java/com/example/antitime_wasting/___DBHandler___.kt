@@ -25,6 +25,8 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
 
     /**
      * onCreate is an overloading method who is called when the database is created.
+     *
+     * @param db the database instance to work on.
      * */
     override fun onCreate(db: SQLiteDatabase?) {
         var CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "("
@@ -37,12 +39,22 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
                 ");"
         db?.execSQL(CREATE_TABLE)
     }
-
+    /**
+     * onUpgrade is an overloading method who is called when the database is created, but another one exists.
+     *
+     * @param db the database instance to work on.
+     * @param oldVersion unused
+     * @param newVersion unused
+     * */
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS "+ DATABASE_NAME)
         onCreate(db)
     }
 
+    /**
+     * wipeDatabase removes all entries from the main database.
+     * Note: does not drop the table or database, simply removes all the entries.
+     * */
     fun wipeDatabase(){
         val db = this.writableDatabase
         db.execSQL("delete from $TABLE_NAME")
@@ -61,6 +73,11 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         const val debugTag = "DBHandler"
     }
 
+    /**
+     * addHandler adds a session object to the database.
+     *
+     * @param session the session object to add to the database.
+     * */
     fun addHandler(session: Session) {
         try {
             val values = ContentValues()
@@ -78,7 +95,12 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         }
     }
 
-
+    /**
+     * Finds a session with the given identifier in the database.
+     *
+     * @param sessionId the id to find.
+     * @return the found session object, can be null.
+     * */
     fun findHandler(sessionId: Int): Session {
         val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = '$sessionId'"
         val db = this.writableDatabase
@@ -98,6 +120,12 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         return session
     }
 
+    /**
+     * deletes a handler from the database (if it exists)
+     *
+     * @param ID the of the session to delete
+     * @return returns the state of the delete.
+     * */
     fun deleteHandler(ID: Int): Boolean {
         var result = false
         val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = '$ID'"
@@ -115,6 +143,12 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         return result
     }
 
+    /**
+     * updates a session object in the database.
+     *
+     * @param session an updated version of the session object to update in the database.
+     * @return returns the state of the operation.
+     * */
     fun updateHandler(session: Session): Boolean {
         val db = this.writableDatabase
         val args = ContentValues()
@@ -128,7 +162,12 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
 
         //return false
     }
-
+    /**
+     * Returns all session objects that match the given type
+     *
+     * @param type the type of session that we want to find
+     * @return returns an ArrayList of all session objects that are of the given type.
+     * */
     fun queryType(type: String): ArrayList<Session>{
         var sessions: ArrayList<Session> = ArrayList<Session>()
         val db = this.writableDatabase
