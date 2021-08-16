@@ -62,15 +62,6 @@ object DataPointFinder {
             }
         }
     }
-
-    /**
-     * Used internally to find the index of a Point in the points array using the date of a session.
-     *
-     * @param date the date from a session in String form.
-     * @param scope the scope of the data of enum type Scope.
-     *
-     * @return an integer indicating the index.
-     */
     private fun findIndexOfPoint(date: String, scope: Scope): Int{
         /**
          * Used internally to find the index of a Point in the points array using the date of a session.
