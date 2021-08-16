@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Timetric</string>
-    <string name="helpText">If you click on Study, it will log your start time. Click again to finish and get your time on the activity spent</string>
+    <string name="helpText">Choose an activity and start a new session</string>
     <string name="createNew">Create New Activity</string>
     <string name="startNew">Start</string>
     <string name="study">Study</string>
@@ -10,7 +10,6 @@
     <string name="dataClearedSucessfully">Data has been cleared!</string>
     <string name="startsession">Start Session</string>
     <string name="endsession">End Session</string>
-
     <string name="testData">Add test data</string>
     <string name="testDataInserted">Previous data has been cleared. Test data has been inserted!</string>
     <string-array name="SessionTypes">
