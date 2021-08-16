@@ -3,8 +3,8 @@
 [![codecov](https://codecov.io/gh/meganerd151/345project/branch/main/graph/badge.svg?token=E8HYFTQ3PU)](https://codecov.io/gh/meganerd151/345project)
 # Timetric
 
-![Codacy Dashboard](https://app.codacy.com/gh/meganerd151/345project/dashboard) | 
-![Codecov Dashboard](https://app.codecov.io/gh/meganerd151/345project/branch/main)
+[Codacy Dashboard](https://app.codacy.com/gh/meganerd151/345project/dashboard) | 
+[Codecov Dashboard](https://app.codecov.io/gh/meganerd151/345project/branch/main)
 
 ## Anti time-wasting app development
 
