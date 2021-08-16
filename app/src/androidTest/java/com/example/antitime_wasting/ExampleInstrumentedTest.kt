@@ -17,7 +17,7 @@ import org.junit.Assert.*
 class ExampleInstrumentedTest {
     @Test
     /**
-     * test context
+     * test context, ran on android device
      * */
     fun useAppContext() {
         // Context of the app under test.
