@@ -54,9 +54,10 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
      * wipeDatabase removes all entries from the main database.
      * Note: does not drop the table or database, simply removes all the entries.
      * */
-    fun wipeDatabase(){
+    fun wipeDatabase():Boolean{
         val db = this.writableDatabase
         db.execSQL("delete from $TABLE_NAME")
+        return true
     }
 
     companion object {
