@@ -8,6 +8,8 @@
     <string name="clearData">Clear Data</string>
     <string name="stats">Statistics</string>
     <string name="dataClearedSucessfully">Data has been cleared!</string>
+    <string name="startsession">Start Session</string>
+    <string name="endsession">End Session</string>
     
     <string-array name="SessionTypes">
         <item>Study</item>
