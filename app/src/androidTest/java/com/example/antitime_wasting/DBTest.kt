@@ -25,15 +25,18 @@ import kotlin.jvm.Throws
 class DBTest {
     private lateinit var dbHandler: ___DBHandler___
     private lateinit var testSession: Session
+    private lateinit var testSession2: Session
+    val context = ApplicationProvider.getApplicationContext<Context>()
 
     /**
      * creates the Database
      * */
     @Before
     fun createDBHandler(){
-        val context = ApplicationProvider.getApplicationContext<Context>()
+
         dbHandler = ___DBHandler___(context, null, null, 0)
         testSession = Session(151, 1000, 2000, "Test")
+        testSession2 = Session(152,1000,2000,"Test")
     }
 
     /**
@@ -43,6 +46,7 @@ class DBTest {
     @Throws(IOException::class)
     fun closeDB(){
         dbHandler.close()
+
     }
 
     /**
@@ -52,8 +56,9 @@ class DBTest {
     @Throws(Exception::class)
     fun writeAndRead(){
         dbHandler.addHandler(testSession) //write session to db
-        val e = dbHandler.findHandler(151) //find session in db
-        assertNotNull(e) //won't be equal to original session, so need to ensure not null
+        DBInterface.addSession(testSession2,context)
+        assertNotNull(dbHandler.findHandler(151))
+        assertNotNull(DBInterface.findSession(152,context))
     }
 
     /**
@@ -63,7 +68,9 @@ class DBTest {
     @Throws(Exception::class)
     fun writeAndQuery(){
         dbHandler.addHandler(testSession)
+        DBInterface.addSession(testSession2,context)
         assertNotNull(dbHandler.queryType("Test"))
+        assertNotNull(DBInterface.queryType("Test",context))
     }
 
 
@@ -75,8 +82,10 @@ class DBTest {
     @Throws(Exception::class)
     fun writeAndDelete(){
         dbHandler.addHandler(testSession)
+        DBInterface.addSession(testSession2,context)
         //will provide failed test need to revise
         assertTrue(dbHandler.deleteHandler(151))
+        DBInterface.removeSession(152,context)
     }
 
     /**
@@ -87,9 +96,12 @@ class DBTest {
     @Throws(Exception::class)
     fun writeAndUpdate(){
         dbHandler.addHandler(testSession)
+        DBInterface.addSession(testSession2,context)
         testSession.setSessionType("TEST")
+        testSession2.setSessionType("CoolType")
         //will produce a failed test need to revise
         assertEquals(dbHandler.updateHandler(testSession), true)
+        assertEquals(DBInterface.updateSession(testSession2,context),true)
     }
 
 
@@ -100,5 +112,6 @@ class DBTest {
     @Throws(Exception::class)
     fun wipeDB(){
         assertEquals(dbHandler.wipeDatabase(), true)
+        assertEquals(DBInterface.wipeDatabase(context),true)
     }
 }
