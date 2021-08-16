@@ -69,6 +69,10 @@ class DBTest {
     fun writeAndQuery(){
         dbHandler.addHandler(testSession)
         DBInterface.addSession(testSession2,context)
+        val points = DataPointFinder.findDataPoints("Test",Scope.BY_MONTH,context)
+        assertNotNull(points)
+        assertNotNull(DataPointFinder.findDataPoints("Test",Scope.BY_DAY,context))
+        DataPointFinder.getMaxY(points)
         assertNotNull(dbHandler.queryType("Test"))
         assertNotNull(DBInterface.queryType("Test",context))
     }
