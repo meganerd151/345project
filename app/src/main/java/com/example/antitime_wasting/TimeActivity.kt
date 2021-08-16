@@ -7,13 +7,12 @@ import android.util.Log
 import android.view.MenuItem
 import android.widget.*
 import androidx.annotation.RequiresApi
-import java.sql.Time
 import java.util.*
 
 
 private const val SettingsName = "TimeRunning"
 /**
- * Second page of our App, with Study Button, Excercise button
+ * Second page of our App, with Study Button, Exercise button
  */
 class TimeActivity : AppCompatActivity() {
 
@@ -30,11 +29,11 @@ class TimeActivity : AppCompatActivity() {
     //Standard 'late' initialising of buttons, Views, etc.
     private lateinit var mascotTimeActivity: ImageView
     private lateinit var createActivity: Button
-    private lateinit var studybtn: Button
-    private lateinit var excercisebtn: Button
+    //private lateinit var studybtn: Button
+    //private lateinit var excercisebtn: Button
     private lateinit var timeText: TextView
-    private var twoDimArrayDateTime = arrayListOf<Int>()
-    private lateinit var session:Session
+    //private var twoDimArrayDateTime = arrayListOf<Int>()
+    //private lateinit var session:Session
     private var inSession: Boolean = false
     private var startTime: Int = 0
     private var endTime: Int = 0
@@ -108,7 +107,7 @@ class TimeActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun timeMethod(pressedButton:Button) {
         val studybtn : Button = findViewById(R.id.studybtn)
-        var spinner : Spinner = findViewById(R.id.sessionSpinner)
+        val spinner : Spinner = findViewById(R.id.sessionSpinner)
         if (inSession){
             endTime = getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
