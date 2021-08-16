@@ -2,6 +2,12 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba20764a329b4f2eabc2a3de10894d51)](https://www.codacy.com/gh/meganerd151/345project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=meganerd151/345project&amp;utm_campaign=Badge_Grade)
 # 345project
 
+
+![Codacy Dashboard](https://app.codacy.com/gh/meganerd151/345project/dashboard)
+------------------------------------------------------------------------------------------
+![Codecov Dashboard](https://app.codecov.io/gh/meganerd151/345project/branch/main)
+------------------------------------------------------------------------------------------
+
 Anti time-wasting app development
 
 
