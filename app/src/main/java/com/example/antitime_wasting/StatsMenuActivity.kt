@@ -69,30 +69,34 @@ class StatsMenuActivity : AppCompatActivity() {
         //graphView?.getViewport()?.setYAxisBoundsManual(true)
         //graphView?.getViewport()?.setXAxisBoundsManual(true)
 
-
         //graphView?.getViewport()?.setMinX(0.0)
 
         val dayLabels = StaticLabelsFormatter(graphView)
         //var dayArray = arrayOf("", "05 ", "10 ", "15 ", "20 ", "25 ", "30 ")
         var dayArray = arrayOfNulls<String>(31)
         var i: Int = 0
-        for (i in 0..dayArray.size-1){
-            dayArray[i] = "   "
-        }
-        dayArray[5] = "05  "
-        dayArray[10] = "10  "
-        dayArray[15] = "15  "
-        dayArray[20] = "20  "
-        dayArray[25] = "25  "
-        dayArray[30] = "30  "
+        /*for (i in 0..dayArray.size-1){
+            /*if (i+1 < 10){
+                dayArray[i] = "0${i+1}"
+            } else {
+                dayArray[i] = (i+1).toString()
+            }*/
+            dayArray[i] = ""
+        }*/
+        dayArray[4] = "05"
+        dayArray[9] = "10"
+        dayArray[14] = "15"
+        dayArray[19] = "20"
+        dayArray[24] = "25"
+        dayArray[29] = "30"
         dayLabels.setHorizontalLabels(dayArray)
 
         val res: Resources = resources
         val monthLabels = StaticLabelsFormatter(graphView)
         val monthArray = arrayOfNulls<String>(12)
-        i = 0
+        i= 0
         for(month in res.getStringArray(R.array.months)) {
-            monthArray[i] = month.substring(0, 3) + "  "
+            monthArray[i] = month.substring(0, 3)
             i += 1
         }
         monthLabels.setHorizontalLabels(monthArray)
@@ -134,28 +138,31 @@ class StatsMenuActivity : AppCompatActivity() {
             Scope.BY_DAY -> {
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
-                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
+                //graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(0)
+                //graphView?.getGridLabelRenderer()?.setTextSize(18f)
             }
             Scope.BY_MONTH -> {
                 graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
+                //graphView?.getGridLabelRenderer()?.setNumHorizontalLabels(12)
                 graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
-                graphView?.getGridLabelRenderer()?.setHorizontalLabelsAngle(135)
+                //graphView?.getGridLabelRenderer()?.setTextSize(18f)
             }
         }
         graphView?.setTitle("$sessionType")
         graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle(scopeLabel)
+        graphView?.getGridLabelRenderer()?.setTextSize(19f)
 
         val numPoints: Double = points.size.toDouble()
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
         //graphView?.getViewport()?.setMinX(-1.0)
-        //graphView?.getViewport()?.setMaxX(numPoints+2)
+        //graphView?.getViewport()?.setMaxX((numPoints+1).toDouble())
         if (maxValue > Ymin) {
-            graphView?.getViewport()?.setMaxY(maxValue + 1)
+            graphView?.getViewport()?.setMaxY(maxValue)
         } else {
             graphView?.getViewport()?.setMaxY(Ymin)
         }
-
+        series.spacing = 5
         graphView?.addSeries(series)
 
     }
