@@ -5,14 +5,12 @@ import android.content.res.Resources
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telephony.mbms.FileInfo
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
-import java.io.FileInputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -23,9 +21,6 @@ import kotlin.random.Random
  */
 class MainActivity : AppCompatActivity() {
 
-    //Standard 'late' initialisation of buttons, Imageview, Containers etc.
-    //'lateinit' means that a particular variable will be initialize later in the
-    //program
     private lateinit var mascot: ImageView
     private lateinit var startButton: Button
 
@@ -97,13 +92,13 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    fun insertTestData(){
+    private fun insertTestData(){
 
         val res: Resources = resources
         val sessions = ArrayList<Session>()
 
-        var currentDay: String = SimpleDateFormat("dd", Locale.US).format((Date()))
-        var currentMonth: String = SimpleDateFormat("MM", Locale.US).format((Date()))
+        val currentDay: String = SimpleDateFormat("dd", Locale.US).format((Date()))
+        val currentMonth: String = SimpleDateFormat("MM", Locale.US).format((Date()))
         var dayString: String
         var monthString: String
         for (type in res.getStringArray(R.array.SessionTypes)) {
