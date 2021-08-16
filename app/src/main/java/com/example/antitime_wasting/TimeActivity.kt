@@ -46,7 +46,7 @@ class TimeActivity : AppCompatActivity() {
         Log.i("start", "start pressed")
 
         mascotTimeActivity = findViewById(R.id.mascotTimeActivity)
-        createActivity = findViewById(R.id.createNewActivity)
+        //createActivity = findViewById(R.id.createNewActivity)
         timeText = findViewById((R.id.timeText))
 
         val spinner : Spinner = findViewById(R.id.sessionSpinner)
