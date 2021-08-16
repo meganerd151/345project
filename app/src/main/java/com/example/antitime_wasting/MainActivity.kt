@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                     day.toString()
                 }
                 //Log.i("TestData", "day is $dayString")
-                sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-$dayString")) //replace with this month not 08
+                sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-08-$dayString")) //replace with this month not 08
             }
             //sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-01"))
         }
