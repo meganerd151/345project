@@ -37,7 +37,10 @@ object DataPointFinder {
         }
         for (session in sessions){
             if (inScope(session.date.toString(), scope)){
+                Log.i("datapoints", "IN SCOPE ${session.date.toString()}")
                 points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!!
+            } else{
+                Log.i("datapoints", "OUT OF SCOPE ${session.date.toString()}")
             }
         }
         return points
@@ -55,10 +58,10 @@ object DataPointFinder {
          */
         return when (scope){
             Scope.BY_DAY -> {
-                SimpleDateFormat("yyyy", Locale.US).format(Date()) == date.substring(0, 4)
+                SimpleDateFormat("yyyy-MM", Locale.US).format(Date()) == date.substring(0, 7)
             }
             Scope.BY_MONTH -> {
-                SimpleDateFormat("yyyy-MM", Locale.US).format((Date())) == date.substring(0, 7)
+                SimpleDateFormat("yyyy", Locale.US).format((Date())) == date.substring(0, 4)
             }
         }
     }

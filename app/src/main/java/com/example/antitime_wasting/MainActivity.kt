@@ -105,7 +105,17 @@ class MainActivity : AppCompatActivity() {
         var currentDay: String = SimpleDateFormat("dd", Locale.US).format((Date()))
         var currentMonth: String = SimpleDateFormat("MM", Locale.US).format((Date()))
         var dayString: String
+        var monthString: String
         for (type in res.getStringArray(R.array.SessionTypes)) {
+            for (month: Int in 1..(currentMonth.toInt()-1)){
+                monthString = if (month < 10) {
+                    "0$month"
+                } else {
+                    month.toString()
+                }
+                sessions.add(Session(0, Random.nextInt(150000, 1500000), type, "2021-$monthString-02"))
+            }
+            //sessions.add(Session(0, Random.nextInt(150000, 1500000), type, "2021-03-02"))
             for (day: Int in 1..currentDay.toInt()) {
                 dayString = if (day < 10) {
                     "0$day"
@@ -114,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 sessions.add(Session(0, Random.nextInt(1000, 150000), type, "2021-$currentMonth-$dayString"))
             }
-            //sessions.add(Session(0, Random.nextInt(1000, 100000), type, "2021-08-01"))
+
         }
 
         for (session in sessions){
