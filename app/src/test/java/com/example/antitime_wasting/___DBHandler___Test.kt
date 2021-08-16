@@ -15,28 +15,46 @@ import org.junit.Test
     val dbHandler = ___DBHandler___(context,null,null,0)
     val testSession = Session(1000,2000,"Test")
 
+    /**
+     * tests the wipedatabase method
+     * */
     @Test fun testWipeDatabase() {
         assertEquals(dbHandler.wipeDatabase(),true)
     }
 
+    /**
+     * tests addhandler method
+     * */
     @Test fun testAddHandler() {
         dbHandler.addHandler(testSession)
     }
 
+    /**
+     * tests findhandler method
+     * */
     @Test fun testFindHandler() {
         val recoveredHandler = dbHandler.findHandler(1)
         assertNotNull(recoveredHandler)
 
     }
 
+    /**
+     * tests deletehandler method
+     * */
     @Test fun testDeleteHandler() {
         assertTrue(dbHandler.deleteHandler(1))
     }
 
+    /**
+     * tests updatehandler method
+     * */
     @Test fun testUpdateHandler() {
         assertEquals(dbHandler.updateHandler(testSession),true)
     }
 
+    /**
+     * tests querytype method
+     * */
     @Test fun testQueryType() {
         assertNotNull(dbHandler.queryType("Test"))
     }
