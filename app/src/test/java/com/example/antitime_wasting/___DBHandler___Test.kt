@@ -1,7 +1,8 @@
 package com.example.antitime_wasting
-
+import androidx.test.core.app.ApplicationProvider
 import android.content.Context
 import junit.framework.TestCase
+import org.junit.Test
 
 /*
 * @created 16/Aug/2021 - 1:18 PM
@@ -9,33 +10,34 @@ import junit.framework.TestCase
 * @author Blake MacDade
 */ class ___DBHandler___Test : TestCase() {
 
-    val context:Context = TODO()
+    val context = ApplicationProvider.getApplicationContext<Context>()
+
     val dbHandler = ___DBHandler___(context,null,null,0)
     val testSession = Session(1000,2000,"Test")
 
-    fun testWipeDatabase() {
+    @Test fun testWipeDatabase() {
         assertEquals(dbHandler.wipeDatabase(),true)
     }
 
-    fun testAddHandler() {
+    @Test fun testAddHandler() {
         dbHandler.addHandler(testSession)
     }
 
-    fun testFindHandler() {
+    @Test fun testFindHandler() {
         val recoveredHandler = dbHandler.findHandler(1)
         assertNotNull(recoveredHandler)
 
     }
 
-    fun testDeleteHandler() {
-        assertEquals(dbHandler.deleteHandler(1),true)
+    @Test fun testDeleteHandler() {
+        assertTrue(dbHandler.deleteHandler(1))
     }
 
-    fun testUpdateHandler() {
+    @Test fun testUpdateHandler() {
         assertEquals(dbHandler.updateHandler(testSession),true)
     }
 
-    fun testQueryType() {
+    @Test fun testQueryType() {
         assertNotNull(dbHandler.queryType("Test"))
     }
 }
