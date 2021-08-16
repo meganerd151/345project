@@ -73,4 +73,13 @@ class SessionTest {
         assertEquals("Study", s.sessionType)
         assertEquals(5, s.timeSpent)
     }
+
+    @Test fun sessionTestDataInsertingConstructor(){
+        val s = Session(420,69,"Test","100lol")
+
+        assertEquals(s.startTime,420)
+        assertEquals(s.endTime,69)
+        assertEquals(s.sessionType,"Test")
+        assertEquals(s.date,"100lol")
+    }
 }

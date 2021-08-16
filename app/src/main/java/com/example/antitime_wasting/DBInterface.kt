@@ -107,9 +107,9 @@ object DBInterface {
      *
      * @param context Application Context.
      * */
-    fun wipeDatabase(context: Context?){
+    fun wipeDatabase(context: Context?):Boolean{
         val dbHandler = ___DBHandler___(context,null,null,1)
-        dbHandler.wipeDatabase()
+        return dbHandler.wipeDatabase()
     }
 
 }
