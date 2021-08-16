@@ -57,6 +57,7 @@ class DBTest {
     fun writeAndRead(){
         dbHandler.addHandler(testSession) //write session to db
         DBInterface.addSession(testSession2,context)
+        assertNotNull(DBInterface.getLastSession(context))
         assertNotNull(dbHandler.findHandler(151))
         assertNotNull(DBInterface.findSession(152,context))
     }
