@@ -15,7 +15,9 @@ import kotlin.jvm.Throws
 * @created 16/Aug/2021 - 8:25 PM
 * @project Anti time-wasting
 * @author Blake MacDade
-*/class GenericAndroidTests {
+*/
+@RunWith(AndroidJUnit4::class)
+class GenericAndroidTests {
 
     val context = ApplicationProvider.getApplicationContext<Context>()
     lateinit var settingsTalker: SettingsTalker
