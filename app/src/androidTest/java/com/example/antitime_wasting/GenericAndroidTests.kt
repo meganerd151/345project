@@ -22,8 +22,12 @@ class GenericAndroidTests {
     val context = ApplicationProvider.getApplicationContext<Context>()
     lateinit var settingsTalker: SettingsTalker
 
+
+    /**
+     * Called before the other tests, sets up needed variables
+     * */
     @Before
-    fun createDBHandler(){
+    fun setup(){
         settingsTalker = SettingsTalker(context)
     }
 
@@ -51,11 +55,24 @@ class GenericAndroidTests {
         assertEquals(settingsTalker.getIntEntry("456"),-1)
     }
 
+    /**
+     * Tests clearing all settings
+     * */
     @Test
     @Throws(Exception::class)
     fun clearAllSettingsTest(){
         settingsTalker.addEntry("456",123)
         settingsTalker.clearAll(true)
         assertEquals(settingsTalker.getIntEntry("456"),-1)
+    }
+
+    /**
+     * Tests updating a settings entry
+     * */
+    @Test
+    @Throws(Exception::class)
+    fun updateSettingsTest(){
+        settingsTalker.addEntry("123","Test!")
+        settingsTalker.updateEntry("123","456")
     }
 }
