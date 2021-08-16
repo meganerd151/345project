@@ -37,10 +37,7 @@ object DataPointFinder {
         }
         for (session in sessions){
             if (inScope(session.date.toString(), scope)){
-                Log.i("datapoints", "IN SCOPE ${session.date.toString()}")
                 points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!!
-            } else{
-                Log.i("datapoints", "OUT OF SCOPE ${session.date.toString()}")
             }
         }
         return points
