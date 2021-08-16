@@ -4,14 +4,12 @@ import android.content.Intent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telephony.mbms.FileInfo
-import android.util.Log
+//import android.telephony.mbms.FileInfo
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.snackbar.Snackbar
-import java.io.FileInputStream
 
 /**
  *Home Page
