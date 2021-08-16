@@ -11,11 +11,18 @@ import org.junit.runner.RunWith
 import java.io.IOException
 import kotlin.jvm.Throws
 
+
+/**
+ * Class to test the database
+ * */
 @RunWith(AndroidJUnit4::class)
 class DBTest {
     private lateinit var dbHandler: ___DBHandler___
     private lateinit var testSession: Session
 
+    /**
+     * creates the Database
+     * */
     @Before
     fun createDBHandler(){
         val context = ApplicationProvider.getApplicationContext<Context>()
@@ -23,12 +30,18 @@ class DBTest {
         testSession = Session(151, 1000, 2000, "Test")
     }
 
+    /**
+     * closes the database
+     * */
     @After
     @Throws(IOException::class)
     fun closeDB(){
         dbHandler.close()
     }
 
+    /**
+     * Tests reading and writing to the database
+     * */
     @Test
     @Throws(Exception::class)
     fun writeAndRead(){
@@ -37,6 +50,9 @@ class DBTest {
         assertNotNull(e) //won't be equal to original session, so need to ensure not null
     }
 
+    /**
+     * Tests writing and querying the database
+     * */
     @Test
     @Throws(Exception::class)
     fun writeAndQuery(){
