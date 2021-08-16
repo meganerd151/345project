@@ -1,5 +1,8 @@
 ![Android CI](https://github.com/meganerd151/345project/actions/workflows/android.yml/badge.svg) ![Code Coverage](https://github.com/meganerd151/345project/actions/workflows/coverage.yml/badge.svg) ![Documentation](https://github.com/meganerd151/345project/actions/workflows/documentation.yml/badge.svg)
 # 345project
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/077177d8ccad42f8b93c71d117997d54)](https://app.codacy.com/gh/meganerd151/345project?utm_source=github.com&utm_medium=referral&utm_content=meganerd151/345project&utm_campaign=Badge_Grade_Settings)
+
 Anti time-wasting app development
 
 
