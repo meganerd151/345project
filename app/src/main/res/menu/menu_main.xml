@@ -10,6 +10,9 @@
         android:id="@+id/testData"
         android:title="@string/testData" />
     <item
+        android:id="@+id/facts_page_id"
+        android:title="Facts page" />
+    <item
         android:id="@+id/statisticsMenu"
         android:icon="@drawable/ic_statistics"
         android:title="@string/stats"

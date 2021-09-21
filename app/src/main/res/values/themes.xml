@@ -15,4 +15,13 @@
         <item name="android:windowBackground">@color/white</item>
 
     </style>
+
+    <style name="Theme.AntiTimewasting.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AntiTimewasting.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AntiTimewasting.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

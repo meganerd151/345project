@@ -79,6 +79,10 @@ class MainActivity : AppCompatActivity() {
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
+            R.id.facts_page_id->{
+                val intent = Intent(this, facts_page::class.java)
+                startActivity(intent)
+            }
             R.id.testData -> {
                 DBInterface.wipeDatabase(this)
                 Snackbar.make(

@@ -12,6 +12,9 @@
     <string name="endsession">End Session</string>
     <string name="testData">Add test data</string>
     <string name="testDataInserted">Previous data has been cleared. Test data has been inserted!</string>
+    <string name="fact_one">Here is fact one</string>
+    <string name="fact_two">Here is fact two</string>
+    <string name="fact_three">Here is fact three</string>
     <string-array name="SessionTypes">
         <item>Study</item>
         <item>Exercise</item>
@@ -36,4 +39,15 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+    <string name="title_activity_facts_page">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

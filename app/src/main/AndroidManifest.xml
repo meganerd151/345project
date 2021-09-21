@@ -11,17 +11,23 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AntiTimewasting">
-        <activity android:name=".StatsMenuActivity"
+        <activity
+            android:name=".facts_page"
+            android:label="@string/title_activity_facts_page"
+            android:theme="@style/Theme.AntiTimewasting.NoActionBar" />
+        <activity
+            android:name=".StatsMenuActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-        <activity android:name=".TimeActivity"
+        <activity
+            android:name=".TimeActivity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
