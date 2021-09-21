@@ -86,5 +86,7 @@ $dokka.location:com.example.antitime_wasting/___DBHandler___/onUpgrade/#android.
 $dokka.location:com.example.antitime_wasting/___DBHandler___/queryType/#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/query-type.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___/updateHandler/#com.example.antitime_wasting.Session/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/update-handler.html
 $dokka.location:com.example.antitime_wasting/___DBHandler___/wipeDatabase/#/PointingToDeclaration/app/com.example.antitime_wasting/___-d-b-handler___/wipe-database.html
+$dokka.location:com.example.antitime_wasting/facts_page///PointingToDeclaration/app/com.example.antitime_wasting/facts_page/index.html
+$dokka.location:com.example.antitime_wasting/facts_page/facts_page/#/PointingToDeclaration/app/com.example.antitime_wasting/facts_page/facts_page.html
 com.example.antitime_wasting
 
