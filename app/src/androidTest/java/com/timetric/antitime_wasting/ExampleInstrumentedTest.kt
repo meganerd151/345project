@@ -22,6 +22,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.example.antitime_wasting", appContext.packageName)
+        assertEquals("com.timetric.antitime_wasting", appContext.packageName)
     }
 }
