@@ -12,9 +12,15 @@
     <string name="endsession">End Session</string>
     <string name="testData">Add test data</string>
     <string name="testDataInserted">Previous data has been cleared. Test data has been inserted!</string>
-    <string name="fact_one">Here is fact one</string>
-    <string name="fact_two">Here is fact two</string>
-    <string name="fact_three">Here is fact three</string>
+    <string name="fact_one">Study Tip: The recommended length of break is 10 minutes per 50 minutes of study!</string>
+    <string name="fact_two">Study Tip: The brain is most effective between the hours of 10am-2pm and 4pm-10pm!</string>
+    <string name="fact_three">Study Tip: It is recommended to do 14 hours of study per subject per week!</string>
+    <string name="fact_four">Health Tip: It is recommended to get 2.5 hours of moderate exercise or 1.25 hours of vigorous exercise per week!</string>
+    <string name="fact_five">Health Tip: Ages 18yrs-25yrs need 7hrs-9hrs of sleep!</string>
+    <string name="fact_six">Health Tip: It is beneficial to do 20 minutes of meditation per day!</string>
+    <string name="fact_seven">Study Tip: Regularly test yourself on knowledge with questions (flash cards can help with this)!</string>
+    <string name="fact_eight">Study Tip: Following a study routine makes for more effective study!</string>
+
     <string-array name="SessionTypes">
         <item>Study</item>
         <item>Exercise</item>

@@ -17,6 +17,71 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        android:id="@+id/factbox_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="@string/fact_eight"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/factbox_7"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:id="@+id/factbox_7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="@string/fact_seven"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/factbox_6"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:id="@+id/factbox_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="@string/fact_six"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/factbox_5"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:id="@+id/factbox_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="@string/fact_five"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/factbox_4"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
+        android:id="@+id/factbox_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="@string/fact_four"
+        android:textColor="#0B0A0A"
+        android:textColorHint="#121111"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/factbox_3"
+        tools:layout_editor_absoluteX="0dp" />
+    <TextView
         android:id="@+id/factbox_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
