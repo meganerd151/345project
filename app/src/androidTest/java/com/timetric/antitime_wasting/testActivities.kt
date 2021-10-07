@@ -16,6 +16,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import kotlin.Throws
 
 /*
 * @created 16/Aug/2021 - 8:58 PM
@@ -75,5 +76,12 @@ class testActivities {
         onView(withId(R.id.view2)).check(matches(isDisplayed()))
         onView(withId(R.id.studybtn)).check(matches(isDisplayed()))
 
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun testFactsPage(){
+        val FactsPageScenario = ActivityScenario.launch(facts_page::class.java)
+        onView(withId(R.layout.activity_facts_page)).check(matches(isDisplayed()))
     }
 }
