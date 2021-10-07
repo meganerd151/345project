@@ -11,11 +11,13 @@ import org.junit.runner.RunWith
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Rule
-import kotlin.jvm.Throws
+//import kotlin.jvm.Throws
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import org.junit.Before
 import kotlin.Throws
 
 /*
@@ -41,6 +43,8 @@ class testActivities {
         onView(withId(R.id.startButton)).check(matches(isDisplayed()))
         onView(withId(R.id.mascot)).check(matches(isDisplayed()))
         onView(withId(R.id.coordinator)).check(matches(isDisplayed()))
+
+        onView(withId(R.id.startButton)).perform(click())
     }
 
     /**
@@ -76,12 +80,17 @@ class testActivities {
         onView(withId(R.id.view2)).check(matches(isDisplayed()))
         onView(withId(R.id.studybtn)).check(matches(isDisplayed()))
 
+        onView(withId(R.id.studybtn)).perform(click())
+
+
     }
 
+    /*
     @Test
     @Throws(Exception::class)
     fun testFactsPage(){
         val FactsPageScenario = ActivityScenario.launch(facts_page::class.java)
         onView(withId(R.layout.activity_facts_page)).check(matches(isDisplayed()))
-    }
+    }*/
+
 }
