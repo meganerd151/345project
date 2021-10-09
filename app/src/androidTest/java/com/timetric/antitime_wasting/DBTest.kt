@@ -46,6 +46,7 @@ class DBTest {
     @Throws(IOException::class)
     fun closeDB(){
         dbHandler.close()
+        wipeDB()
 
     }
 

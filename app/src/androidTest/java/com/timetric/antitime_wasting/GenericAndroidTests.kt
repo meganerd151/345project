@@ -63,6 +63,8 @@ class GenericAndroidTests {
     @Throws(Exception::class)
     fun clearAllSettingsTest(){
         settingsTalker.addEntry("456",123)
+        settingsTalker.clearAll(false)
+        assertEquals(settingsTalker.getIntEntry("456"),123)
         settingsTalker.clearAll(true)
         assertEquals(settingsTalker.getIntEntry("456"),-1)
     }
