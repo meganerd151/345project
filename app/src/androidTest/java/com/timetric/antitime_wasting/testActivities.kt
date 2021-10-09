@@ -85,12 +85,20 @@ class testActivities {
 
     }
 
-    /*
     @Test
     @Throws(Exception::class)
     fun testFactsPage(){
         val FactsPageScenario = ActivityScenario.launch(facts_page::class.java)
-        onView(withId(R.layout.activity_facts_page)).check(matches(isDisplayed()))
-    }*/
+        onView(withId(R.id.statsConstraintLayout)).check(matches(isDisplayed()))
+        onView(withId(R.id.toolbar)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_1)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_2)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_3)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_4)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_5)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_6)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_7)).check(matches(isDisplayed()))
+        onView(withId(R.id.factbox_8)).check(matches(isDisplayed()))
+    }
 
 }
