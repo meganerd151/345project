@@ -1,17 +1,16 @@
-package com.timetric.antitime_wasting
-/*
+package com.example.antitime_wasting
+
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.pressBack
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import com.example.antitime_wasting.MainActivity
-import com.example.antitime_wasting.R
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
@@ -22,14 +21,64 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class mainUIelementsTest {
+class BasicUITest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun mainUIelementsTest() {
+    fun basicUITest() {
+        val button = onView(
+            allOf(
+                withId(R.id.startButton), withText("START"),
+                withParent(
+                    allOf(
+                        withId(R.id.linearLayoutBottom),
+                        withParent(withId(R.id.ConstraintLayout))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        button.check(matches(isDisplayed()))
+
+        val textView = onView(
+            allOf(
+                withId(R.id.statisticsMenu), withContentDescription("Statistics"),
+                withParent(withParent(withId(R.id.action_bar))),
+                isDisplayed()
+            )
+        )
+        textView.check(matches(isDisplayed()))
+
+        val imageView = onView(
+            allOf(
+                withContentDescription("More options"),
+                withParent(withParent(withId(R.id.action_bar))),
+                isDisplayed()
+            )
+        )
+        imageView.check(matches(isDisplayed()))
+
+        val imageView2 = onView(
+            allOf(
+                withId(R.id.mascot),
+                withParent(withParent(withId(R.id.ConstraintLayout))),
+                isDisplayed()
+            )
+        )
+        imageView2.check(matches(isDisplayed()))
+
+        val imageView3 = onView(
+            allOf(
+                withId(R.id.mascot),
+                withParent(withParent(withId(R.id.ConstraintLayout))),
+                isDisplayed()
+            )
+        )
+        imageView3.check(matches(isDisplayed()))
+
         val materialButton = onView(
             allOf(
                 withId(R.id.startButton), withText("Start"),
@@ -48,7 +97,7 @@ class mainUIelementsTest {
         )
         materialButton.perform(click())
 
-        val button = onView(
+        val button2 = onView(
             allOf(
                 withId(R.id.studybtn), withText("START SESSION"),
                 withParent(
@@ -60,9 +109,9 @@ class mainUIelementsTest {
                 isDisplayed()
             )
         )
-        button.check(matches(isDisplayed()))
+        button2.check(matches(isDisplayed()))
 
-        val textView = onView(
+        val textView2 = onView(
             allOf(
                 withId(R.id.sessionSpinner), withText("Study"),
                 withParent(
@@ -74,9 +123,9 @@ class mainUIelementsTest {
                 isDisplayed()
             )
         )
-        textView.check(matches(withText("Study")))
+        textView2.check(matches(isDisplayed()))
 
-        val imageView = onView(
+        val imageView4 = onView(
             allOf(
                 withId(R.id.mascotTimeActivity),
                 withParent(
@@ -88,73 +137,8 @@ class mainUIelementsTest {
                 isDisplayed()
             )
         )
-        imageView.check(matches(isDisplayed()))
+        imageView4.check(matches(isDisplayed()))
 
-        val textView2 = onView(
-            allOf(
-                withId(R.id.timeText),
-                withText("\n\nChoose an activity and start a new session\n\n"),
-                withParent(
-                    allOf(
-                        withId(R.id.timeConstraintLayout),
-                        withParent(withId(android.R.id.content))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        textView2.check(matches(withText("  Choose an activity and start a new session  ")))
-
-        val textView3 = onView(
-            allOf(
-                withId(R.id.timeText),
-                withText("\n\nChoose an activity and start a new session\n\n"),
-                withParent(
-                    allOf(
-                        withId(R.id.timeConstraintLayout),
-                        withParent(withId(android.R.id.content))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        textView3.check(matches(withText("  Choose an activity and start a new session  ")))
-
-        val materialButton2 = onView(
-            allOf(
-                withId(R.id.studybtn), withText("Start Session"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.timeConstraintLayout),
-                        childAtPosition(
-                            withId(android.R.id.content),
-                            0
-                        )
-                    ),
-                    4
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton2.perform(click())
-
-        val materialButton3 = onView(
-            allOf(
-                withId(R.id.studybtn), withText("End Session"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.timeConstraintLayout),
-                        childAtPosition(
-                            withId(android.R.id.content),
-                            0
-                        )
-                    ),
-                    4
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton3.perform(click())
 
         val appCompatImageButton = onView(
             allOf(
@@ -203,19 +187,19 @@ class mainUIelementsTest {
         )
         view.check(matches(isDisplayed()))
 
-        val textView4 = onView(
+        val button3 = onView(
             allOf(
-                withId(R.id.sessionSpinner), withText("Study"),
+                withId(R.id.applyBtn), withText("APPLY CHANGES"),
                 withParent(
                     allOf(
-                        withId(R.id.sessionTypeSelector),
-                        withParent(withId(R.id.statsConstraintLayout))
+                        withId(R.id.statsConstraintLayout),
+                        withParent(withId(android.R.id.content))
                     )
                 ),
                 isDisplayed()
             )
         )
-        textView4.check(matches(isDisplayed()))
+        button3.check(matches(isDisplayed()))
 
         val textView5 = onView(
             allOf(
@@ -233,17 +217,45 @@ class mainUIelementsTest {
 
         val textView6 = onView(
             allOf(
-                withId(R.id.sessionSpinner), withText("Month View"),
+                withId(R.id.textView3), withText("Select Scope"),
                 withParent(
                     allOf(
-                        withId(R.id.scopeSelector),
-                        withParent(withId(R.id.statsConstraintLayout))
+                        withId(R.id.statsConstraintLayout),
+                        withParent(withId(android.R.id.content))
                     )
                 ),
                 isDisplayed()
             )
         )
         textView6.check(matches(isDisplayed()))
+
+        val textView7 = onView(
+            allOf(
+                withId(R.id.sessionSpinner), withText("Study"),
+                withParent(
+                    allOf(
+                        withId(R.id.sessionTypeSelector),
+                        withParent(withId(R.id.statsConstraintLayout))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView7.check(matches(isDisplayed()))
+
+        val textView8 = onView(
+            allOf(
+                withId(R.id.textView2), withText("Select Activity Type"),
+                withParent(
+                    allOf(
+                        withId(R.id.statsConstraintLayout),
+                        withParent(withId(android.R.id.content))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView8.check(matches(isDisplayed()))
 
         val appCompatImageButton2 = onView(
             allOf(
@@ -278,33 +290,6 @@ class mainUIelementsTest {
         )
         overflowMenuButton.perform(click())
 
-        val textView7 = onView(
-            allOf(
-                withId(R.id.title), withText("Clear Data"),
-                withParent(withParent(withId(R.id.content))),
-                isDisplayed()
-            )
-        )
-        textView7.check(matches(isDisplayed()))
-
-        val textView8 = onView(
-            allOf(
-                withId(R.id.title), withText("Facts page"),
-                withParent(withParent(withId(R.id.content))),
-                isDisplayed()
-            )
-        )
-        textView8.check(matches(isDisplayed()))
-
-        val textView9 = onView(
-            allOf(
-                withId(R.id.title), withText("Facts page"),
-                withParent(withParent(withId(R.id.content))),
-                isDisplayed()
-            )
-        )
-        textView9.check(matches(isDisplayed()))
-
         val materialTextView = onView(
             allOf(
                 withId(R.id.title), withText("Facts page"),
@@ -320,35 +305,7 @@ class mainUIelementsTest {
         )
         materialTextView.perform(click())
 
-        val textView10 = onView(
-            allOf(
-                withId(R.id.factbox_5),
-                withText("Health Tip: Ages 18yrs-25yrs need 7hrs-9hrs of sleep!"),
-                withParent(
-                    allOf(
-                        withId(R.id.statsConstraintLayout),
-                        withParent(withId(android.R.id.content))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        textView10.check(matches(isDisplayed()))
-
-        val textView11 = onView(
-            allOf(
-                withId(R.id.factbox_5),
-                withText("Health Tip: Ages 18yrs-25yrs need 7hrs-9hrs of sleep!"),
-                withParent(
-                    allOf(
-                        withId(R.id.statsConstraintLayout),
-                        withParent(withId(android.R.id.content))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        textView11.check(matches(isDisplayed()))
+        pressBack()
     }
 
     private fun childAtPosition(
@@ -369,4 +326,3 @@ class mainUIelementsTest {
         }
     }
 }
-*/
