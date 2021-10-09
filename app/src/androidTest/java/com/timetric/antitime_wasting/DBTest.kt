@@ -12,6 +12,7 @@ import java.io.IOException
 import kotlin.jvm.Throws
 
 
+
 /**
  * Class to test the database
  *
@@ -24,6 +25,7 @@ import kotlin.jvm.Throws
 @RunWith(AndroidJUnit4::class)
 class DBTest {
     private lateinit var dbHandler: ___DBHandler___
+    private lateinit var testdbHandler: ___DBHandler___
     private lateinit var testSession: Session
     private lateinit var testSession2: Session
     val context = ApplicationProvider.getApplicationContext<Context>()
@@ -35,6 +37,7 @@ class DBTest {
     fun createDBHandler(){
 
         dbHandler = ___DBHandler___(context, null, null, 0)
+        testdbHandler = ___DBHandler___(context, null, null, 1)
         testSession = Session(151, 1000, 2000, "Test")
         testSession2 = Session(152,1000,2000,"Test")
     }
