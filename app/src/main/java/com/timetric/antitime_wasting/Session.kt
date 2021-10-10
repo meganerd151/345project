@@ -43,8 +43,6 @@ class Session {
         this.id = id
     }
 
-    constructor(){}
-
     constructor(start:Int?,end:Int?,sessionType:String?){
         this.startTime = start
         this.endTime = end

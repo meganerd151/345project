@@ -5,6 +5,8 @@
     <string name="startNew">Start</string>
     <string name="study">Study</string>
     <string name="exercise">Exercise</string>
+    <string name="typeSpinnerLabel">Select Activity Type</string>
+    <string name="scopeSpinnerLabel">Select Scope</string>
     <string name="clearData">Clear Data</string>
     <string name="stats">Statistics</string>
     <string name="dataClearedSucessfully">Data has been cleared!</string>

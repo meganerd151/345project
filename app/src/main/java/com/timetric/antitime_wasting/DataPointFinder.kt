@@ -2,7 +2,6 @@ package com.example.antitime_wasting
 
 import kotlin.collections.ArrayList
 import android.content.Context
-import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.*
 
