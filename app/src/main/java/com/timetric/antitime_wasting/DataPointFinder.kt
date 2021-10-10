@@ -37,7 +37,7 @@ object DataPointFinder {
         }
         for (session in sessions){
             if (inScope(session.date.toString(), scope)){
-                points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!!
+                points[findIndexOfPoint(session.date.toString(), scope)].y += session.timeSpent!! / 60
             }
         }
         return points
