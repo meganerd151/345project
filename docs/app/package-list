@@ -31,6 +31,7 @@ $dokka.location:com.example.antitime_wasting/Scope.BY_MONTH/name/#/PointingToDec
 $dokka.location:com.example.antitime_wasting/Scope.BY_MONTH/ordinal/#/PointingToDeclaration/app/com.example.antitime_wasting/-scope/-b-y_-m-o-n-t-h/ordinal.html
 $dokka.location:com.example.antitime_wasting/Scope///PointingToDeclaration/app/com.example.antitime_wasting/-scope/index.html
 $dokka.location:com.example.antitime_wasting/Session///PointingToDeclaration/app/com.example.antitime_wasting/-session/index.html
+$dokka.location:com.example.antitime_wasting/Session/Session/#/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.String/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
 $dokka.location:com.example.antitime_wasting/Session/Session/#kotlin.Int?#kotlin.Int?#kotlin.String?#kotlin.String?/PointingToDeclaration/app/com.example.antitime_wasting/-session/-session.html
