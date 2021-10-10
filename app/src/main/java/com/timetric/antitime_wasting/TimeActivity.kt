@@ -27,7 +27,6 @@ class TimeActivity : AppCompatActivity() {
     }
 
     private lateinit var mascotTimeActivity: ImageView
-    private lateinit var createActivity: Button
     private lateinit var timeText: TextView
     private var inSession: Boolean = false
     private var startTime: Int = 0
@@ -46,7 +45,6 @@ class TimeActivity : AppCompatActivity() {
         Log.i("start", "start pressed")
 
         mascotTimeActivity = findViewById(R.id.mascotTimeActivity)
-        //createActivity = findViewById(R.id.createNewActivity)
         timeText = findViewById((R.id.timeText))
 
         val spinner : Spinner = findViewById(R.id.sessionSpinner)
@@ -55,12 +53,12 @@ class TimeActivity : AppCompatActivity() {
             R.array.SessionTypes,
             R.layout.spinner_item
         )
-        spinner.setAdapter(adapter)
+        spinner.adapter = adapter
 
 
         val studybtn = findViewById<Button>(R.id.studybtn)
         studybtn.setOnClickListener {
-            timeMethod(studybtn)
+            timeMethod()
 
         }
 
@@ -87,7 +85,7 @@ class TimeActivity : AppCompatActivity() {
 
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun timeMethod(pressedButton:Button) {
+    private fun timeMethod() {
         /* Keeps track of the time the user is in an activity.
          */
         val studybtn : Button = findViewById(R.id.studybtn)
@@ -95,16 +93,16 @@ class TimeActivity : AppCompatActivity() {
         if (inSession){
             endTime = getCurrentTime()
             DBInterface.addSession(Session(startTime, endTime, sessionType), this)
-            timeText.setText(displayLayout(startTime.toLong(), endTime.toLong(), sessionType))
+            timeText.text = displayLayout(startTime.toLong(), endTime.toLong(), sessionType)
             inSession = false
             studybtn.text = "Start Session"
-            spinner.setEnabled(true)
+            spinner.isEnabled = true
         } else {
             startTime = getCurrentTime()
             sessionType = spinner.getSelectedItem().toString()
             inSession = true
             studybtn.text = "End Session"
-            spinner.setEnabled(false)
+            spinner.isEnabled = false
         }
     }
 
