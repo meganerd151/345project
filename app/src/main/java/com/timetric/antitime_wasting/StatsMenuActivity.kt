@@ -1,15 +1,13 @@
 package com.example.antitime_wasting
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.SpinnerAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.jjoe64.graphview.GraphView
 import com.jjoe64.graphview.series.BarGraphSeries
 import com.jjoe64.graphview.series.DataPoint
 import android.content.res.Resources
+import android.view.View
+import android.widget.*
 import com.jjoe64.graphview.helper.StaticLabelsFormatter
 import com.jjoe64.graphview.GridLabelRenderer
 import com.jjoe64.graphview.GridLabelRenderer.GridStyle
@@ -92,14 +90,21 @@ class StatsMenuActivity : AppCompatActivity() {
 
         update_graph("Study", Scope.BY_DAY, dayLabels, thisMonth)
 
-        val applybtn = findViewById<Button>(R.id.applyBtn)
-        applybtn.setOnClickListener {
-            when (scopeSpinner.selectedItem.toString()){
-                "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels, thisMonth)
-                "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels, thisYear)
+        val spinnerSelected = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (scopeSpinner.selectedItem.toString()){
+                    "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels, thisMonth)
+                    "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels, thisYear)
+                }
             }
 
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
         }
+        typeSpinner.onItemSelectedListener = spinnerSelected
+        scopeSpinner.onItemSelectedListener = spinnerSelected
+
     }
 
     /**
