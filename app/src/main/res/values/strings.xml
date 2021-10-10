@@ -24,6 +24,7 @@
     <string-array name="SessionTypes">
         <item>Study</item>
         <item>Exercise</item>
+        <item>Chores</item>
     </string-array>
 
     <string-array name="ScopeTypes">
