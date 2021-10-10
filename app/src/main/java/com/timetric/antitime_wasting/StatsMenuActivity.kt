@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.*
 import com.jjoe64.graphview.helper.StaticLabelsFormatter
 import com.jjoe64.graphview.GridLabelRenderer
-import com.jjoe64.graphview.GridLabelRenderer.GridStyle
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -26,7 +25,7 @@ import kotlin.collections.ArrayList
  */
 class StatsMenuActivity : AppCompatActivity() {
     private var graphView: GraphView? = null
-    private var Ymin: Double = 10.0
+    private var yMin: Double = 10.0
 
 
 
@@ -44,7 +43,7 @@ class StatsMenuActivity : AppCompatActivity() {
             R.array.SessionTypes,
             R.layout.spinner_item
         )
-        typeSpinner.setAdapter(typeAdapter)
+        typeSpinner.adapter = typeAdapter
 
         val scopeSpinner : Spinner = findViewById(R.id.scopeSelector)
         val scopeAdapter:SpinnerAdapter = ArrayAdapter.createFromResource(
@@ -52,16 +51,16 @@ class StatsMenuActivity : AppCompatActivity() {
             R.array.ScopeTypes,
             R.layout.spinner_item
         )
-        scopeSpinner.setAdapter(scopeAdapter)
+        scopeSpinner.adapter = scopeAdapter
 
         graphView = findViewById(R.id.idGraphView)
 
-        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitleTextSize(45f)
-        graphView?.getGridLabelRenderer()?.setPadding(8)
+        graphView?.gridLabelRenderer?.horizontalAxisTitleTextSize = 45f
+        graphView?.gridLabelRenderer?.padding = 8
 
-        graphView?.setTitleTextSize(65f)
+        graphView?.titleTextSize = 65f
 
-        graphView?.getGridLabelRenderer()?.setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL)
+        graphView?.gridLabelRenderer?.gridStyle = GridLabelRenderer.GridStyle.HORIZONTAL
 
         val dayLabels = StaticLabelsFormatter(graphView)
 
@@ -88,13 +87,13 @@ class StatsMenuActivity : AppCompatActivity() {
         val thisMonth: String = res.getStringArray(R.array.months)[SimpleDateFormat("MM", Locale.US).format((Date())).toInt()-1]
         val thisYear: String = SimpleDateFormat("yyyy", Locale.US).format((Date()))
 
-        update_graph("Study", Scope.BY_DAY, dayLabels, thisMonth)
+        updateGraph("Study", Scope.BY_DAY, dayLabels, thisMonth)
 
         val spinnerSelected = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when (scopeSpinner.selectedItem.toString()){
-                    "Month View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels, thisMonth)
-                    "Year View" -> update_graph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels, thisYear)
+                    "Month View" -> updateGraph(typeSpinner.selectedItem.toString(), Scope.BY_DAY, dayLabels, thisMonth)
+                    "Year View" -> updateGraph(typeSpinner.selectedItem.toString(), Scope.BY_MONTH, monthLabels, thisYear)
                 }
             }
 
@@ -113,7 +112,7 @@ class StatsMenuActivity : AppCompatActivity() {
      * @param sessionType the type of session the graph is to display.
      * @param scope the length of time the graph covers.
      */
-    private fun update_graph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter, scopeLabel: String){
+    private fun updateGraph(sessionType: String, scope: Scope, YLabels: StaticLabelsFormatter, scopeLabel: String){
         graphView?.removeAllSeries()
         val points: ArrayList<Point> = DataPointFinder.findDataPoints(sessionType, scope, this)
         val dataPoints = arrayOfNulls<DataPoint>(points.size)
@@ -127,24 +126,24 @@ class StatsMenuActivity : AppCompatActivity() {
 
         when (scope){
             Scope.BY_DAY -> {
-                graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Day")
-                graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
+                graphView?.gridLabelRenderer?.horizontalAxisTitle = "Day"
+                graphView?.gridLabelRenderer?.labelFormatter = YLabels
             }
             Scope.BY_MONTH -> {
-                graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle("Month")
-                graphView?.getGridLabelRenderer()?.setLabelFormatter(YLabels)
+                graphView?.gridLabelRenderer?.horizontalAxisTitle = "Month"
+                graphView?.gridLabelRenderer?.labelFormatter = YLabels
             }
         }
-        graphView?.setTitle(sessionType)
-        graphView?.getGridLabelRenderer()?.setHorizontalAxisTitle(scopeLabel)
-        graphView?.getGridLabelRenderer()?.setTextSize(19f)
+        graphView?.title = sessionType
+        graphView?.gridLabelRenderer?.horizontalAxisTitle = scopeLabel
+        graphView?.gridLabelRenderer?.textSize = 19f
 
         val maxValue: Double = DataPointFinder.getMaxY(points)
 
-        if (maxValue > Ymin) {
-            graphView?.getViewport()?.setMaxY(maxValue)
+        if (maxValue > yMin) {
+            graphView?.viewport?.setMaxY(maxValue)
         } else {
-            graphView?.getViewport()?.setMaxY(Ymin)
+            graphView?.viewport?.setMaxY(yMin)
         }
         series.spacing = 5
         graphView?.addSeries(series)
