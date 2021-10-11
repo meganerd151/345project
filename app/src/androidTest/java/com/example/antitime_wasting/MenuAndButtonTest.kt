@@ -104,23 +104,6 @@ class MenuAndButtonTest {
         )
         actionMenuItemView.perform(click())
 
-        val materialButton = onView(
-            allOf(
-                withId(R.id.applyBtn), withText("Apply Changes"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.statsConstraintLayout),
-                        childAtPosition(
-                            withId(android.R.id.content),
-                            0
-                        )
-                    ),
-                    6
-                ),
-                isDisplayed()
-            )
-        )
-        materialButton.perform(click())
 
         val appCompatImageButton = onView(
             allOf(

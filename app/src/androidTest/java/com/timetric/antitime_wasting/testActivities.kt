@@ -62,7 +62,6 @@ class testActivities {
         onView(withId(R.id.sessionTypeSelector)).check(matches(isDisplayed()))
         onView(withId(R.id.textView3)).check(matches(isDisplayed()))
         onView(withId(R.id.scopeSelector)).check(matches(isDisplayed()))
-        onView(withId(R.id.applyBtn)).check(matches(isDisplayed()))
     }
 
     /**

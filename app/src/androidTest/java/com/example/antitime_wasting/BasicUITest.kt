@@ -187,19 +187,6 @@ class BasicUITest {
         )
         view.check(matches(isDisplayed()))
 
-        val button3 = onView(
-            allOf(
-                withId(R.id.applyBtn), withText("APPLY CHANGES"),
-                withParent(
-                    allOf(
-                        withId(R.id.statsConstraintLayout),
-                        withParent(withId(android.R.id.content))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        button3.check(matches(isDisplayed()))
 
         val textView5 = onView(
             allOf(
