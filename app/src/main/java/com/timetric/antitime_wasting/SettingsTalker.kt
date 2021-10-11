@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import android.util.Log
 
-/*
+/**
 * @created 08/Aug/2021 - 2:56 PM
 * @project Anti time-wasting
 * @author Blake MacDade

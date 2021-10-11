@@ -110,16 +110,16 @@ class TimeActivity : AppCompatActivity() {
         return (Date().time).toInt()
     }
 
-    /*
-     * Used internally to get the String to display the session information.
-     *
-     * @param start the start time
-     * @param end the end time
-     * @param type the session type as a String.
-     *
-     * @return a String that can be displayed.
-     */
     private fun displayLayout(start:Long,end:Long, type:String): String {
+        /*
+         * Used internally to get the String to display the session information.
+         *
+         * @param start the start time
+         * @param end the end time
+         * @param type the session type as a String.
+         *
+         * @return a String that can be displayed.
+         */
         val difference = end-start
         val diffDays = (difference / (24 * 60 * 60 * 1000)).toInt()
         val diffhours = (difference / (60 * 60 * 1000)).toInt() % 24

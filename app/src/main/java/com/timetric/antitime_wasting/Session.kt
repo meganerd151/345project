@@ -30,7 +30,7 @@ class Session {
     var timeSpent:Int? = null
         private set
 
-    constructor(){};
+    constructor()
 
     constructor(id:Int,start:Int,end:Int,sessionType:String){
         this.id = id

@@ -3,10 +3,8 @@ package com.example.antitime_wasting
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.test.espresso.Espresso.onData
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
-import androidx.test.espresso.assertion.ViewAssertions.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
@@ -18,6 +16,12 @@ import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+
+/**
+ * Made using espresso auto test generation.
+ * @created 10/10/21
+ * @author Blake MacDade
+ * */
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)

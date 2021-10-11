@@ -84,6 +84,9 @@ class testActivities {
 
     }
 
+    /**
+     * Tests that the components of the facts page are loaded and displayed on the screen.
+     * */
     @Test
     @Throws(Exception::class)
     fun testFactsPage(){

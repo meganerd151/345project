@@ -3,7 +3,7 @@ package com.example.antitime_wasting
 import android.content.Context
 
 private const val settingsName = "numSessions"
-/*
+/**
 * @created 08/Aug/2021 - 2:50 PM
 * @project Anti time-wasting
 * @author Blake MacDade
@@ -83,6 +83,13 @@ object DBInterface {
         return dbHandler.updateHandler(session)
     }
 
+    /**
+     * Gets the last session that the user entered.
+     *
+     * @param context the context the application is running in.
+     *
+     * @return the most recent session.
+     * */
     fun getLastSession(context: Context?): Session{
         talker = SettingsTalker(context!!)
         val dbHandler = ___DBHandler___(context,null,null,1)

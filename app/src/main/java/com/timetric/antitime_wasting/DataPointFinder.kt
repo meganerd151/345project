@@ -78,6 +78,13 @@ object DataPointFinder {
         }
     }
 
+    /**
+     * getMaxY iterates through the avaiable points and gets the maximum Y value,
+     *
+     * @param points the array of points to iterate through
+     *
+     * @return the maximum Y value found in the given array of points.
+     * */
     fun getMaxY(points: ArrayList<Point>): Double{
         var maxY = 0
         for (point in points){

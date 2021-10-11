@@ -18,7 +18,11 @@ import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-
+/**
+ * Made using espresso auto test generation.
+ * @created 10/10/21
+ * @author Blake MacDade
+ * */
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class BasicUITest {

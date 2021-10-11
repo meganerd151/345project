@@ -17,8 +17,6 @@ import kotlin.collections.ArrayList
 /**
  * Page to display statistics stored in the database
  *
- * TODO: change to displaying in either minutes or hours
- *
  * @author Sam Fern
  * @author David Black
  * @author Amy Lloyd

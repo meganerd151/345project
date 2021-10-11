@@ -13,7 +13,7 @@ import kotlin.collections.ArrayList
 
 /**
  * This is a class to directly interact with the Database.
- * Note: you should not directly interact with this class, you should instead interract with DBInterface.kt
+ * Note: you should not directly interact with this class, you should instead interact with DBInterface.kt
  *
  * @param context the application context (unused)
  * @param name unused
@@ -58,19 +58,6 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         val db = this.writableDatabase
         db.execSQL("delete from $TABLE_NAME")
         return true
-    }
-
-    companion object {
-        private const val DATABASE_VERSION = 1
-        const val DATABASE_NAME = "timesDB.db"
-        const val TABLE_NAME = "Times"
-        const val COLUMN_ID = "TimeID"
-        const val COLUMN_START_TIME = "StartTime"
-        const val COLUMN_END_TIME = "EndTime"
-        const val COLUMN_SESSION_TYPE = "SessionType"
-        const val COLUMN_DATE = "Date"
-        const val COLUMN_DELTA_T = "TimeSpent"
-        const val debugTag = "DBHandler"
     }
 
     /**
@@ -183,5 +170,17 @@ class ___DBHandler___(context: Context?, name: String?, factory: CursorFactory?,
         return sessions
     }
 
+    companion object {
+        private const val DATABASE_VERSION = 1
+        const val DATABASE_NAME = "timesDB.db"
+        const val TABLE_NAME = "Times"
+        const val COLUMN_ID = "TimeID"
+        const val COLUMN_START_TIME = "StartTime"
+        const val COLUMN_END_TIME = "EndTime"
+        const val COLUMN_SESSION_TYPE = "SessionType"
+        const val COLUMN_DATE = "Date"
+        const val COLUMN_DELTA_T = "TimeSpent"
+        const val debugTag = "DBHandler"
+    }
 
 }
