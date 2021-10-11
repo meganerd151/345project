@@ -13,6 +13,8 @@ $dokka.location:com.example.antitime_wasting/DBInterface/wipeDatabase/#android.c
 $dokka.location:com.example.antitime_wasting/DataPointFinder///PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/index.html
 $dokka.location:com.example.antitime_wasting/DataPointFinder/findDataPoints/#kotlin.String#com.example.antitime_wasting.Scope#android.content.Context?/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/find-data-points.html
 $dokka.location:com.example.antitime_wasting/DataPointFinder/getMaxY/#java.util.ArrayList[com.example.antitime_wasting.Point]/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/get-max-y.html
+$dokka.location:com.example.antitime_wasting/DataPointFinder/testFindIndexOfPoint/#/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/test-find-index-of-point.html
+$dokka.location:com.example.antitime_wasting/DataPointFinder/testInScope/#/PointingToDeclaration/app/com.example.antitime_wasting/-data-point-finder/test-in-scope.html
 $dokka.location:com.example.antitime_wasting/MainActivity///PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/index.html
 $dokka.location:com.example.antitime_wasting/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/-main-activity.html
 $dokka.location:com.example.antitime_wasting/MainActivity/onCreateOptionsMenu/#android.view.Menu?/PointingToDeclaration/app/com.example.antitime_wasting/-main-activity/on-create-options-menu.html
