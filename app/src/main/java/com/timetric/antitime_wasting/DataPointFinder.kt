@@ -94,4 +94,17 @@ object DataPointFinder {
         }
         return (maxY).toDouble()/(1000)
     }
+
+    fun testInScope(): Boolean{
+        var result = false
+        inScope("2021-10",Scope.BY_DAY)
+        result = inScope("2021",Scope.BY_MONTH)
+        return result
+    }
+
+    fun testFindIndexOfPoint(): Int{
+        findIndexOfPoint("012345678910",Scope.BY_DAY)
+        findIndexOfPoint("012345678910",Scope.BY_MONTH)
+        return 1
+    }
 }
