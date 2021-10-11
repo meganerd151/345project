@@ -31,6 +31,10 @@ class MenuAndButtonTest {
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
+
+    /**
+     * Goes through most parts of the app and clicks buttons, etc making sure everything works.
+     * */
     @Test
     fun menuAndButtonTest() {
         val overflowMenuButton = onView(

@@ -31,6 +31,9 @@ class BasicUITest {
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
+    /**
+     * Runs through all main parts of the app to do UI tests
+     * */
     @Test
     fun basicUITest() {
         val button = onView(
